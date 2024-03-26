@@ -58,7 +58,7 @@ public class UserData
         Level = userDataDto.Level;
         MaxForce = userDataDto.MaxForce;
         DistanceWalked = userDataDto.DistanceWalked;
-        CostumeCount = userDataDto.WeaponCount;
+        CostumeCount = userDataDto.CostumeCount;
         WeaponCount = userDataDto.WeaponCount;
         CompanionCount = userDataDto.CompanionCount;
         MemoirCount = userDataDto.MemoirCount;
