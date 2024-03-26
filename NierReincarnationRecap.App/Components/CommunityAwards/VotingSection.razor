@@ -1,0 +1,20 @@
+﻿@using NierReincarnationRecap.Model.ViewModel
+
+@if (Awards.Count > 0)
+{
+    @if (!string.IsNullOrEmpty(HeaderImagePath))
+    {
+        <MudContainer Class="mud-typography-align-center my-6">
+            <MudImage Src="@HeaderImagePath" Fluid />
+        </MudContainer>
+    }
+    <MudGrid>
+        @foreach (var award in Awards)
+        {
+            <CascadingValue Name="AwardCount" Value="Awards.Count">
+                <VotingCard Award="award" AwardIndex="@Awards.IndexOf(award)" />
+            </CascadingValue>
+        }
+    </MudGrid>
+    <br />
+}

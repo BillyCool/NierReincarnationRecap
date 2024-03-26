@@ -1,0 +1,62 @@
+﻿@page "/save-data"
+
+<PageTitle>NieR Reincarnation Recap - Save Data</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Save Data</MudText>
+<MudText Class="mb-8">Download a copy your account data and optionally get your personalized recap.</MudText>
+
+<br />
+<MudText Typo="Typo.h5" GutterBottom="true">Download Data</MudText>
+<br />
+<MudText Typo="Typo.body2">
+    Here, you can download a copy your account data for your reference or future analysis. This tool is available for both the GL and JP regions.<br />
+    <br />
+    <MudAlert Severity="Severity.Warning" Variant="Variant.Outlined">
+        Your account must be backed up using the Square Enix Bridge and you must use a Windows device
+    </MudAlert>
+    <br />
+    <br />
+
+    Please follow the steps below to download your user data:<br />
+    <MudList>
+        <MudListItem>1. Download the save data utility from <MudLink Href="https://github.com/BillyCool/NierReincarnationRecap/releases" Color="Color.Secondary">GitHub</MudLink></MudListItem>
+        <MudListItem>2. Extract the .zip file and run the <MudText Color="Color.Primary" Inline>NierReincarnationSaveData.exe</MudText> file</MudListItem>
+        <MudListItem>3. In the app that opens, type the number corresponding to your region and press <MudText Color="Color.Primary" Inline>ENTER</MudText></MudListItem>
+        <MudListItem>4. You will be presented with a URL to login to your account. Click or copy the link to your browser, login with your account and confirm the transfer like you would do in-game</MudListItem>
+        <MudListItem>5. Coming back to the app, press <MudText Color="Color.Primary" Inline>ENTER</MudText> to continue</MudListItem>
+        <MudListItem>6. Your account data will be exported in a <MudText Color="Color.Primary" Inline>userdata.zip</MudText> file in the same folder as the .exe</MudListItem>
+        <MudListItem>7. Optionally choose to upload your data to this site for a personalized recap. See section below for more details.</MudListItem>
+    </MudList>
+</MudText>
+
+<br />
+<MudText Typo="Typo.h5" GutterBottom="true">Personalized Recap</MudText>
+<br />
+<MudText Typo="Typo.body2" GutterBottom="true">
+    After saving your account data in your computer, you will be asked to optionally upload your data to this website.<br />
+    Doing so, will create a personalized account recap and you will be given a link to it that you can optionally share with others.
+    Your data will also be used in the <MudLink Href="/mama-rewards">Mama Awards</MudLink>.
+    <br />
+    <br />
+    The following data will be uploaded and used:
+    <MudList>
+        <MudListItem>- User ID</MudListItem>
+        <MudListItem>- Player ID</MudListItem>
+        <MudListItem>- Registration Time</MudListItem>
+        <MudListItem>- Name</MudListItem>
+        <MudListItem>- Favorite Costume</MudListItem>
+        <MudListItem>- Total Login Days</MudListItem>
+        <MudListItem>- Level</MudListItem>
+        <MudListItem>- Max Force</MudListItem>
+        <MudListItem>- Distance Walked</MudListItem>
+        <MudListItem>- Costume Count</MudListItem>
+        <MudListItem>- Weapon Count</MudListItem>
+        <MudListItem>- Companion Count</MudListItem>
+        <MudListItem>- Memoir Count</MudListItem>
+        <MudListItem>- Debris Count</MudListItem>
+        <MudListItem>- Awakening Count</MudListItem>
+        <MudListItem>- Arena Rankings</MudListItem>
+        <MudListItem>- Subjugation Scores</MudListItem>
+        <MudListItem>- Exploration Scores</MudListItem>
+    </MudList>
+</MudText>

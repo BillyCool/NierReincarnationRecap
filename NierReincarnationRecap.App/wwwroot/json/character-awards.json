@@ -1,0 +1,1345 @@
+﻿[
+  {
+    "category": 9,
+    "optionList": [
+      {
+        "name": "Mama / Pod 006",
+        "imagePath": "000001"
+      },
+      {
+        "name": "Carrier",
+        "imagePath": "000002"
+      },
+      {
+        "name": "Rion",
+        "imagePath": "008001"
+      },
+      {
+        "name": "Dimos",
+        "imagePath": "007001"
+      },
+      {
+        "name": "Gayle",
+        "imagePath": "009001"
+      },
+      {
+        "name": "Akeha",
+        "imagePath": "015001"
+      },
+      {
+        "name": "Argo",
+        "imagePath": "006001"
+      },
+      {
+        "name": "Levania",
+        "imagePath": "005001"
+      },
+      {
+        "name": "063y",
+        "imagePath": "011001"
+      },
+      {
+        "name": "F66x",
+        "imagePath": "012001"
+      },
+      {
+        "name": "Lars",
+        "imagePath": "013001"
+      },
+      {
+        "name": "Griff",
+        "imagePath": "014001"
+      },
+      {
+        "name": "Noelle",
+        "imagePath": "010001"
+      },
+      {
+        "name": "Fio",
+        "imagePath": "019001"
+      },
+      {
+        "name": "Dark Mama \u0026 Babe",
+        "imagePath": "000003"
+      },
+      {
+        "name": "Papa",
+        "imagePath": "000004"
+      },
+      {
+        "name": "Saryu",
+        "imagePath": "022001"
+      },
+      {
+        "name": "Priyet",
+        "imagePath": "023001"
+      },
+      {
+        "name": "Marie",
+        "imagePath": "024001"
+      },
+      {
+        "name": "Yurie",
+        "imagePath": "025001"
+      },
+      {
+        "name": "Yudil",
+        "imagePath": "027001"
+      },
+      {
+        "name": "Sarafa",
+        "imagePath": "026001"
+      },
+      {
+        "name": "Hina",
+        "imagePath": "020001"
+      },
+      {
+        "name": "Yuzuki",
+        "imagePath": "021001"
+      }
+    ]
+  },
+  {
+    "category": 10,
+    "optionList": [
+      {
+        "name": "Mama / Pod 006",
+        "imagePath": "000001"
+      },
+      {
+        "name": "Carrier",
+        "imagePath": "000002"
+      },
+      {
+        "name": "Rion",
+        "imagePath": "008001"
+      },
+      {
+        "name": "Dimos",
+        "imagePath": "007001"
+      },
+      {
+        "name": "Gayle",
+        "imagePath": "009001"
+      },
+      {
+        "name": "Akeha",
+        "imagePath": "015001"
+      },
+      {
+        "name": "Argo",
+        "imagePath": "006001"
+      },
+      {
+        "name": "Levania",
+        "imagePath": "005001"
+      },
+      {
+        "name": "063y",
+        "imagePath": "011001"
+      },
+      {
+        "name": "F66x",
+        "imagePath": "012001"
+      },
+      {
+        "name": "Lars",
+        "imagePath": "013001"
+      },
+      {
+        "name": "Griff",
+        "imagePath": "014001"
+      },
+      {
+        "name": "Noelle",
+        "imagePath": "010001"
+      },
+      {
+        "name": "Fio",
+        "imagePath": "019001"
+      },
+      {
+        "name": "Dark Mama \u0026 Babe",
+        "imagePath": "000003"
+      },
+      {
+        "name": "Papa",
+        "imagePath": "000004"
+      },
+      {
+        "name": "Saryu",
+        "imagePath": "022001"
+      },
+      {
+        "name": "Priyet",
+        "imagePath": "023001"
+      },
+      {
+        "name": "Marie",
+        "imagePath": "024001"
+      },
+      {
+        "name": "Yurie",
+        "imagePath": "025001"
+      },
+      {
+        "name": "Yudil",
+        "imagePath": "027001"
+      },
+      {
+        "name": "Sarafa",
+        "imagePath": "026001"
+      },
+      {
+        "name": "Hina",
+        "imagePath": "020001"
+      },
+      {
+        "name": "Yuzuki",
+        "imagePath": "021001"
+      },
+      {
+        "name": "10H",
+        "imagePath": "048001"
+      }
+    ]
+  },
+  {
+    "category": 11,
+    "optionList": [
+      {
+        "name": "Rion - Sickly Exile",
+        "imagePath": "008001"
+      },
+      {
+        "name": "Rion - Dissenting Exile",
+        "imagePath": "008003"
+      },
+      {
+        "name": "Rion - Guardian Exile",
+        "imagePath": "008010"
+      },
+      {
+        "name": "Rion - Abstract Exile",
+        "imagePath": "008005"
+      },
+      {
+        "name": "Rion - Mechanical Exile",
+        "imagePath": "008002"
+      },
+      {
+        "name": "Rion - Summer Exile",
+        "imagePath": "008009"
+      },
+      {
+        "name": "Rion - Yuletide Exile",
+        "imagePath": "008012"
+      },
+      {
+        "name": "Rion - New Year\u0027s Exile",
+        "imagePath": "008006"
+      },
+      {
+        "name": "Rion - Celebratory Exile",
+        "imagePath": "008013"
+      },
+      {
+        "name": "Rion - Festive Exile",
+        "imagePath": "008019"
+      },
+      {
+        "name": "Rion - Shadowbound Exile",
+        "imagePath": "008014"
+      },
+      {
+        "name": "Rion - Abyssal Exile",
+        "imagePath": "008007"
+      },
+      {
+        "name": "Rion - Phantasmal Exile",
+        "imagePath": "008011"
+      },
+      {
+        "name": "Rion - Oathbound Exile",
+        "imagePath": "008018"
+      },
+      {
+        "name": "Rion - Reborn Revolutionary",
+        "imagePath": "008004"
+      },
+      {
+        "name": "Rion - Frozen-Heart Revolutionary",
+        "imagePath": "008008"
+      }
+    ]
+  },
+  {
+    "category": 12,
+    "optionList": [
+      {
+        "name": "Dimos - Departed Gunman",
+        "imagePath": "007001"
+      },
+      {
+        "name": "Dimos - Dissenting Gunman",
+        "imagePath": "007003"
+      },
+      {
+        "name": "Dimos - Guardian Gunman",
+        "imagePath": "007005"
+      },
+      {
+        "name": "Dimos - False Guardian Gunman",
+        "imagePath": "007009"
+      },
+      {
+        "name": "Dimos - Abstract Gunman",
+        "imagePath": "007002"
+      },
+      {
+        "name": "Dimos - Bloody Gunman",
+        "imagePath": "007006"
+      },
+      {
+        "name": "Dimos - Bloodless Gunman",
+        "imagePath": "007013"
+      },
+      {
+        "name": "Dimos - Fractured Gunman",
+        "imagePath": "007008"
+      },
+      {
+        "name": "Dimos - Summer Gunman",
+        "imagePath": "007015"
+      },
+      {
+        "name": "Dimos - New Year\u0027s Gunman",
+        "imagePath": "007016"
+      },
+      {
+        "name": "Dimos - Celebratory Gunman",
+        "imagePath": "007010"
+      },
+      {
+        "name": "Dimos - Abyssal Gunman",
+        "imagePath": "007012"
+      },
+      {
+        "name": "Dimos - Reborn Automaton",
+        "imagePath": "007004"
+      },
+      {
+        "name": "Dimos - Frozen-Heart Automaton",
+        "imagePath": "007007"
+      }
+    ]
+  },
+  {
+    "category": 13,
+    "optionList": [
+      {
+        "name": "Gayle - Wounded Hunter",
+        "imagePath": "009001"
+      },
+      {
+        "name": "Gayle - Dissenting Hunter",
+        "imagePath": "009003"
+      },
+      {
+        "name": "Gayle - Guardian Hunter",
+        "imagePath": "009005"
+      },
+      {
+        "name": "Gayle - Abstract Hunter",
+        "imagePath": "009002"
+      },
+      {
+        "name": "Gayle - Bloody Hunter",
+        "imagePath": "009006"
+      },
+      {
+        "name": "Gayle - Fractured Hunter",
+        "imagePath": "009010"
+      },
+      {
+        "name": "Gayle - Mechanical Hunter",
+        "imagePath": "009016"
+      },
+      {
+        "name": "Gayle - Summer Hunter",
+        "imagePath": "009011"
+      },
+      {
+        "name": "Gayle - Yuletide Hunter",
+        "imagePath": "009013"
+      },
+      {
+        "name": "Gayle - New Year\u0027s Hunter",
+        "imagePath": "009007"
+      },
+      {
+        "name": "Gayle - Celebratory Hunter",
+        "imagePath": "009009"
+      },
+      {
+        "name": "Gayle - Festive Hunter",
+        "imagePath": "009015"
+      },
+      {
+        "name": "Gayle - Abyssal Hunter",
+        "imagePath": "009012"
+      },
+      {
+        "name": "Gayle - Reborn Contractor",
+        "imagePath": "009004"
+      },
+      {
+        "name": "Gayle - Frozen-Heart Contractor",
+        "imagePath": "009008"
+      }
+    ]
+  },
+  {
+    "category": 14,
+    "optionList": [
+      {
+        "name": "Akeha - Twilight Assassian",
+        "imagePath": "015001"
+      },
+      {
+        "name": "Akeha - Dissenting Assassian",
+        "imagePath": "015003"
+      },
+      {
+        "name": "Akeha - Guardian Assassian",
+        "imagePath": "015011"
+      },
+      {
+        "name": "Akeha - False Guardian Assassian",
+        "imagePath": "015013"
+      },
+      {
+        "name": "Akeha - Abstract Assassian",
+        "imagePath": "015002"
+      },
+      {
+        "name": "Akeha - Bloody Assassian",
+        "imagePath": "015005"
+      },
+      {
+        "name": "Akeha - Bloodless Assassian",
+        "imagePath": "015010"
+      },
+      {
+        "name": "Akeha - Fractured Assassian",
+        "imagePath": "015014"
+      },
+      {
+        "name": "Akeha - Mechanical Assassian",
+        "imagePath": "015012"
+      },
+      {
+        "name": "Akeha - Summer Assassian",
+        "imagePath": "015009"
+      },
+      {
+        "name": "Akeha - Yuletide Assassian",
+        "imagePath": "015007"
+      },
+      {
+        "name": "Akeha - New Year\u0027s Assassian",
+        "imagePath": "015018"
+      },
+      {
+        "name": "Akeha - Celebratory Assassian",
+        "imagePath": "015015"
+      },
+      {
+        "name": "Akeha - Festive Assassian",
+        "imagePath": "015021"
+      },
+      {
+        "name": "Akeha - Abyssal Assassian",
+        "imagePath": "015016"
+      },
+      {
+        "name": "Akeha - Divine Assassian",
+        "imagePath": "015020"
+      },
+      {
+        "name": "Akeha - Intoner Assassian",
+        "imagePath": "015006"
+      },
+      {
+        "name": "Akeha - Fabled Assassian",
+        "imagePath": "015017"
+      },
+      {
+        "name": "Akeha - Reborn Swordmaster",
+        "imagePath": "015004"
+      },
+      {
+        "name": "Akeha - Frozen-Heart Swordmaster",
+        "imagePath": "015008"
+      }
+    ]
+  },
+  {
+    "category": 15,
+    "optionList": [
+      {
+        "name": "Argo - Apex Traveler",
+        "imagePath": "006001"
+      },
+      {
+        "name": "Argo - Dissenting Traveler",
+        "imagePath": "006003"
+      },
+      {
+        "name": "Argo - Guardian Traveler",
+        "imagePath": "006005"
+      },
+      {
+        "name": "Argo - Abstract Traveler",
+        "imagePath": "006006"
+      },
+      {
+        "name": "Argo - Bloody Traveler",
+        "imagePath": "006012"
+      },
+      {
+        "name": "Argo - Fractured Traveler",
+        "imagePath": "006010"
+      },
+      {
+        "name": "Argo - Summer Traveler",
+        "imagePath": "006008"
+      },
+      {
+        "name": "Argo - Yuletide Traveler",
+        "imagePath": "006013"
+      },
+      {
+        "name": "Argo - Celebratory Traveler",
+        "imagePath": "006009"
+      },
+      {
+        "name": "Argo - Shadowbound Traveler",
+        "imagePath": "006014"
+      },
+      {
+        "name": "Argo - Patriotic Traveler",
+        "imagePath": "006002"
+      },
+      {
+        "name": "Argo - Reborn Adventurer",
+        "imagePath": "006004"
+      },
+      {
+        "name": "Argo - Frozen-Heart Adventurer",
+        "imagePath": "006007"
+      }
+    ]
+  },
+  {
+    "category": 16,
+    "optionList": [
+      {
+        "name": "Levania - Human Monster",
+        "imagePath": "004001"
+      },
+      {
+        "name": "Levania - Dark Monster",
+        "imagePath": "005001"
+      },
+      {
+        "name": "Levania - Guardian Monster",
+        "imagePath": "005007"
+      },
+      {
+        "name": "Levania - Abstract Monster",
+        "imagePath": "005002"
+      },
+      {
+        "name": "Levania - Bloody Monster",
+        "imagePath": "005008"
+      },
+      {
+        "name": "Levania - Bloodless Monster",
+        "imagePath": "005005"
+      },
+      {
+        "name": "Levania - Lacrima Monster",
+        "imagePath": "005010"
+      },
+      {
+        "name": "Levania - Yuletide Monster",
+        "imagePath": "005006"
+      },
+      {
+        "name": "Levania - Celebratory Monster",
+        "imagePath": "005011"
+      },
+      {
+        "name": "Levania - Festive Monster",
+        "imagePath": "005013"
+      },
+      {
+        "name": "Levania - Abyssal Monster",
+        "imagePath": "005009"
+      },
+      {
+        "name": "Levania - Reborn Beast",
+        "imagePath": "005003"
+      },
+      {
+        "name": "Levania - Frozen-Heart Beast",
+        "imagePath": "005004"
+      }
+    ]
+  },
+  {
+    "category": 17,
+    "optionList": [
+      {
+        "name": "063y - Stalwart Prisoner",
+        "imagePath": "011001"
+      },
+      {
+        "name": "063y - Dissenting Prisoner",
+        "imagePath": "011003"
+      },
+      {
+        "name": "063y - Guardian Prisoner",
+        "imagePath": "011009"
+      },
+      {
+        "name": "063y - Abstract Prisoner",
+        "imagePath": "011002"
+      },
+      {
+        "name": "063y - Fractured Prisoner",
+        "imagePath": "011005"
+      },
+      {
+        "name": "063y - Summer Prisoner",
+        "imagePath": "011007"
+      },
+      {
+        "name": "063y - Yuletide Prisoner",
+        "imagePath": "011015"
+      },
+      {
+        "name": "063y - New Year\u0027s Prisoner",
+        "imagePath": "011010"
+      },
+      {
+        "name": "063y - Celebratory Prisoner",
+        "imagePath": "011012"
+      },
+      {
+        "name": "063y - Abyssal Prisoner",
+        "imagePath": "011011"
+      },
+      {
+        "name": "063y - Divine Prisoner",
+        "imagePath": "011014"
+      },
+      {
+        "name": "063y - Phantasmal Prisoner",
+        "imagePath": "011008"
+      },
+      {
+        "name": "063y - Reborn Convict",
+        "imagePath": "011004"
+      },
+      {
+        "name": "063y - Frozen-Heart Convict",
+        "imagePath": "011006"
+      }
+    ]
+  },
+  {
+    "category": 18,
+    "optionList": [
+      {
+        "name": "F66x - Distressed Captive",
+        "imagePath": "012001"
+      },
+      {
+        "name": "F66x - Dissenting Captive",
+        "imagePath": "012003"
+      },
+      {
+        "name": "F66x - Guardian Captive",
+        "imagePath": "012007"
+      },
+      {
+        "name": "F66x - Abstract Captive",
+        "imagePath": "012002"
+      },
+      {
+        "name": "F66x - Bloody Captive",
+        "imagePath": "012010"
+      },
+      {
+        "name": "F66x - Bloodless Captive",
+        "imagePath": "012011"
+      },
+      {
+        "name": "F66x - Lacrima Captive",
+        "imagePath": "012005"
+      },
+      {
+        "name": "F66x - Summer Captive",
+        "imagePath": "012008"
+      },
+      {
+        "name": "F66x - Celebratory Captive",
+        "imagePath": "012012"
+      },
+      {
+        "name": "F66x - Abyssal Captive",
+        "imagePath": "012009"
+      },
+      {
+        "name": "F66x - Reborn Inmate",
+        "imagePath": "012004"
+      },
+      {
+        "name": "F66x - Frozen-Heart Inmate",
+        "imagePath": "012006"
+      }
+    ]
+  },
+  {
+    "category": 19,
+    "optionList": [
+      {
+        "name": "Lars - Spiteful Solder",
+        "imagePath": "013001"
+      },
+      {
+        "name": "Lars - Dissenting Solder",
+        "imagePath": "013003"
+      },
+      {
+        "name": "Lars - Guardian Solder",
+        "imagePath": "013008"
+      },
+      {
+        "name": "Lars - Abstract Solder",
+        "imagePath": "013004"
+      },
+      {
+        "name": "Lars - Bloody Solder",
+        "imagePath": "013010"
+      },
+      {
+        "name": "Lars - Lacrima Solder",
+        "imagePath": "013007"
+      },
+      {
+        "name": "Lars - Fractured Solder",
+        "imagePath": "013005"
+      },
+      {
+        "name": "Lars - Yuletide Solder",
+        "imagePath": "013012"
+      },
+      {
+        "name": "Lars - Celebratory Solder",
+        "imagePath": "013009"
+      },
+      {
+        "name": "Lars - Abyssal Solder",
+        "imagePath": "013011"
+      },
+      {
+        "name": "Lars - Phantasmal Solder",
+        "imagePath": "013014"
+      },
+      {
+        "name": "Lars - Reborn Truant",
+        "imagePath": "013002"
+      },
+      {
+        "name": "Lars - Frozen-Heart Truant",
+        "imagePath": "013006"
+      }
+    ]
+  },
+  {
+    "category": 20,
+    "optionList": [
+      {
+        "name": "Griff - Harmonioud Captain",
+        "imagePath": "014001"
+      },
+      {
+        "name": "Griff - Dissenting Captain",
+        "imagePath": "014003"
+      },
+      {
+        "name": "Griff - Guardian Captain",
+        "imagePath": "014005"
+      },
+      {
+        "name": "Griff - False Guardian Captain",
+        "imagePath": "014014"
+      },
+      {
+        "name": "Griff - Abstract Captain",
+        "imagePath": "014004"
+      },
+      {
+        "name": "Griff - Bloody Captain",
+        "imagePath": "014010"
+      },
+      {
+        "name": "Griff - Lacrima Captain",
+        "imagePath": "014008"
+      },
+      {
+        "name": "Griff - Fractured Captain",
+        "imagePath": "014009"
+      },
+      {
+        "name": "Griff - Mechanical Captain",
+        "imagePath": "014016"
+      },
+      {
+        "name": "Griff - Yuletide Captain",
+        "imagePath": "014011"
+      },
+      {
+        "name": "Griff - New Year\u0027s Captain",
+        "imagePath": "014017"
+      },
+      {
+        "name": "Griff - Celebratory Captain",
+        "imagePath": "014007"
+      },
+      {
+        "name": "Griff - Festive Captain",
+        "imagePath": "014015"
+      },
+      {
+        "name": "Griff - Abyssal Captain",
+        "imagePath": "014013"
+      },
+      {
+        "name": "Griff - Reborn Has-Been",
+        "imagePath": "014002"
+      },
+      {
+        "name": "Griff - Frozen-Heart Has-Been",
+        "imagePath": "014006"
+      }
+    ]
+  },
+  {
+    "category": 21,
+    "optionList": [
+      {
+        "name": "Noelle - Hidden Weapon",
+        "imagePath": "010001"
+      },
+      {
+        "name": "Noelle - Dissenting Weapon",
+        "imagePath": "010003"
+      },
+      {
+        "name": "Noelle - Guardian Weapon",
+        "imagePath": "010005"
+      },
+      {
+        "name": "Noelle - Abstract Weapon",
+        "imagePath": "010002"
+      },
+      {
+        "name": "Noelle - Bloody Weapon",
+        "imagePath": "010011"
+      },
+      {
+        "name": "Noelle - Bloodless Weapon",
+        "imagePath": "010009"
+      },
+      {
+        "name": "Noelle - Fractured Weapon",
+        "imagePath": "010012"
+      },
+      {
+        "name": "Noelle - Mechanical Weapon",
+        "imagePath": "010018"
+      },
+      {
+        "name": "Noelle - Summer Weapon",
+        "imagePath": "010016"
+      },
+      {
+        "name": "Noelle - Yuletide Weapon",
+        "imagePath": "010019"
+      },
+      {
+        "name": "Noelle - New Year\u0027s Weapon",
+        "imagePath": "010010"
+      },
+      {
+        "name": "Noelle - Celebratory Weapon",
+        "imagePath": "010007"
+      },
+      {
+        "name": "Noelle - Festive Weapon",
+        "imagePath": "010017"
+      },
+      {
+        "name": "Noelle - Phantasmal Weapon",
+        "imagePath": "010008"
+      },
+      {
+        "name": "Noelle - Fabled Weapon",
+        "imagePath": "010014"
+      },
+      {
+        "name": "Noelle - Abyssal Weapon",
+        "imagePath": "010013"
+      },
+      {
+        "name": "Noelle - Reborn Warlady",
+        "imagePath": "010004"
+      },
+      {
+        "name": "Noelle - Frozen-Heart Warlady",
+        "imagePath": "010006"
+      }
+    ]
+  },
+  {
+    "category": 22,
+    "optionList": [
+      {
+        "name": "Fio - The Girl of Light",
+        "imagePath": "019001"
+      },
+      {
+        "name": "Fio - Dissenting Girl",
+        "imagePath": "019004"
+      },
+      {
+        "name": "Fio - Guardian Girl",
+        "imagePath": "019006"
+      },
+      {
+        "name": "Fio - Abstract Girl",
+        "imagePath": "019005"
+      },
+      {
+        "name": "Fio - Lacrima Girl",
+        "imagePath": "019016"
+      },
+      {
+        "name": "Fio - Mechanical Girl",
+        "imagePath": "019003"
+      },
+      {
+        "name": "Fio - Summer Girl",
+        "imagePath": "019010"
+      },
+      {
+        "name": "Fio - Yuletide Girl",
+        "imagePath": "019015"
+      },
+      {
+        "name": "Fio - New Year\u0027s Girl",
+        "imagePath": "019011"
+      },
+      {
+        "name": "Fio - Celebratory Girl",
+        "imagePath": "019012"
+      },
+      {
+        "name": "Fio - Festive Girl",
+        "imagePath": "019018"
+      },
+      {
+        "name": "Fio - Abyssal Girl",
+        "imagePath": "019008"
+      },
+      {
+        "name": "Fio - Divine Girl",
+        "imagePath": "019019"
+      },
+      {
+        "name": "Fio - Simulacrum Girl",
+        "imagePath": "019013"
+      },
+      {
+        "name": "Fio - Intoner Girl",
+        "imagePath": "019007"
+      },
+      {
+        "name": "Fio - Reborn Princess",
+        "imagePath": "019002"
+      },
+      {
+        "name": "Fio - Frozen-Heart Princess",
+        "imagePath": "019009"
+      }
+    ]
+  },
+  {
+    "category": 23,
+    "optionList": [
+      {
+        "name": "Saryu - Avowed Witch",
+        "imagePath": "022001"
+      },
+      {
+        "name": "Saryu - Guardian Witch",
+        "imagePath": "022007"
+      },
+      {
+        "name": "Saryu - Abstract Witch",
+        "imagePath": "022003"
+      },
+      {
+        "name": "Saryu - Bloody Witch",
+        "imagePath": "022005"
+      },
+      {
+        "name": "Saryu - Summer Witch",
+        "imagePath": "022006"
+      },
+      {
+        "name": "Saryu - Yuletide Witch",
+        "imagePath": "022009"
+      },
+      {
+        "name": "Saryu - Celebratory Witch",
+        "imagePath": "022004"
+      },
+      {
+        "name": "Saryu - Festive Witch",
+        "imagePath": "022012"
+      },
+      {
+        "name": "Saryu - Abyssal Witch",
+        "imagePath": "022011"
+      },
+      {
+        "name": "Saryu - Fabled Witch",
+        "imagePath": "022008"
+      },
+      {
+        "name": "Saryu - Phantasmal Witch",
+        "imagePath": "022010"
+      },
+      {
+        "name": "Saryu - Reborn Sorceress",
+        "imagePath": "022002"
+      }
+    ]
+  },
+  {
+    "category": 24,
+    "optionList": [
+      {
+        "name": "Priyet - Verboten Werebeast",
+        "imagePath": "023001"
+      },
+      {
+        "name": "Priyet - Guardian Werebeast",
+        "imagePath": "023006"
+      },
+      {
+        "name": "Priyet - Abstract Werebeast",
+        "imagePath": "023003"
+      },
+      {
+        "name": "Priyet - Yuletide Werebeast",
+        "imagePath": "023005"
+      },
+      {
+        "name": "Priyet - Celebratory Werebeast",
+        "imagePath": "023004"
+      },
+      {
+        "name": "Priyet - Shadowbound Werebeast",
+        "imagePath": "023007"
+      },
+      {
+        "name": "Priyet - Abyssal Werebeast",
+        "imagePath": "023008"
+      },
+      {
+        "name": "Priyet - Reborn Fiend",
+        "imagePath": "023002"
+      }
+    ]
+  },
+  {
+    "category": 25,
+    "optionList": [
+      {
+        "name": "Marie - Praying Songstress",
+        "imagePath": "024001"
+      },
+      {
+        "name": "Marie - Guardian Songstress",
+        "imagePath": "024007"
+      },
+      {
+        "name": "Marie - Abstract Songstress",
+        "imagePath": "024003"
+      },
+      {
+        "name": "Marie - Fractured Songstress",
+        "imagePath": "024006"
+      },
+      {
+        "name": "Marie - Summer Songstress",
+        "imagePath": "024008"
+      },
+      {
+        "name": "Marie - Yuletide Songstress",
+        "imagePath": "024011"
+      },
+      {
+        "name": "Marie - New Year\u0027s Songstress",
+        "imagePath": "024005"
+      },
+      {
+        "name": "Marie - Celebratory Songstress",
+        "imagePath": "024004"
+      },
+      {
+        "name": "Marie - Abyssal Songstress",
+        "imagePath": "024009"
+      },
+      {
+        "name": "Marie - Oathbound Songstress",
+        "imagePath": "024010"
+      },
+      {
+        "name": "Marie - Reborn Pillar",
+        "imagePath": "024002"
+      }
+    ]
+  },
+  {
+    "category": 26,
+    "optionList": [
+      {
+        "name": "Yurie - Obsessed Ruler",
+        "imagePath": "025001"
+      },
+      {
+        "name": "Yurie - Guardian Ruler",
+        "imagePath": "025005"
+      },
+      {
+        "name": "Yurie - Abstract Ruler",
+        "imagePath": "025004"
+      },
+      {
+        "name": "Yurie - Summer Ruler",
+        "imagePath": "025008"
+      },
+      {
+        "name": "Yurie - Yuletide Ruler",
+        "imagePath": "025010"
+      },
+      {
+        "name": "Yurie - New Year\u0027s Ruler",
+        "imagePath": "025006"
+      },
+      {
+        "name": "Yurie - Celebratory Ruler",
+        "imagePath": "025003"
+      },
+      {
+        "name": "Yurie - Festive Ruler",
+        "imagePath": "025011"
+      },
+      {
+        "name": "Yurie - Abyssal Ruler",
+        "imagePath": "025007"
+      },
+      {
+        "name": "Yurie - Divine Ruler",
+        "imagePath": "025009"
+      },
+      {
+        "name": "Yurie - Reborn Leader",
+        "imagePath": "025002"
+      }
+    ]
+  },
+  {
+    "category": 27,
+    "optionList": [
+      {
+        "name": "Yudil - Pilfering Boor",
+        "imagePath": "027001"
+      },
+      {
+        "name": "Yudil - Guardian Boor",
+        "imagePath": "027005"
+      },
+      {
+        "name": "Yudil - Abstract Boor",
+        "imagePath": "027003"
+      },
+      {
+        "name": "Yudil - New Year\u0027s Boor",
+        "imagePath": "027009"
+      },
+      {
+        "name": "Yudil - Celebratory Boor",
+        "imagePath": "027004"
+      },
+      {
+        "name": "Yudil - Abyssal Boor",
+        "imagePath": "027007"
+      },
+      {
+        "name": "Yudil - Divine Boor",
+        "imagePath": "027008"
+      },
+      {
+        "name": "Yudil - Phantasmal Boor",
+        "imagePath": "027006"
+      },
+      {
+        "name": "Yudil - Reborn Usurper",
+        "imagePath": "027002"
+      }
+    ]
+  },
+  {
+    "category": 28,
+    "optionList": [
+      {
+        "name": "Sarafa - Chained Belle",
+        "imagePath": "026001"
+      },
+      {
+        "name": "Sarafa - Guardian Belle",
+        "imagePath": "026004"
+      },
+      {
+        "name": "Sarafa - Abstract Belle",
+        "imagePath": "026005"
+      },
+      {
+        "name": "Sarafa - New Year\u0027s Belle",
+        "imagePath": "026008"
+      },
+      {
+        "name": "Sarafa - Celebratory Belle",
+        "imagePath": "026003"
+      },
+      {
+        "name": "Sarafa - Abyssal Belle",
+        "imagePath": "026006"
+      },
+      {
+        "name": "Sarafa - Shadowbound Belle",
+        "imagePath": "026007"
+      },
+      {
+        "name": "Sarafa - Oathbound Belle",
+        "imagePath": "026009"
+      },
+      {
+        "name": "Sarafa - Reborn Monopolist",
+        "imagePath": "026002"
+      }
+    ]
+  },
+  {
+    "category": 29,
+    "optionList": [
+      {
+        "name": "Hina - Dedicated Pupil",
+        "imagePath": "020001"
+      },
+      {
+        "name": "Hina - Guardian Pupil",
+        "imagePath": "020007"
+      },
+      {
+        "name": "Hina - Abstract Pupil",
+        "imagePath": "020004"
+      },
+      {
+        "name": "Hina - Mechanical Pupil",
+        "imagePath": "020005"
+      },
+      {
+        "name": "Hina - Celebratory Pupil",
+        "imagePath": "020003"
+      },
+      {
+        "name": "Hina - Abyssal Pupil",
+        "imagePath": "020006"
+      },
+      {
+        "name": "Hina - Reborn Prodigy",
+        "imagePath": "049001"
+      }
+    ]
+  },
+  {
+    "category": 30,
+    "optionList": [
+      {
+        "name": "Yuzuki - Devoted Student",
+        "imagePath": "021001"
+      },
+      {
+        "name": "Yuzuki - Guardian Student",
+        "imagePath": "021007"
+      },
+      {
+        "name": "Yuzuki - Abstract Student",
+        "imagePath": "021005"
+      },
+      {
+        "name": "Yuzuki - Mechanical Student",
+        "imagePath": "021004"
+      },
+      {
+        "name": "Yuzuki - Celebratory Student",
+        "imagePath": "021003"
+      },
+      {
+        "name": "Yuzuki - Abyssal Student",
+        "imagePath": "021006"
+      },
+      {
+        "name": "Yuzuki - Reborn Reject",
+        "imagePath": "021002"
+      }
+    ]
+  },
+  {
+    "category": 31,
+    "optionList": [
+      {
+        "name": "10H - Sentinel Savior",
+        "imagePath": "048001"
+      },
+      {
+        "name": "10H - Abstract Savior",
+        "imagePath": "048003"
+      },
+      {
+        "name": "10H - Reborn Warden",
+        "imagePath": "048004"
+      }
+    ]
+  }
+]

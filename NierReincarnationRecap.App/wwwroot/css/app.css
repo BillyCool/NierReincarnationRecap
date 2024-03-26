@@ -1,0 +1,42 @@
+.submit-votes-btn {
+    background-image: url("../images/parts_button_picturebook_monologue_positive.png");
+}
+
+.reset-votes-btn {
+    background-image: url("../images/parts_button_picturebook_monologue_negative.png");
+}
+
+.votes-btn {
+    background-repeat: no-repeat;
+    background-size: 100% 110px;
+    width: 100%;
+    height: 110px;
+}
+
+.vote-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.profile-card {
+    border-color: #a29e82 !important;
+}
+
+.profile-card-header {
+    color: #101010;
+    background-color: #a29e82;
+}
+
+.profile-card-image {
+    background-size: 100% auto !important;
+    background-position: bottom !important;
+}
+
+.achievement-icon .mud-list-item-icon {
+    min-width: 30px;
+}

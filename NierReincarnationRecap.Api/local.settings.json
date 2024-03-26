@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "DbConnectionString": "",
+    "CryptoKey": "",
+    "CryptoIV": "",
+    "WebsiteBaseUrl": "https://nierreincarnationrecap.com"
+  },
+  "Host": {
+    "CORS": "*"
+  }
+}

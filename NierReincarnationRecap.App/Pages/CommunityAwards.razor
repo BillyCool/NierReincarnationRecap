@@ -1,0 +1,16 @@
+﻿@page "/community-awards"
+@using NierReincarnationRecap.App.Components.CommunityAwards
+@using NierReincarnationRecap.App.Services
+@using NierReincarnationRecap.Model.Dto
+@using NierReincarnationRecap.Model.ViewModel
+
+<PageTitle>NieR Reincarnation Recap - Community Awards</PageTitle>
+
+<MudText Typo="Typo.h3" GutterBottom="true">Community Awards</MudText>
+<MudText Class="mb-8">Community favorites over the years. Voting is now open! All categories are optional.</MudText>
+
+<MudGrid>
+    <CommunityAwardsCard Title="Story Awards" Description="Vote for your favorite stories" Link="/community-awards/story" />
+    <CommunityAwardsCard Title="Character Awards" Description="Vote for your favorite characters" Link="/community-awards/character" />
+    <CommunityAwardsCard Title="Costume Series Awards" Description="Vote for your favorite costumes" Link="/community-awards/costume-series" />
+</MudGrid>

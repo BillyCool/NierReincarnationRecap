@@ -1,0 +1,23 @@
+﻿<MudItem Style="min-width: 288px;" xs="12" sm="6" md="4">
+    <MudCard Outlined Class="profile-card">
+        <MudCardHeader Class="profile-card-header">
+            <CardHeaderContent>
+                <MudText Typo="Typo.body1">Rankings</MudText>
+                <MudText Typo="Typo.body2">Best performances</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudList Dense Class="pt-1 pb-0">
+                <AchievementListItem Text="Highest Arena Rank" Value="@HighestArenaRank" />
+                <AchievementListItem Text="Average Arena Rank" Value="@AverageArenaRank" />
+                <AchievementListItem Text="Highest Subj. Rank" Value="@HighestSubjugationRank" />
+                <AchievementListItem Text="Average Subj. Rank" Value="@AverageSubjugationRank" />
+                <AchievementListItem Text="Best Subj. Element" Value="@BestSubjugationElement" />
+                <AchievementListItem Text="Shooting Normal" Value="@HighestShootingNormalScore" />
+                <AchievementListItem Text="Shooting Hard" Value="@HighestShootingHardScore" />
+                <AchievementListItem Text="Flying Mama Normal" Value="@HighestFlyingMamaNormalScore" />
+                <AchievementListItem Text="Flying Mama Hard" Value="@HighestFlyingMamaHardScore" />
+            </MudList>
+        </MudCardContent>
+    </MudCard>
+</MudItem>

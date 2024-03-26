@@ -1,0 +1,388 @@
+﻿[
+  {
+    "category": 0,
+    "optionList": [
+      { "name": "The Girl and the Monster" },
+      { "name": "The Sun and the Moon" },
+      { "name": "The People and the World" }
+    ]
+  },
+  {
+    "category": 1,
+    "optionList": [
+      { "name": "The Girl and the Monster" },
+      { "name": "The Sun and the Moon" },
+      { "name": "The People and the World" }
+    ]
+  },
+  {
+    "category": 3,
+    "optionList": [
+      {
+        "name": "Rion - Sickly Exile",
+        "imagePath": "008001"
+      },
+      {
+        "name": "Dimos - Departed Gunman",
+        "imagePath": "007001"
+      },
+      {
+        "name": "Gayle - Wounded Hunter",
+        "imagePath": "009001"
+      },
+      {
+        "name": "Akeha - Twilight Assassin",
+        "imagePath": "015001"
+      },
+      {
+        "name": "Argo - Apex Traveler",
+        "imagePath": "006001"
+      },
+      {
+        "name": "Levania - Dark Monster",
+        "imagePath": "005001"
+      },
+      {
+        "name": "063y - Stalwart Prisoner",
+        "imagePath": "011001"
+      },
+      {
+        "name": "F66x - Distressed Captive",
+        "imagePath": "012001"
+      },
+      {
+        "name": "Lars - Spiteful Soldier",
+        "imagePath": "013001"
+      },
+      {
+        "name": "Griff - Harmonious Captain",
+        "imagePath": "014001"
+      },
+      {
+        "name": "Noelle - Hidden Weapon",
+        "imagePath": "010001"
+      },
+      {
+        "name": "Fio - The Girl of Light",
+        "imagePath": "019001"
+      },
+      {
+        "name": "Saryu - Avowed Witch",
+        "imagePath": "022001"
+      },
+      {
+        "name": "Priyet - Verboten Werebeast",
+        "imagePath": "023001"
+      },
+      {
+        "name": "Marie - Praying Songstress",
+        "imagePath": "024001"
+      },
+      {
+        "name": "Yurie - Obsessed Ruler",
+        "imagePath": "025001"
+      },
+      {
+        "name": "Yudil - Pilfering Boor",
+        "imagePath": "027001"
+      },
+      {
+        "name": "Sarafa - Chained Belle",
+        "imagePath": "026001"
+      },
+      {
+        "name": "Hina - Dedicated Pupil",
+        "imagePath": "020001"
+      },
+      {
+        "name": "Yuzuki - Devoted Student",
+        "imagePath": "021001"
+      },
+      {
+        "name": "10H - Sentinel Savior",
+        "imagePath": "048001"
+      }
+    ]
+  },
+  {
+    "category": 4,
+    "optionList": [
+      {
+        "name": "Rion - Reborn Revolutionary",
+        "imagePath": "008004"
+      },
+      {
+        "name": "Dimos - Reborn Automaton",
+        "imagePath": "007004"
+      },
+      {
+        "name": "Gayle - Reborn Contractor",
+        "imagePath": "009004"
+      },
+      {
+        "name": "Akeha - Reborn Swordmaster",
+        "imagePath": "015004"
+      },
+      {
+        "name": "Argo - Reborn Adventurer",
+        "imagePath": "006004"
+      },
+      {
+        "name": "Levania - Reborn Beast",
+        "imagePath": "005003"
+      },
+      {
+        "name": "063y - Reborn Convict",
+        "imagePath": "011004"
+      },
+      {
+        "name": "F66x - Reborn Inmate",
+        "imagePath": "012004"
+      },
+      {
+        "name": "Lars - Reborn Truant",
+        "imagePath": "013002"
+      },
+      {
+        "name": "Griff - Reborn Has-Been",
+        "imagePath": "014002"
+      },
+      {
+        "name": "Noelle - Reborn Warlady",
+        "imagePath": "010004"
+      },
+      {
+        "name": "Fio - Reborn Princess",
+        "imagePath": "019002"
+      },
+      {
+        "name": "Saryu - Reborn Sorceress",
+        "imagePath": "022002"
+      },
+      {
+        "name": "Priyet - Reborn Fiend",
+        "imagePath": "023002"
+      },
+      {
+        "name": "Marie - Reborn Pillar",
+        "imagePath": "024002"
+      },
+      {
+        "name": "Yurie - Reborn Leader",
+        "imagePath": "025002"
+      },
+      {
+        "name": "Yudil - Reborn Usurper",
+        "imagePath": "027002"
+      },
+      {
+        "name": "Sarafa - Reborn Monopolist",
+        "imagePath": "026002"
+      },
+      {
+        "name": "Hina - Reborn Prodigy",
+        "imagePath": "049001"
+      },
+      {
+        "name": "Yuzuki - Reborn Reject",
+        "imagePath": "021002"
+      },
+      {
+        "name": "10H - Reborn Warden",
+        "imagePath": "048004"
+      }
+    ]
+  },
+  {
+    "category": 5,
+    "optionList": [
+      {
+        "name": "Rion - Frozen-Heart Revolutionary",
+        "imagePath": "008008"
+      },
+      {
+        "name": "Dimos - Frozen-Heart Automaton",
+        "imagePath": "007007"
+      },
+      {
+        "name": "Gayle - Frozen-Heart Contractor",
+        "imagePath": "009008"
+      },
+      {
+        "name": "Akeha - Frozen-Heart Swordmaster",
+        "imagePath": "015008"
+      },
+      {
+        "name": "Argo - Frozen-Heart Adventurer",
+        "imagePath": "006007"
+      },
+      {
+        "name": "Levania - Frozen-Heart Beast",
+        "imagePath": "005004"
+      },
+      {
+        "name": "063y - Frozen-Heart Convict",
+        "imagePath": "011006"
+      },
+      {
+        "name": "F66x - Frozen-Heart Inmate",
+        "imagePath": "012006"
+      },
+      {
+        "name": "Lars - Frozen-Heart Truant",
+        "imagePath": "013006"
+      },
+      {
+        "name": "Griff - Frozen-Heart Has-Been",
+        "imagePath": "014006"
+      },
+      {
+        "name": "Noelle - Frozen-Heart Warlady",
+        "imagePath": "010006"
+      },
+      {
+        "name": "Fio - Frozen-Heart Princess",
+        "imagePath": "019009"
+      }
+    ]
+  },
+  {
+    "category": 6,
+    "optionList": [
+      {
+        "name": "Rion - Sickly Exile",
+        "imagePath": "008001"
+      },
+      {
+        "name": "Dimos - Departed Gunman",
+        "imagePath": "007001"
+      },
+      {
+        "name": "Gayle - Wounded Hunter",
+        "imagePath": "009001"
+      },
+      {
+        "name": "Akeha - Twilight Assassin",
+        "imagePath": "015001"
+      },
+      {
+        "name": "Argo - Apex Traveler",
+        "imagePath": "006001"
+      },
+      {
+        "name": "Levania - Dark Monster",
+        "imagePath": "005001"
+      },
+      {
+        "name": "063y - Stalwart Prisoner",
+        "imagePath": "011001"
+      },
+      {
+        "name": "F66x - Distressed Captive",
+        "imagePath": "012001"
+      },
+      {
+        "name": "Lars - Spiteful Soldier",
+        "imagePath": "013001"
+      },
+      {
+        "name": "Griff - Harmonious Captain",
+        "imagePath": "014001"
+      },
+      {
+        "name": "Noelle - Hidden Weapon",
+        "imagePath": "010001"
+      },
+      {
+        "name": "Fio - The Girl of Light",
+        "imagePath": "019001"
+      },
+      {
+        "name": "Saryu - Avowed Witch",
+        "imagePath": "022001"
+      },
+      {
+        "name": "Priyet - Verboten Werebeast",
+        "imagePath": "023001"
+      },
+      {
+        "name": "Marie - Praying Songstress",
+        "imagePath": "024001"
+      },
+      {
+        "name": "Yurie - Obsessed Ruler",
+        "imagePath": "025001"
+      },
+      {
+        "name": "Yudil - Pilfering Boor",
+        "imagePath": "027001"
+      },
+      {
+        "name": "Sarafa - Chained Belle",
+        "imagePath": "026001"
+      },
+      {
+        "name": "Hina - Dedicated Pupil",
+        "imagePath": "020001"
+      },
+      {
+        "name": "Yuzuki - Devoted Student",
+        "imagePath": "021001"
+      },
+      {
+        "name": "10H - Sentinel Savior",
+        "imagePath": "048001"
+      }
+    ]
+  },
+  {
+    "category": 7,
+    "optionList": [
+      { "name": "The Cage of Reincarnation" },
+      { "name": "Sunset Port" },
+      { "name": "Garden of Benediction" },
+      { "name": "Coffin of Repose" },
+      { "name": "Pure Hills" },
+      { "name": "Seat of Shadow" },
+      { "name": "Blood Oath\u0027s Edge" },
+      { "name": "Rhythm\u0027s Citadel" },
+      { "name": "Path of Longing" },
+      { "name": "Bridge of Supplication" },
+      { "name": "Festive Fountain" },
+      { "name": "Den of Madness" },
+      { "name": "Foundation of Fortune" },
+      { "name": "Valley of Light" },
+      { "name": "Chamber of Prayer" },
+      { "name": "Garden of Paradise" },
+      { "name": "Stronghold of Desolation" },
+      { "name": "Vestiges of Paradise" },
+      { "name": "City of Discontent" },
+      { "name": "Town of Deceit" },
+      { "name": "Covetous Grove" },
+      { "name": "Original Sin\u0027s Door" },
+      { "name": "Playful Seas" },
+      { "name": "Trench of Lost Bonds" },
+      { "name": "Happy Home" },
+      { "name": "Rebellion\u0027s Illusion" },
+      { "name": "Rebellion\u0027s Reality" },
+      { "name": "The Pumpkin Box" },
+      { "name": "Mechanical Foundations" },
+      { "name": "A Distant Peak" },
+      { "name": "The Wishing Space" },
+      { "name": "Forest of Temptation" },
+      { "name": "Eternal Steps" },
+      { "name": "Hidden Truths" },
+      { "name": "Traces of Pursuit" },
+      { "name": "Market of Ruse" },
+      { "name": "The Devil\u0027s Tray" },
+      { "name": "Tower of Beginnings" },
+      { "name": "Ritual of Reverie" },
+      { "name": "Their Stage" },
+      { "name": "A Question of Decorum" },
+      { "name": "An Endearing Journey" },
+      { "name": "Hallowed Struggle" },
+      { "name": "Starfall Cliff" },
+      { "name": "The Cage of Rebirth" }
+    ]
+  }
+]

@@ -1,0 +1,987 @@
+﻿[
+  {
+    "category": 32,
+    "optionList": [
+      {
+        "name": "Rion - Abstract Exile",
+        "imagePath": "008005"
+      },
+      {
+        "name": "Dimos - Abstract Gunman",
+        "imagePath": "007002"
+      },
+      {
+        "name": "Gayle - Abstract Hunter",
+        "imagePath": "009002"
+      },
+      {
+        "name": "Akeha - Abstract Assassian",
+        "imagePath": "015002"
+      },
+      {
+        "name": "Argo - Abstract Traveler",
+        "imagePath": "006006"
+      },
+      {
+        "name": "Levania - Abstract Monster",
+        "imagePath": "005002"
+      },
+      {
+        "name": "063y - Abstract Prisoner",
+        "imagePath": "011002"
+      },
+      {
+        "name": "F66x - Abstract Captive",
+        "imagePath": "012002"
+      },
+      {
+        "name": "Lars - Abstract Solder",
+        "imagePath": "013004"
+      },
+      {
+        "name": "Griff - Abstract Captain",
+        "imagePath": "014004"
+      },
+      {
+        "name": "Noelle - Abstract Weapon",
+        "imagePath": "010002"
+      },
+      {
+        "name": "Fio - Abstract Girl",
+        "imagePath": "019005"
+      },
+      {
+        "name": "Saryu - Abstract Witch",
+        "imagePath": "022003"
+      },
+      {
+        "name": "Priyet - Abstract Werebeast",
+        "imagePath": "023003"
+      },
+      {
+        "name": "Marie - Abstract Songstress",
+        "imagePath": "024003"
+      },
+      {
+        "name": "Yurie - Abstract Ruler",
+        "imagePath": "025004"
+      },
+      {
+        "name": "Yudil - Abstract Boor",
+        "imagePath": "027003"
+      },
+      {
+        "name": "Sarafa - Abstract Belle",
+        "imagePath": "026005"
+      },
+      {
+        "name": "Hina - Abstract Pupil",
+        "imagePath": "020004"
+      },
+      {
+        "name": "Yuzuki - Abstract Student",
+        "imagePath": "021005"
+      },
+      {
+        "name": "10H - Abstract Savior",
+        "imagePath": "048003"
+      }
+    ]
+  },
+  {
+    "category": 33,
+    "optionList": [
+      {
+        "name": "Dimos - Bloody Gunman",
+        "imagePath": "007006"
+      },
+      {
+        "name": "Gayle - Bloody Hunter",
+        "imagePath": "009006"
+      },
+      {
+        "name": "Akeha - Bloody Assassian",
+        "imagePath": "015005"
+      },
+      {
+        "name": "Argo - Bloody Traveler",
+        "imagePath": "006012"
+      },
+      {
+        "name": "Levania - Bloody Monster",
+        "imagePath": "005008"
+      },
+      {
+        "name": "F66x - Bloody Captive",
+        "imagePath": "012010"
+      },
+      {
+        "name": "Lars - Bloody Solder",
+        "imagePath": "013010"
+      },
+      {
+        "name": "Griff - Bloody Captain",
+        "imagePath": "014010"
+      },
+      {
+        "name": "Noelle - Bloody Weapon",
+        "imagePath": "010011"
+      },
+      {
+        "name": "Saryu - Bloody Witch",
+        "imagePath": "022005"
+      }
+    ]
+  },
+  {
+    "category": 34,
+    "optionList": [
+      {
+        "name": "Dimos - Bloodless Gunman",
+        "imagePath": "007013"
+      },
+      {
+        "name": "Akeha - Bloodless Assassian",
+        "imagePath": "015010"
+      },
+      {
+        "name": "Levania - Bloodless Monster",
+        "imagePath": "005005"
+      },
+      {
+        "name": "F66x - Bloodless Captive",
+        "imagePath": "012011"
+      },
+      {
+        "name": "Noelle - Bloodless Weapon",
+        "imagePath": "010009"
+      }
+    ]
+  },
+  {
+    "category": 35,
+    "optionList": [
+      {
+        "name": "Levania - Lacrima Monster",
+        "imagePath": "005010"
+      },
+      {
+        "name": "F66x - Lacrima Captive",
+        "imagePath": "012005"
+      },
+      {
+        "name": "Lars - Lacrima Solder",
+        "imagePath": "013007"
+      },
+      {
+        "name": "Griff - Lacrima Captain",
+        "imagePath": "014008"
+      },
+      {
+        "name": "Fio - Lacrima Girl",
+        "imagePath": "019016"
+      }
+    ]
+  },
+  {
+    "category": 36,
+    "optionList": [
+      {
+        "name": "Dimos - Fractured Gunman",
+        "imagePath": "007008"
+      },
+      {
+        "name": "Gayle - Fractured Hunter",
+        "imagePath": "009010"
+      },
+      {
+        "name": "Akeha - Fractured Assassian",
+        "imagePath": "015014"
+      },
+      {
+        "name": "Argo - Fractured Traveler",
+        "imagePath": "006010"
+      },
+      {
+        "name": "063y - Fractured Prisoner",
+        "imagePath": "011005"
+      },
+      {
+        "name": "Lars - Fractured Solder",
+        "imagePath": "013005"
+      },
+      {
+        "name": "Griff - Fractured Captain",
+        "imagePath": "014009"
+      },
+      {
+        "name": "Noelle - Fractured Weapon",
+        "imagePath": "010012"
+      },
+      {
+        "name": "Marie - Fractured Songstress",
+        "imagePath": "024006"
+      }
+    ]
+  },
+  {
+    "category": 37,
+    "optionList": [
+      {
+        "name": "Rion - Mechanical Exile",
+        "imagePath": "008002"
+      },
+      {
+        "name": "Gayle - Mechanical Hunter",
+        "imagePath": "009016"
+      },
+      {
+        "name": "Akeha - Mechanical Assassian",
+        "imagePath": "015012"
+      },
+      {
+        "name": "Griff - Mechanical Captain",
+        "imagePath": "014016"
+      },
+      {
+        "name": "Noelle - Mechanical Weapon",
+        "imagePath": "010018"
+      },
+      {
+        "name": "Fio - Mechanical Girl",
+        "imagePath": "019003"
+      },
+      {
+        "name": "Hina - Mechanical Pupil",
+        "imagePath": "020005"
+      },
+      {
+        "name": "Yuzuki - Mechanical Student",
+        "imagePath": "021004"
+      }
+    ]
+  },
+  {
+    "category": 38,
+    "optionList": [
+      {
+        "name": "Rion - Summer Exile",
+        "imagePath": "008009"
+      },
+      {
+        "name": "Dimos - Summer Gunman",
+        "imagePath": "007015"
+      },
+      {
+        "name": "Gayle - Summer Hunter",
+        "imagePath": "009011"
+      },
+      {
+        "name": "Akeha - Summer Assassian",
+        "imagePath": "015009"
+      },
+      {
+        "name": "Argo - Summer Traveler",
+        "imagePath": "006008"
+      },
+      {
+        "name": "063y - Summer Prisoner",
+        "imagePath": "011007"
+      },
+      {
+        "name": "F66x - Summer Captive",
+        "imagePath": "012008"
+      },
+      {
+        "name": "Noelle - Summer Weapon",
+        "imagePath": "010016"
+      },
+      {
+        "name": "Fio - Summer Girl",
+        "imagePath": "019010"
+      },
+      {
+        "name": "Saryu - Summer Witch",
+        "imagePath": "022006"
+      },
+      {
+        "name": "Marie - Summer Songstress",
+        "imagePath": "024008"
+      },
+      {
+        "name": "Yurie - Summer Ruler",
+        "imagePath": "025008"
+      }
+    ]
+  },
+  {
+    "category": 39,
+    "optionList": [
+      {
+        "name": "Rion - Yuletide Exile",
+        "imagePath": "008012"
+      },
+      {
+        "name": "Gayle - Yuletide Hunter",
+        "imagePath": "009013"
+      },
+      {
+        "name": "Akeha - Yuletide Assassian",
+        "imagePath": "015007"
+      },
+      {
+        "name": "Argo - Yuletide Traveler",
+        "imagePath": "006013"
+      },
+      {
+        "name": "Levania - Yuletide Monster",
+        "imagePath": "005006"
+      },
+      {
+        "name": "063y - Yuletide Prisoner",
+        "imagePath": "011015"
+      },
+      {
+        "name": "Lars - Yuletide Solder",
+        "imagePath": "013012"
+      },
+      {
+        "name": "Griff - Yuletide Captain",
+        "imagePath": "014011"
+      },
+      {
+        "name": "Noelle - Yuletide Weapon",
+        "imagePath": "010019"
+      },
+      {
+        "name": "Fio - Yuletide Girl",
+        "imagePath": "019015"
+      },
+      {
+        "name": "Saryu - Yuletide Witch",
+        "imagePath": "022009"
+      },
+      {
+        "name": "Priyet - Yuletide Werebeast",
+        "imagePath": "023005"
+      },
+      {
+        "name": "Marie - Yuletide Songstress",
+        "imagePath": "024011"
+      },
+      {
+        "name": "Yurie - Yuletide Ruler",
+        "imagePath": "025010"
+      }
+    ]
+  },
+  {
+    "category": 40,
+    "optionList": [
+      {
+        "name": "Rion - New Year\u0027s Exile",
+        "imagePath": "008006"
+      },
+      {
+        "name": "Dimos - New Year\u0027s Gunman",
+        "imagePath": "007016"
+      },
+      {
+        "name": "Gayle - New Year\u0027s Hunter",
+        "imagePath": "009007"
+      },
+      {
+        "name": "Akeha - New Year\u0027s Assassian",
+        "imagePath": "015018"
+      },
+      {
+        "name": "063y - New Year\u0027s Prisoner",
+        "imagePath": "011010"
+      },
+      {
+        "name": "Griff - New Year\u0027s Captain",
+        "imagePath": "014017"
+      },
+      {
+        "name": "Noelle - New Year\u0027s Weapon",
+        "imagePath": "010010"
+      },
+      {
+        "name": "Fio - New Year\u0027s Girl",
+        "imagePath": "019011"
+      },
+      {
+        "name": "Marie - New Year\u0027s Songstress",
+        "imagePath": "024005"
+      },
+      {
+        "name": "Yurie - New Year\u0027s Ruler",
+        "imagePath": "025006"
+      },
+      {
+        "name": "Yudil - New Year\u0027s Boor",
+        "imagePath": "027009"
+      },
+      {
+        "name": "Sarafa - New Year\u0027s Belle",
+        "imagePath": "026008"
+      }
+    ]
+  },
+  {
+    "category": 41,
+    "optionList": [
+      {
+        "name": "Rion - Celebratory Exile",
+        "imagePath": "008013"
+      },
+      {
+        "name": "Dimos - Celebratory Gunman",
+        "imagePath": "007010"
+      },
+      {
+        "name": "Gayle - Celebratory Hunter",
+        "imagePath": "009009"
+      },
+      {
+        "name": "Akeha - Celebratory Assassian",
+        "imagePath": "015015"
+      },
+      {
+        "name": "Argo - Celebratory Traveler",
+        "imagePath": "006009"
+      },
+      {
+        "name": "Levania - Celebratory Monster",
+        "imagePath": "005011"
+      },
+      {
+        "name": "063y - Celebratory Prisoner",
+        "imagePath": "011012"
+      },
+      {
+        "name": "F66x - Celebratory Captive",
+        "imagePath": "012012"
+      },
+      {
+        "name": "Lars - Celebratory Solder",
+        "imagePath": "013009"
+      },
+      {
+        "name": "Griff - Celebratory Captain",
+        "imagePath": "014007"
+      },
+      {
+        "name": "Noelle - Celebratory Weapon",
+        "imagePath": "010007"
+      },
+      {
+        "name": "Fio - Celebratory Girl",
+        "imagePath": "019012"
+      },
+      {
+        "name": "Saryu - Celebratory Witch",
+        "imagePath": "022004"
+      },
+      {
+        "name": "Priyet - Celebratory Werebeast",
+        "imagePath": "023004"
+      },
+      {
+        "name": "Marie - Celebratory Songstress",
+        "imagePath": "024004"
+      },
+      {
+        "name": "Yurie - Celebratory Ruler",
+        "imagePath": "025003"
+      },
+      {
+        "name": "Yudil - Celebratory Boor",
+        "imagePath": "027004"
+      },
+      {
+        "name": "Sarafa - Celebratory Belle",
+        "imagePath": "026003"
+      },
+      {
+        "name": "Hina - Celebratory Pupil",
+        "imagePath": "020003"
+      },
+      {
+        "name": "Yuzuki - Celebratory Student",
+        "imagePath": "021003"
+      }
+    ]
+  },
+  {
+    "category": 42,
+    "optionList": [
+      {
+        "name": "Rion - Festive Exile",
+        "imagePath": "008019"
+      },
+      {
+        "name": "Gayle - Festive Hunter",
+        "imagePath": "009015"
+      },
+      {
+        "name": "Akeha - Festive Assassian",
+        "imagePath": "015021"
+      },
+      {
+        "name": "Levania - Festive Monster",
+        "imagePath": "005013"
+      },
+      {
+        "name": "Griff - Festive Captain",
+        "imagePath": "014015"
+      },
+      {
+        "name": "Noelle - Festive Weapon",
+        "imagePath": "010017"
+      },
+      {
+        "name": "Fio - Festive Girl",
+        "imagePath": "019018"
+      },
+      {
+        "name": "Saryu - Festive Witch",
+        "imagePath": "022012"
+      },
+      {
+        "name": "Yurie - Festive Ruler",
+        "imagePath": "025011"
+      }
+    ]
+  },
+  {
+    "category": 43,
+    "optionList": [
+      {
+        "name": "Rion - Shadowbound Exile",
+        "imagePath": "008014"
+      },
+      {
+        "name": "Argo - Shadowbound Traveler",
+        "imagePath": "006014"
+      },
+      {
+        "name": "Priyet - Shadowbound Werebeast",
+        "imagePath": "023007"
+      },
+      {
+        "name": "Sarafa - Shadowbound Belle",
+        "imagePath": "026007"
+      }
+    ]
+  },
+  {
+    "category": 44,
+    "optionList": [
+      {
+        "name": "Rion - Abyssal Exile",
+        "imagePath": "008007"
+      },
+      {
+        "name": "Dimos - Abyssal Gunman",
+        "imagePath": "007012"
+      },
+      {
+        "name": "Gayle - Abyssal Hunter",
+        "imagePath": "009012"
+      },
+      {
+        "name": "Akeha - Abyssal Assassian",
+        "imagePath": "015016"
+      },
+      {
+        "name": "Levania - Abyssal Monster",
+        "imagePath": "005009"
+      },
+      {
+        "name": "063y - Abyssal Prisoner",
+        "imagePath": "011011"
+      },
+      {
+        "name": "F66x - Abyssal Captive",
+        "imagePath": "012009"
+      },
+      {
+        "name": "Lars - Abyssal Solder",
+        "imagePath": "013011"
+      },
+      {
+        "name": "Griff - Abyssal Captain",
+        "imagePath": "014013"
+      },
+      {
+        "name": "Noelle - Abyssal Weapon",
+        "imagePath": "010013"
+      },
+      {
+        "name": "Fio - Abyssal Girl",
+        "imagePath": "019008"
+      },
+      {
+        "name": "Saryu - Abyssal Witch",
+        "imagePath": "022011"
+      },
+      {
+        "name": "Priyet - Abyssal Werebeast",
+        "imagePath": "023008"
+      },
+      {
+        "name": "Marie - Abyssal Songstress",
+        "imagePath": "024009"
+      },
+      {
+        "name": "Yurie - Abyssal Ruler",
+        "imagePath": "025007"
+      },
+      {
+        "name": "Yudil - Abyssal Boor",
+        "imagePath": "027007"
+      },
+      {
+        "name": "Sarafa - Abyssal Belle",
+        "imagePath": "026006"
+      },
+      {
+        "name": "Hina - Abyssal Pupil",
+        "imagePath": "020006"
+      },
+      {
+        "name": "Yuzuki - Abyssal Student",
+        "imagePath": "021006"
+      }
+    ]
+  },
+  {
+    "category": 45,
+    "optionList": [
+      {
+        "name": "Akeha - Divine Assassian",
+        "imagePath": "015020"
+      },
+      {
+        "name": "063y - Divine Prisoner",
+        "imagePath": "011014"
+      },
+      {
+        "name": "Fio - Divine Girl",
+        "imagePath": "019019"
+      },
+      {
+        "name": "Yurie - Divine Ruler",
+        "imagePath": "025009"
+      },
+      {
+        "name": "Yudil - Divine Boor",
+        "imagePath": "027008"
+      }
+    ]
+  },
+  {
+    "category": 46,
+    "optionList": [
+      {
+        "name": "Rion - Reborn Revolutionary",
+        "imagePath": "008004"
+      },
+      {
+        "name": "Dimos - Reborn Automaton",
+        "imagePath": "007004"
+      },
+      {
+        "name": "Gayle - Reborn Contractor",
+        "imagePath": "009004"
+      },
+      {
+        "name": "Akeha - Reborn Swordmaster",
+        "imagePath": "015004"
+      },
+      {
+        "name": "Argo - Reborn Adventurer",
+        "imagePath": "006004"
+      },
+      {
+        "name": "Levania - Reborn Beast",
+        "imagePath": "005003"
+      },
+      {
+        "name": "063y - Reborn Convict",
+        "imagePath": "011004"
+      },
+      {
+        "name": "F66x - Reborn Inmate",
+        "imagePath": "012004"
+      },
+      {
+        "name": "Lars - Reborn Truant",
+        "imagePath": "013002"
+      },
+      {
+        "name": "Griff - Reborn Has-Been",
+        "imagePath": "014002"
+      },
+      {
+        "name": "Noelle - Reborn Warlady",
+        "imagePath": "010004"
+      },
+      {
+        "name": "Fio - Reborn Princess",
+        "imagePath": "019002"
+      },
+      {
+        "name": "Saryu - Reborn Sorceress",
+        "imagePath": "022002"
+      },
+      {
+        "name": "Priyet - Reborn Fiend",
+        "imagePath": "023002"
+      },
+      {
+        "name": "Marie - Reborn Pillar",
+        "imagePath": "024002"
+      },
+      {
+        "name": "Yurie - Reborn Leader",
+        "imagePath": "025002"
+      },
+      {
+        "name": "Yudil - Reborn Usurper",
+        "imagePath": "027002"
+      },
+      {
+        "name": "Sarafa - Reborn Monopolist",
+        "imagePath": "026002"
+      },
+      {
+        "name": "Hina - Reborn Prodigy",
+        "imagePath": "049001"
+      },
+      {
+        "name": "Yuzuki - Reborn Reject",
+        "imagePath": "021002"
+      },
+      {
+        "name": "10H - Reborn Warden",
+        "imagePath": "048004"
+      }
+    ]
+  },
+  {
+    "category": 47,
+    "optionList": [
+      {
+        "name": "Rion - Frozen-Heart Revolutionary",
+        "imagePath": "008008"
+      },
+      {
+        "name": "Dimos - Frozen-Heart Automaton",
+        "imagePath": "007007"
+      },
+      {
+        "name": "Gayle - Frozen-Heart Contractor",
+        "imagePath": "009008"
+      },
+      {
+        "name": "Akeha - Frozen-Heart Swordmaster",
+        "imagePath": "015008"
+      },
+      {
+        "name": "Argo - Frozen-Heart Adventurer",
+        "imagePath": "006007"
+      },
+      {
+        "name": "Levania - Frozen-Heart Beast",
+        "imagePath": "005004"
+      },
+      {
+        "name": "063y - Frozen-Heart Convict",
+        "imagePath": "011006"
+      },
+      {
+        "name": "F66x - Frozen-Heart Inmate",
+        "imagePath": "012006"
+      },
+      {
+        "name": "Lars - Frozen-Heart Truant",
+        "imagePath": "013006"
+      },
+      {
+        "name": "Griff - Frozen-Heart Has-Been",
+        "imagePath": "014006"
+      },
+      {
+        "name": "Noelle - Frozen-Heart Warlady",
+        "imagePath": "010006"
+      },
+      {
+        "name": "Fio - Frozen-Heart Princess",
+        "imagePath": "019009"
+      }
+    ]
+  },
+  {
+    "category": 48,
+    "optionList": [
+      {
+        "name": "2B - Praying Battler",
+        "imagePath": "001001"
+      },
+      {
+        "name": "2B - Shattered Battler",
+        "imagePath": "001004"
+      },
+      {
+        "name": "2B - Divergent Battler",
+        "imagePath": "001002"
+      },
+      {
+        "name": "2P - Mock Machine",
+        "imagePath": "001003"
+      },
+      {
+        "name": "2B - Alternate Battler",
+        "imagePath": "001005"
+      },
+      {
+        "name": "9S - Isolated Scanner",
+        "imagePath": "002001"
+      },
+      {
+        "name": "9S - Divergent Scanner",
+        "imagePath": "002002"
+      },
+      {
+        "name": "A2 - Vengeful Attacker",
+        "imagePath": "003001"
+      },
+      {
+        "name": "A2 - Divergent Attacker",
+        "imagePath": "003002"
+      },
+      {
+        "name": "The World-Ender - Soulful Lad",
+        "imagePath": "016001"
+      },
+      {
+        "name": "The World-Ender - Divergent Lad",
+        "imagePath": "016002"
+      },
+      {
+        "name": "The World-Ender - Alternate Lad",
+        "imagePath": "016003"
+      },
+      {
+        "name": "Emil - Puzzling Oddity",
+        "imagePath": "017001"
+      },
+      {
+        "name": "Emil - Divergent Oddity",
+        "imagePath": "017002"
+      },
+      {
+        "name": "Kain\u00E9 - The Aerie Warrior",
+        "imagePath": "018001"
+      },
+      {
+        "name": "Kain\u00E9 - Divergent Warrior",
+        "imagePath": "018002"
+      },
+      {
+        "name": "Zero - Progenitor Sister",
+        "imagePath": "031001"
+      },
+      {
+        "name": "Zero - Divergent Sister",
+        "imagePath": "031002"
+      }
+    ]
+  },
+  {
+    "category": 49,
+    "optionList": [
+      {
+        "name": "Akeha - Fabled Assassian",
+        "imagePath": "015017"
+      },
+      {
+        "name": "Noelle - Fabled Weapon",
+        "imagePath": "010014"
+      },
+      {
+        "name": "Saryu - Fabled Witch",
+        "imagePath": "022008"
+      }
+    ]
+  },
+  {
+    "category": 50,
+    "optionList": [
+      {
+        "name": "Rion - Phantasmal Exile",
+        "imagePath": "008011"
+      },
+      {
+        "name": "063y - Phantasmal Prisoner",
+        "imagePath": "011008"
+      },
+      {
+        "name": "Lars - Phantasmal Solder",
+        "imagePath": "013014"
+      },
+      {
+        "name": "Noelle - Phantasmal Weapon",
+        "imagePath": "010008"
+      },
+      {
+        "name": "Saryu - Phantasmal Witch",
+        "imagePath": "022010"
+      },
+      {
+        "name": "Yudil - Phantasmal Boor",
+        "imagePath": "027006"
+      }
+    ]
+  },
+  {
+    "category": 51,
+    "optionList": [
+      {
+        "name": "Joker - Caged Rebel",
+        "imagePath": "044001"
+      },
+      {
+        "name": "Queen - Virtuous Priestess",
+        "imagePath": "045001"
+      },
+      {
+        "name": "Fox - Insightful Emperor",
+        "imagePath": "046001"
+      },
+      {
+        "name": "Crow - Scheming Justice",
+        "imagePath": "047001"
+      }
+    ]
+  },
+  {
+    "category": 52,
+    "optionList": [
+      {
+        "name": "Rion - Oathbound Exile",
+        "imagePath": "008018"
+      },
+      {
+        "name": "Marie - Oathbound Songstress",
+        "imagePath": "024010"
+      },
+      {
+        "name": "Sarafa - Oathbound Belle",
+        "imagePath": "026009"
+      }
+    ]
+  }
+]

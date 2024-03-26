@@ -1,0 +1,33 @@
+﻿@page "/community-awards/{AwardType}"
+@using NierReincarnationRecap.App.Components.CommunityAwards
+
+<PageTitle>NieR Reincarnation Recap - Community Awards</PageTitle>
+
+@if (Awards is null)
+{
+    <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+}
+else if (Awards.Count == 0)
+{
+    <MudAlert Severity="Severity.Warning" Variant="Variant.Outlined">
+        There are no active awards, check back later
+    </MudAlert>
+}
+else
+{
+    <VotingSection Awards="@Awards" HeaderImagePath="@($"images/{AwardType}-awards-heading.png")" />
+
+    <MudButton Class="mb-2 votes-btn submit-votes-btn" FullWidth Size="Size.Large" Color="Color.Dark" ButtonType="ButtonType.Submit" Disabled="IsSubmitting" OnClick="SubmitOptions">
+        @if(IsSubmitting)
+        {
+            <MudProgressCircular Class="ms-n1" Size="Size.Medium" Color="Color.Dark" Indeterminate="true" />
+        }
+        else
+        {
+            <MudElement>Submit</MudElement>
+        }
+    </MudButton>
+    <MudButton Class="mb-2 votes-btn reset-votes-btn" FullWidth Size="Size.Large" Color="Color.Default" ButtonType="ButtonType.Reset" OnClick="ResetOptions">
+        Reset
+    </MudButton>
+}

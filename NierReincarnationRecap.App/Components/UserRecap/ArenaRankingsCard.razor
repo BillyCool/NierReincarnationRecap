@@ -1,0 +1,18 @@
+﻿@if (ArenaRankings.Count > 0)
+{
+    <MudItem xs="12">
+        <MudCard Outlined Class="profile-card">
+            <MudCardHeader Class="profile-card-header">
+                <CardHeaderContent>
+                    <MudText Typo="Typo.body1">Arena Rankings</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent>
+                <MudHidden Breakpoint="Breakpoint.Xs">
+                    <MudChart ChartType="ChartType.Line" ChartSeries="@Series" XAxisLabels="@XAxisLabels" Width="100%" Height="400px" ChartOptions="@Options" />
+                </MudHidden>
+                <ArenaRankingsTable ArenaRankings="ArenaRankings" />
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+}

@@ -1,0 +1,17 @@
+﻿<MudItem Style="min-width: 288px;" xs="12" sm="6" md="4">
+    <MudCard Outlined Class="profile-card">
+        <MudCardHeader Class="profile-card-header">
+            <CardHeaderAvatar>
+                <MudAvatar Color="Color.Dark">@UserRecapData.Region</MudAvatar>
+            </CardHeaderAvatar>
+            <CardHeaderContent>
+                <MudText Typo="Typo.body1">@UserRecapData.Name</MudText>
+                <MudText Typo="Typo.body2">Level @UserRecapData.Level</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        @if (!string.IsNullOrEmpty(ImagePath))
+        {
+            <MudCardMedia Class="profile-card-image align-self-end" Image="@ImagePath" Height="288" />
+        }
+    </MudCard>
+</MudItem>

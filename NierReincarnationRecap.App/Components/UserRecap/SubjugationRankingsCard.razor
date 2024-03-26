@@ -1,0 +1,18 @@
+﻿@if (SubjugationRankings.Count > 0)
+{
+    <MudItem xs="12">
+        <MudCard Outlined Class="profile-card">
+            <MudCardHeader Class="profile-card-header">
+                <CardHeaderContent>
+                    <MudText Typo="Typo.body1">Subjugation Scores</MudText>
+                </CardHeaderContent>
+            </MudCardHeader>
+            <MudCardContent>
+                <MudHidden Breakpoint="Breakpoint.Xs">
+                    <MudChart ChartType="ChartType.Line" ChartSeries="@Series" XAxisLabels="@XAxisLabels" Width="100%" Height="400px" ChartOptions="@Options" />
+                </MudHidden>
+                <SubjugationRankingsTable SubjugationRankings="SubjugationRankings" />
+            </MudCardContent>
+        </MudCard>
+    </MudItem>
+}

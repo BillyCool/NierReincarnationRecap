@@ -1,0 +1,15 @@
+﻿<MudListItem Class="px-0 py-0 achievement-icon" Icon="@Icon" IconSize="Size.Small">
+    <MudElement Class="align-start d-flex">
+        <MudText Typo="Typo.body2" Style="">@Text</MudText>
+        <MudSpacer />
+        <MudText Typo="Typo.body2">@Value.ToString()</MudText>
+    </MudElement>
+</MudListItem>
+
+@code {
+    [Parameter] public string Text { get; set; }
+
+    [Parameter] public object Value { get; set; }
+
+    [Parameter] public string? Icon { get; set; }
+}

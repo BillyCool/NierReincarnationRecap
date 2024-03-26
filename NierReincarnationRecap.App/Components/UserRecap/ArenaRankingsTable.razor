@@ -1,0 +1,16 @@
+﻿@using NierReincarnationRecap.Model.Dto
+
+<MudTable Items="ArenaRankings" Breakpoint="Breakpoint.None" Dense FixedHeader Height="300px">
+    <HeaderContent>
+        <MudTh>Season</MudTh>
+        <MudTh>Rank</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Season">@context.Season</MudTd>
+        <MudTd DataLabel="Rank">@context.Rank</MudTd>
+    </RowTemplate>
+</MudTable>
+
+@code {
+    [Parameter][EditorRequired] public required List<ArenaRankingDto> ArenaRankings { get; set; }
+}

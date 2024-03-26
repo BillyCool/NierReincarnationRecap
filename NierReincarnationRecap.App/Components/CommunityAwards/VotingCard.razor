@@ -1,0 +1,85 @@
+﻿@using NierReincarnationRecap.App.Services
+@using NierReincarnationRecap.Model.ViewModel
+@using NierReincarnationRecap.Model.Enums
+@inject IUserPreferencesService UserPreferencesService
+
+<MudItem xs="12">
+    <MudCard Class="border-double border-4 " Outlined Square Style="border-color: #b2b0a1; background: radial-gradient(circle, #5f574d, #38322f)">
+        <MudCardHeader Class="justify-center">
+            <MudText Typo="Typo.subtitle2">@(AwardIndex + 1 + "/" + AwardCount)</MudText>
+        </MudCardHeader>
+        <MudCardContent Class="pb-10 px-10">
+            <MudText Typo="Typo.h4" GutterBottom="true" Class="border-b-4" Align="Align.Center">@Award.Category.GetDisplayName()</MudText>
+            @for (int i = 0; i < Award.OptionList.Count; i++)
+            {
+                <VotingOption
+                    AwardOption="Award.OptionList[i]"
+                    AwardOptionIndex=i
+                    IsWinner="@(i == Award.Winner)"
+                    IsSelected=@(i == SelectedOption)
+                    OnOptionSelected="OptionSelected" />
+            }
+        </MudCardContent>
+    </MudCard>
+</MudItem>
+
+@code {
+    [Parameter][EditorRequired] public required Award Award { get; set; }
+
+    [Parameter][EditorRequired] public required int AwardIndex { get; set; }
+
+    [CascadingParameter] public UserPreferences UserPreferences { get; set; } = null!;
+
+    [CascadingParameter(Name = "AwardCount")] public int AwardCount { get; set; }
+
+    public int? SelectedOption { get; set; }
+
+    protected override void OnInitialized()
+    {
+        SetSelectedOption();
+        base.OnInitialized();
+    }
+
+    protected override void OnParametersSet()
+    {
+        SetSelectedOption();
+        base.OnParametersSet();
+    }
+
+    private void SetSelectedOption()
+    {
+        SelectedOption = null;
+        if (UserPreferences.Votes.TryGetValue(Award.Category, out int selectedOption))
+        {
+            SelectedOption = selectedOption;
+        }
+    }
+
+    private void OptionSelected(int option)
+    {
+        if (SelectedOption == option)
+        {
+            SelectedOption = null;
+
+            if (UserPreferences.Votes.ContainsKey(Award.Category))
+            {
+                UserPreferences.Votes.Remove(Award.Category);
+            }
+        }
+        else
+        {
+            SelectedOption = option;
+
+            if (UserPreferences.Votes.ContainsKey(Award.Category))
+            {
+                UserPreferences.Votes[Award.Category] = option;
+            }
+            else
+            {
+                UserPreferences.Votes.Add(Award.Category, option);
+            }
+        }
+        UserPreferencesService.SaveUserPreferences(UserPreferences);
+        StateHasChanged();
+    }
+}

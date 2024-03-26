@@ -1,0 +1,44 @@
+﻿@using NierReincarnationRecap.Model.ViewModel
+@using NierReincarnationRecap.Model.Enums
+
+<MudItem xs="12" >
+    <MudButton ButtonType="ButtonType.Button" FullWidth OnClick="SelectOption">
+        <MudCard Class="border-2 relative"
+            Outlined
+            Square
+            Style=@((IsHighlited ? "color:#38322f; background:#b2b0a1;" : "background: radial-gradient(circle, #5f574d, #38322f);") + "border-color:#b2b0a1; width:100%;")>
+            @if (!string.IsNullOrEmpty(AwardOption.ImagePath))
+            {
+                <MudContainer Class="vote-image-container" Style="@($"background-image: url('images/vote/ch{AwardOption.ImagePath}_battle01.png');background-size: auto 100%;opacity: {(IsHighlited ? "0.3" : "0.2")};")" />
+            }
+            <MudCardContent Class="py-2 px-10 relative">
+                @if (IsHighlited)
+                {
+                    <MudText Typo="Typo.subtitle2" Class="mud-text-secondary" Style="color:#38322f">@(IsWinner ? "Winner" : "Selected")</MudText>
+                }
+                <MudText Typo="Typo.h6" GutterBottom="true">
+                    @AwardOption.Name
+                </MudText>
+            </MudCardContent>
+        </MudCard>
+    </MudButton>
+</MudItem>
+
+@code {
+    [Parameter][EditorRequired] public required AwardOption AwardOption { get; set; }
+
+    [Parameter][EditorRequired] public int AwardOptionIndex { get; set; }
+
+    [Parameter] public bool IsWinner { get; set; }
+
+    [Parameter][EditorRequired] public bool IsSelected { get; set; }
+
+    [Parameter][EditorRequired] public EventCallback<int> OnOptionSelected { get; set; }
+
+    public bool IsHighlited => IsWinner || IsSelected;
+
+    private async Task SelectOption()
+    {
+        await OnOptionSelected.InvokeAsync(AwardOptionIndex);
+    }
+}

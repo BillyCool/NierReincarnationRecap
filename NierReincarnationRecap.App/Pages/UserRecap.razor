@@ -1,0 +1,18 @@
+﻿@page "/recap/{UserSlug}"
+@using NierReincarnationRecap.App.Components.UserRecap
+
+@if (UserRecapData is null)
+{
+    <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+}
+else {
+    <MudGrid>
+        <CascadingValue Value="@UserRecapData">
+            <ProfileCard />
+            <AchievementCard />
+            <RankingsCard />
+            <ArenaRankingsCard />
+            <SubjugationRankingsCard />
+        </CascadingValue>
+    </MudGrid>
+}

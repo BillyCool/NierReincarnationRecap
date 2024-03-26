@@ -1,0 +1,21 @@
+﻿@using NierReincarnationRecap.App.Components
+@inherits LayoutComponentBase
+
+<PageTitle>NieR Reincarnation Recap</PageTitle>
+
+<MudThemeProvider Theme="MamaTheme" IsDarkMode="@true" />
+<MudSnackbarProvider />
+<MudBreakpointProvider />
+
+<NavMenu />
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="my-10">
+    
+    <CascadingValue Value="UserPreferences">
+        @Body
+    </CascadingValue>
+    <MudScrollToTop>
+        <MudFab Color="Color.Dark" StartIcon="@Icons.Material.Filled.ArrowUpward" />
+    </MudScrollToTop>
+</MudContainer>
+

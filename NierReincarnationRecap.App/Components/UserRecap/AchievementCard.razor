@@ -1,0 +1,23 @@
+﻿<MudItem Style="min-width: 288px;" xs="12" sm="6" md="4">
+    <MudCard Outlined Class="profile-card">
+        <MudCardHeader Class="profile-card-header">
+            <CardHeaderContent>
+                <MudText Typo="Typo.body1">Achievements</MudText>
+                <MudText Typo="Typo.body2">Since @UserRecapData.RegisterDatetime.ToLocalTime().ToString("yyyy-MM-dd HH:mm")</MudText>
+            </CardHeaderContent>
+        </MudCardHeader>
+        <MudCardContent>
+            <MudList Dense Class="pt-1 pb-0">
+                <AchievementListItem Text="Days Logged In" Value="@UserRecapData.TotalLoginCount" Icon="@Icons.Material.Filled.Login" />
+                <AchievementListItem Text="Max Force" Value="@UserRecapData.MaxForce" Icon="@Icons.Material.Filled.ArrowCircleUp" />
+                <AchievementListItem Text="Distance Walked" Value="@((UserRecapData.DistanceWalked / 1000) + "km")" Icon="@Icons.Material.Filled.DirectionsRun" />
+                <AchievementListItem Text="Costumes Collected" Value="@UserRecapData.CostumeCount" Icon="@Icons.Material.Filled.Face" />
+                <AchievementListItem Text="Weapons Collected" Value="@UserRecapData.WeaponCount" Icon="@Icons.Material.Filled.Colorize" />
+                <AchievementListItem Text="Companions Collected" Value="@UserRecapData.CompanionCount" Icon="@Icons.Material.Filled.Pets" />
+                <AchievementListItem Text="Memoirs Collected" Value="@UserRecapData.MemoirCount" Icon="@Icons.Material.Filled.Workspaces" />
+                <AchievementListItem Text="Debris Collected" Value="@UserRecapData.DebrisCount" Icon="@Icons.Material.Filled.SwapVerticalCircle" />
+                <AchievementListItem Text="Total Awakenings" Value="@UserRecapData.AwakeningCount" Icon="@Icons.Material.Filled.AttachMoney" />
+            </MudList>
+        </MudCardContent>
+    </MudCard>
+</MudItem>
