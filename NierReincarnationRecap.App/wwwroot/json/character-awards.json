@@ -1,5 +1,94 @@
 ﻿[
   {
+    "category": 8,
+    "optionList": [
+      {
+        "name": "Rion - Sickly Exile",
+        "imagePath": "008001"
+      },
+      {
+        "name": "Dimos - Departed Gunman",
+        "imagePath": "007001"
+      },
+      {
+        "name": "Gayle - Wounded Hunter",
+        "imagePath": "009001"
+      },
+      {
+        "name": "Akeha - Twilight Assassin",
+        "imagePath": "015001"
+      },
+      {
+        "name": "Argo - Apex Traveler",
+        "imagePath": "006001"
+      },
+      {
+        "name": "Levania - Dark Monster",
+        "imagePath": "005001"
+      },
+      {
+        "name": "063y - Stalwart Prisoner",
+        "imagePath": "011001"
+      },
+      {
+        "name": "F66x - Distressed Captive",
+        "imagePath": "012001"
+      },
+      {
+        "name": "Lars - Spiteful Soldier",
+        "imagePath": "013001"
+      },
+      {
+        "name": "Griff - Harmonious Captain",
+        "imagePath": "014001"
+      },
+      {
+        "name": "Noelle - Hidden Weapon",
+        "imagePath": "010001"
+      },
+      {
+        "name": "Fio - The Girl of Light",
+        "imagePath": "019001"
+      },
+      {
+        "name": "Saryu - Avowed Witch",
+        "imagePath": "022001"
+      },
+      {
+        "name": "Priyet - Verboten Werebeast",
+        "imagePath": "023001"
+      },
+      {
+        "name": "Marie - Praying Songstress",
+        "imagePath": "024001"
+      },
+      {
+        "name": "Yurie - Obsessed Ruler",
+        "imagePath": "025001"
+      },
+      {
+        "name": "Yudil - Pilfering Boor",
+        "imagePath": "027001"
+      },
+      {
+        "name": "Sarafa - Chained Belle",
+        "imagePath": "026001"
+      },
+      {
+        "name": "Hina - Dedicated Pupil",
+        "imagePath": "020001"
+      },
+      {
+        "name": "Yuzuki - Devoted Student",
+        "imagePath": "021001"
+      },
+      {
+        "name": "10H - Sentinel Savior",
+        "imagePath": "048001"
+      }
+    ]
+  },
+  {
     "category": 9,
     "optionList": [
       {
@@ -11,51 +100,51 @@
         "imagePath": "000002"
       },
       {
-        "name": "Rion",
+        "name": "Rion - Sickly Exile",
         "imagePath": "008001"
       },
       {
-        "name": "Dimos",
+        "name": "Dimos - Departed Gunman",
         "imagePath": "007001"
       },
       {
-        "name": "Gayle",
+        "name": "Gayle - Wounded Hunter",
         "imagePath": "009001"
       },
       {
-        "name": "Akeha",
+        "name": "Akeha - Twilight Assassin",
         "imagePath": "015001"
       },
       {
-        "name": "Argo",
+        "name": "Argo - Apex Traveler",
         "imagePath": "006001"
       },
       {
-        "name": "Levania",
+        "name": "Levania - Dark Monster",
         "imagePath": "005001"
       },
       {
-        "name": "063y",
+        "name": "063y - Stalwart Prisoner",
         "imagePath": "011001"
       },
       {
-        "name": "F66x",
+        "name": "F66x - Distressed Captive",
         "imagePath": "012001"
       },
       {
-        "name": "Lars",
+        "name": "Lars - Spiteful Soldier",
         "imagePath": "013001"
       },
       {
-        "name": "Griff",
+        "name": "Griff - Harmonious Captain",
         "imagePath": "014001"
       },
       {
-        "name": "Noelle",
+        "name": "Noelle - Hidden Weapon",
         "imagePath": "010001"
       },
       {
-        "name": "Fio",
+        "name": "Fio - The Girl of Light",
         "imagePath": "019001"
       },
       {
@@ -67,35 +156,35 @@
         "imagePath": "000004"
       },
       {
-        "name": "Saryu",
+        "name": "Saryu - Avowed Witch",
         "imagePath": "022001"
       },
       {
-        "name": "Priyet",
+        "name": "Priyet - Verboten Werebeast",
         "imagePath": "023001"
       },
       {
-        "name": "Marie",
+        "name": "Marie - Praying Songstress",
         "imagePath": "024001"
       },
       {
-        "name": "Yurie",
+        "name": "Yurie - Obsessed Ruler",
         "imagePath": "025001"
       },
       {
-        "name": "Yudil",
+        "name": "Yudil - Pilfering Boor",
         "imagePath": "027001"
       },
       {
-        "name": "Sarafa",
+        "name": "Sarafa - Chained Belle",
         "imagePath": "026001"
       },
       {
-        "name": "Hina",
+        "name": "Hina - Dedicated Pupil",
         "imagePath": "020001"
       },
       {
-        "name": "Yuzuki",
+        "name": "Yuzuki - Devoted Student",
         "imagePath": "021001"
       }
     ]
@@ -112,51 +201,51 @@
         "imagePath": "000002"
       },
       {
-        "name": "Rion",
+        "name": "Rion - Sickly Exile",
         "imagePath": "008001"
       },
       {
-        "name": "Dimos",
+        "name": "Dimos - Departed Gunman",
         "imagePath": "007001"
       },
       {
-        "name": "Gayle",
+        "name": "Gayle - Wounded Hunter",
         "imagePath": "009001"
       },
       {
-        "name": "Akeha",
+        "name": "Akeha - Twilight Assassin",
         "imagePath": "015001"
       },
       {
-        "name": "Argo",
+        "name": "Argo - Apex Traveler",
         "imagePath": "006001"
       },
       {
-        "name": "Levania",
+        "name": "Levania - Dark Monster",
         "imagePath": "005001"
       },
       {
-        "name": "063y",
+        "name": "063y - Stalwart Prisoner",
         "imagePath": "011001"
       },
       {
-        "name": "F66x",
+        "name": "F66x - Distressed Captive",
         "imagePath": "012001"
       },
       {
-        "name": "Lars",
+        "name": "Lars - Spiteful Soldier",
         "imagePath": "013001"
       },
       {
-        "name": "Griff",
+        "name": "Griff - Harmonious Captain",
         "imagePath": "014001"
       },
       {
-        "name": "Noelle",
+        "name": "Noelle - Hidden Weapon",
         "imagePath": "010001"
       },
       {
-        "name": "Fio",
+        "name": "Fio - The Girl of Light",
         "imagePath": "019001"
       },
       {
@@ -168,39 +257,39 @@
         "imagePath": "000004"
       },
       {
-        "name": "Saryu",
+        "name": "Saryu - Avowed Witch",
         "imagePath": "022001"
       },
       {
-        "name": "Priyet",
+        "name": "Priyet - Verboten Werebeast",
         "imagePath": "023001"
       },
       {
-        "name": "Marie",
+        "name": "Marie - Praying Songstress",
         "imagePath": "024001"
       },
       {
-        "name": "Yurie",
+        "name": "Yurie - Obsessed Ruler",
         "imagePath": "025001"
       },
       {
-        "name": "Yudil",
+        "name": "Yudil - Pilfering Boor",
         "imagePath": "027001"
       },
       {
-        "name": "Sarafa",
+        "name": "Sarafa - Chained Belle",
         "imagePath": "026001"
       },
       {
-        "name": "Hina",
+        "name": "Hina - Dedicated Pupil",
         "imagePath": "020001"
       },
       {
-        "name": "Yuzuki",
+        "name": "Yuzuki - Devoted Student",
         "imagePath": "021001"
       },
       {
-        "name": "10H",
+        "name": "10H - Sentinel Savior",
         "imagePath": "048001"
       }
     ]

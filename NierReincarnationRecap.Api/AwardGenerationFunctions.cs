@@ -119,6 +119,11 @@ public class AwardGenerationFunctions
         [
             new Award()
             {
+                Category = CommunityAwardCategory.CharacterDesign,
+                OptionList = GetCharacterAwardOptionsByCategory(CommunityAwardCategory.CharacterStory)
+            },
+            new Award()
+            {
                 Category = CommunityAwardCategory.CharacterVaEng,
                 OptionList = GetCharacterAwardOptionsByCategory(CommunityAwardCategory.CharacterVaEng)
             },
