@@ -25,6 +25,18 @@ public static class Program
 
     public static async Task Main(string[] _)
     {
+        try
+        {
+            await RunInternalAsync();
+        }
+        catch (Exception ex)
+        {
+            ShowErrorAndExit(ex);
+        }
+    }
+
+    private static async Task RunInternalAsync()
+    {
         // Show region select
         ShowRegionSelect();
 
@@ -101,9 +113,13 @@ public static class Program
         };
     }
 
-    private static void ShowErrorAndExit()
+    private static void ShowErrorAndExit(Exception? ex = null)
     {
         Console.WriteLine("Something went wrong!");
+        if (ex is not null)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+        }
         Environment.Exit(0);
     }
 

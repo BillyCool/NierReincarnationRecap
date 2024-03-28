@@ -50,12 +50,12 @@ public static class DataUploader
             FavoriteCostumeId = darkUserMemoryDatabase.EntityIUserProfileTable[0].FavoriteCostumeId,
             TotalLoginCount = darkUserMemoryDatabase.EntityIUserLoginTable[0].TotalLoginCount,
             Level = darkUserMemoryDatabase.EntityIUserStatusTable[0].Level,
-            MaxForce = darkUserMemoryDatabase.EntityIUserDeckTable.MaxBy(x => x.Power)?.Power,
+            MaxForce = darkUserMemoryDatabase.EntityIUserMissionTable.Find(x => x.MissionId == 400120)?.ProgressValue,
             DistanceWalked = darkUserMemoryDatabase.EntityIUserMissionTable.Find(x => x.MissionId == 410013)?.ProgressValue,
             CostumeCount = darkUserMemoryDatabase.EntityIUserCostumeTable.DistinctBy(x => x.CostumeId).Count(),
             WeaponCount = GetUniqueWeaponIdCount(darkUserMemoryDatabase),
             CompanionCount = darkUserMemoryDatabase.EntityIUserCompanionTable.Count,
-            MemoirCount = darkUserMemoryDatabase.EntityIUserPartsTable.DistinctBy(x => x.PartsId).Count(),
+            MemoirCount = darkUserMemoryDatabase.EntityIUserPartsGroupNoteTable.DistinctBy(x => x.PartsGroupId).Count(),
             DebrisCount = darkUserMemoryDatabase.EntityIUserThoughtTable.DistinctBy(x => x.ThoughtId).Count(),
             AwakeningCount = darkUserMemoryDatabase.EntityIUserCostumeTable.Sum(x => x.AwakenCount),
             ArenaRankings = darkUserMemoryDatabase.EntityIUserPvpWeeklyResultTable.GroupBy(x => x.PvpSeasonId)
@@ -83,7 +83,7 @@ public static class DataUploader
 
     private static int GetUniqueWeaponIdCount(DarkUserMemoryDatabase darkUserMemoryDatabase)
     {
-        List<int> weaponIds = [.. darkUserMemoryDatabase.EntityIUserWeaponTable
+        List<int> weaponIds = [.. darkUserMemoryDatabase.EntityIUserWeaponNoteTable
             .Select(x => x.WeaponId)
             .Distinct()
             .OrderBy(x => x)];
