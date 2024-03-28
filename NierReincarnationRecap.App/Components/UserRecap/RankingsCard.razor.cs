@@ -22,15 +22,16 @@ public partial class RankingsCard
 
     public string BestSubjugationElement => SubjugationRankings.Count > 0 ? SubjugationRankings.GroupBy(x => x.AttributeType).MaxBy(x => x.Average(y => y.Score))!.First().AttributeType.GetDisplayName() : "-";
 
+    // Oops, difficulty is inverted
     public string HighestShootingNormalScore => UserRecapData!.ExplorationRankings.Find(x => x.ExplorationType == ExplorationType.Shooting &&
-        x.DifficultyType == DifficultyType.NORMAL)?.Score.ToString() ?? "-";
+        x.DifficultyType == DifficultyType.HARD)?.Score.ToString() ?? "-";
 
     public string HighestShootingHardScore => UserRecapData!.ExplorationRankings.Find(x => x.ExplorationType == ExplorationType.Shooting &&
-        x.DifficultyType == DifficultyType.HARD)?.Score.ToString() ?? "-";
-
-    public string HighestFlyingMamaNormalScore => UserRecapData!.ExplorationRankings.Find(x => x.ExplorationType == ExplorationType.FlyingMama &&
         x.DifficultyType == DifficultyType.NORMAL)?.Score.ToString() ?? "-";
 
-    public string HighestFlyingMamaHardScore => UserRecapData!.ExplorationRankings.Find(x => x.ExplorationType == ExplorationType.FlyingMama &&
+    public string HighestFlyingMamaNormalScore => UserRecapData!.ExplorationRankings.Find(x => x.ExplorationType == ExplorationType.FlyingMama &&
         x.DifficultyType == DifficultyType.HARD)?.Score.ToString() ?? "-";
+
+    public string HighestFlyingMamaHardScore => UserRecapData!.ExplorationRankings.Find(x => x.ExplorationType == ExplorationType.FlyingMama &&
+        x.DifficultyType == DifficultyType.NORMAL)?.Score.ToString() ?? "-";
 }
