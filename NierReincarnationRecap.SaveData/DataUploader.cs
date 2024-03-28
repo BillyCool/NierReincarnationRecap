@@ -118,5 +118,5 @@ public static class DataUploader
 
     private static ExplorationType ExplorationIdToExplorationType(int exploreId) => exploreId is 1 or 11 ? ExplorationType.Shooting : ExplorationType.FlyingMama;
 
-    private static DifficultyType ExplorationIdToDifficultyTypeType(int exploreId) => exploreId <= 10 ? DifficultyType.HARD : DifficultyType.NORMAL;
+    private static ExplorationDifficultyType ExplorationIdToDifficultyTypeType(int exploreId) => exploreId <= 10 ? ExplorationDifficultyType.Normal : ExplorationDifficultyType.Hard;
 }

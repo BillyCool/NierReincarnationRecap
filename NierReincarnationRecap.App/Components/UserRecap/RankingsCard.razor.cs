@@ -24,14 +24,14 @@ public partial class RankingsCard
 
     // Oops, difficulty is inverted
     public string HighestShootingNormalScore => UserRecapData!.ExplorationRankings.Find(x => x.ExplorationType == ExplorationType.Shooting &&
-        x.DifficultyType == DifficultyType.HARD)?.Score.ToString() ?? "-";
+        x.DifficultyType == ExplorationDifficultyType.Normal)?.Score.ToString() ?? "-";
 
     public string HighestShootingHardScore => UserRecapData!.ExplorationRankings.Find(x => x.ExplorationType == ExplorationType.Shooting &&
-        x.DifficultyType == DifficultyType.NORMAL)?.Score.ToString() ?? "-";
+        x.DifficultyType == ExplorationDifficultyType.Hard)?.Score.ToString() ?? "-";
 
     public string HighestFlyingMamaNormalScore => UserRecapData!.ExplorationRankings.Find(x => x.ExplorationType == ExplorationType.FlyingMama &&
-        x.DifficultyType == DifficultyType.HARD)?.Score.ToString() ?? "-";
+        x.DifficultyType == ExplorationDifficultyType.Normal)?.Score.ToString() ?? "-";
 
     public string HighestFlyingMamaHardScore => UserRecapData!.ExplorationRankings.Find(x => x.ExplorationType == ExplorationType.FlyingMama &&
-        x.DifficultyType == DifficultyType.NORMAL)?.Score.ToString() ?? "-";
+        x.DifficultyType == ExplorationDifficultyType.Hard)?.Score.ToString() ?? "-";
 }
