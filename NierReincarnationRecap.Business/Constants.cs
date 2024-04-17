@@ -2,7 +2,7 @@
 
 public static class Constants
 {
-    public const string AppVersion = "3.7.0";
+    public const string AppVersion = "3.7.1";
 
     public const string SystemLanguage = "English";
 

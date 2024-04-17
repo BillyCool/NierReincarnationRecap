@@ -52,7 +52,7 @@ public static class DataUploader
             Level = darkUserMemoryDatabase.EntityIUserStatusTable[0].Level,
             MaxForce = darkUserMemoryDatabase.EntityIUserMissionTable.Find(x => x.MissionId == 400120)?.ProgressValue,
             DistanceWalked = darkUserMemoryDatabase.EntityIUserMissionTable.Find(x => x.MissionId == 410013)?.ProgressValue,
-            CostumeCount = darkUserMemoryDatabase.EntityIUserCostumeTable.DistinctBy(x => x.CostumeId).Count(),
+            CostumeCount = darkUserMemoryDatabase.EntityIUserCostumeTable.DistinctBy(x => x.CostumeId).Count(x => x.CostumeId != 10112) + 1, // The Girl of Light
             WeaponCount = GetUniqueWeaponIdCount(darkUserMemoryDatabase),
             CompanionCount = darkUserMemoryDatabase.EntityIUserCompanionTable.Count,
             MemoirCount = darkUserMemoryDatabase.EntityIUserPartsGroupNoteTable.DistinctBy(x => x.PartsGroupId).Count(),
