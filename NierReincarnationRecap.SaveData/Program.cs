@@ -120,6 +120,7 @@ public static class Program
         {
             Console.WriteLine($"Error: {ex.Message}");
         }
+        Console.ReadKey();
         Environment.Exit(0);
     }
 
