@@ -15,7 +15,7 @@ else if (Awards.Count == 0)
 }
 else
 {
-    <VotingSection Awards="@Awards" HeaderImagePath="@($"images/{AwardType}-awards-heading.png")" IsVotingEnabled="@IsVotingEnabled" />
+    <CommunityAwardsVotingSection Awards="@Awards" HeaderImagePath="@($"images/{AwardType}-awards-heading.png")" IsVotingEnabled="@IsVotingEnabled" />
 
     @if (IsVotingEnabled)
     {

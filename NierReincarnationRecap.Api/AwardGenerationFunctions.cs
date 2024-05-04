@@ -3,10 +3,15 @@ using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.EntityFrameworkCore;
 using NierReincarnationRecap.Business.EF;
+using NierReincarnationRecap.Business.EF.Model;
+using NierReincarnationRecap.Model.Dto;
 using NierReincarnationRecap.Model.Enums;
 using NierReincarnationRecap.Model.ViewModel;
+using System.Collections.Immutable;
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
 
 namespace NierReincarnationRecap.Api;
 
@@ -19,7 +24,7 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
         [
             new Award()
             {
-                Category = CommunityAwardCategory.StoryArc,
+                Category = AwardCategory.StoryArc,
                 OptionList =
                 [
                     new() { Name = "The Girl and the Monster" },
@@ -29,7 +34,7 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.OstArc,
+                Category = AwardCategory.OstArc,
                 OptionList =
                 [
                     new() { Name = "The Girl and the Monster" },
@@ -39,27 +44,27 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CharacterStory,
-                OptionList = GetCharacterAwardOptionsByCategory(CommunityAwardCategory.CharacterStory)
+                Category = AwardCategory.CharacterStory,
+                OptionList = GetCharacterAwardOptionsByCategory(AwardCategory.CharacterStory)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.DarkMemoryStory,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeEx)
+                Category = AwardCategory.DarkMemoryStory,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeEx)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.LightMemoryStory,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeFrozenHeart)
+                Category = AwardCategory.LightMemoryStory,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeFrozenHeart)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.HiddenStory,
-                OptionList = GetCharacterAwardOptionsByCategory(CommunityAwardCategory.HiddenStory)
+                Category = AwardCategory.HiddenStory,
+                OptionList = GetCharacterAwardOptionsByCategory(AwardCategory.HiddenStory)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.RecordStory,
+                Category = AwardCategory.RecordStory,
                 OptionList =
                 [
                     new() { Name = "The Cage of Reincarnation" },
@@ -123,123 +128,123 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
         [
             new Award()
             {
-                Category = CommunityAwardCategory.CharacterDesign,
-                OptionList = GetCharacterAwardOptionsByCategory(CommunityAwardCategory.CharacterStory)
+                Category = AwardCategory.CharacterDesign,
+                OptionList = GetCharacterAwardOptionsByCategory(AwardCategory.CharacterStory)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CharacterVaEng,
-                OptionList = GetCharacterAwardOptionsByCategory(CommunityAwardCategory.CharacterVaEng)
+                Category = AwardCategory.CharacterVaEng,
+                OptionList = GetCharacterAwardOptionsByCategory(AwardCategory.CharacterVaEng)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CharacterVaJp,
-                OptionList = GetCharacterAwardOptionsByCategory(CommunityAwardCategory.CharacterVaJp)
+                Category = AwardCategory.CharacterVaJp,
+                OptionList = GetCharacterAwardOptionsByCategory(AwardCategory.CharacterVaJp)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeRion,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeRion)
+                Category = AwardCategory.CostumeRion,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeRion)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeDimos,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeDimos)
+                Category = AwardCategory.CostumeDimos,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeDimos)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeGayle,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeGayle)
+                Category = AwardCategory.CostumeGayle,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeGayle)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeAkeha,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeAkeha)
+                Category = AwardCategory.CostumeAkeha,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeAkeha)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeArgo,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeArgo)
+                Category = AwardCategory.CostumeArgo,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeArgo)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeLevania,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeLevania)
+                Category = AwardCategory.CostumeLevania,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeLevania)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.Costume063y,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.Costume063y)
+                Category = AwardCategory.Costume063y,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.Costume063y)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeF66x,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeF66x)
+                Category = AwardCategory.CostumeF66x,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeF66x)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeLars,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeLars)
+                Category = AwardCategory.CostumeLars,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeLars)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeGriff,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeGriff)
+                Category = AwardCategory.CostumeGriff,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeGriff)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeNoelle,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeNoelle)
+                Category = AwardCategory.CostumeNoelle,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeNoelle)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeFio,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeFio)
+                Category = AwardCategory.CostumeFio,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeFio)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeSaryu,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeSaryu)
+                Category = AwardCategory.CostumeSaryu,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeSaryu)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumePriyet,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumePriyet)
+                Category = AwardCategory.CostumePriyet,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumePriyet)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeMarie,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeMarie)
+                Category = AwardCategory.CostumeMarie,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeMarie)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeYurie,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeYurie)
+                Category = AwardCategory.CostumeYurie,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeYurie)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeYudil,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeYudil)
+                Category = AwardCategory.CostumeYudil,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeYudil)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeSarafa,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeSarafa)
+                Category = AwardCategory.CostumeSarafa,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeSarafa)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeHina,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeHina)
+                Category = AwardCategory.CostumeHina,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeHina)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeYuzuki,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeYuzuki)
+                Category = AwardCategory.CostumeYuzuki,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeYuzuki)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.Costume10H,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.Costume10H)
+                Category = AwardCategory.Costume10H,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.Costume10H)
             },
         ];
 
@@ -255,108 +260,108 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
         [
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeAbstract,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeAbstract)
+                Category = AwardCategory.CostumeAbstract,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeAbstract)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeBloody,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeBloody)
+                Category = AwardCategory.CostumeBloody,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeBloody)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeBloodless,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeBloodless)
+                Category = AwardCategory.CostumeBloodless,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeBloodless)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeLacrima,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeLacrima)
+                Category = AwardCategory.CostumeLacrima,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeLacrima)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeFractured,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeFractured)
+                Category = AwardCategory.CostumeFractured,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeFractured)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeMechanical,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeMechanical)
+                Category = AwardCategory.CostumeMechanical,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeMechanical)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeSummer,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeSummer)
+                Category = AwardCategory.CostumeSummer,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeSummer)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeHolyNight,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeHolyNight)
+                Category = AwardCategory.CostumeHolyNight,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeHolyNight)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeNewYears,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeNewYears)
+                Category = AwardCategory.CostumeNewYears,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeNewYears)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeCelebratory,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeCelebratory)
+                Category = AwardCategory.CostumeCelebratory,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeCelebratory)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeFestive,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeFestive)
+                Category = AwardCategory.CostumeFestive,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeFestive)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeShadowbound,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeShadowbound)
+                Category = AwardCategory.CostumeShadowbound,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeShadowbound)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeAbyssal,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeAbyssal)
+                Category = AwardCategory.CostumeAbyssal,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeAbyssal)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeDivine,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeDivine)
+                Category = AwardCategory.CostumeDivine,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeDivine)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeEx,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeEx)
+                Category = AwardCategory.CostumeEx,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeEx)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeFrozenHeart,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeFrozenHeart)
+                Category = AwardCategory.CostumeFrozenHeart,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeFrozenHeart)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeDrakeNier,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeDrakeNier)
+                Category = AwardCategory.CostumeDrakeNier,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeDrakeNier)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeSinoalice,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeSinoalice)
+                Category = AwardCategory.CostumeSinoalice,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeSinoalice)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeFinalFantasy,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeFinalFantasy)
+                Category = AwardCategory.CostumeFinalFantasy,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeFinalFantasy)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumePersona,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumePersona)
+                Category = AwardCategory.CostumePersona,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumePersona)
             },
             new Award()
             {
-                Category = CommunityAwardCategory.CostumeDragonQuest,
-                OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeDragonQuest)
+                Category = AwardCategory.CostumeDragonQuest,
+                OptionList = GetCostumeAwardOptionsByCategory(AwardCategory.CostumeDragonQuest)
             }
         ];
 
@@ -365,7 +370,31 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
         return new JsonResult(awards, new JsonSerializerOptions(JsonSerializerDefaults.Web) { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull });
     }
 
-    private static List<AwardOption> GetCharacterAwardOptionsByCategory(CommunityAwardCategory awardCategory)
+    [Function("mama-awards-json")]
+    public async Task<IActionResult> MamaAwardsJson([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req)
+    {
+        List<UserData> userData = await dbContext.UserData.ToListAsync();
+
+        List<Award> awards =
+        [
+            GenerateMamaAward(AwardCategory.DaysLoggedInJp, userData),
+            GenerateMamaAward(AwardCategory.DaysLoggedInGl, userData),
+            GenerateMamaAward(AwardCategory.MaxForce, userData),
+            GenerateMamaAward(AwardCategory.CostumesCollected, userData),
+            GenerateMamaAward(AwardCategory.WeaponsCollected, userData),
+            GenerateMamaAward(AwardCategory.AwakeningCount, userData),
+            GenerateMamaAward(AwardCategory.AvgArenaRank, userData),
+            GenerateMamaAward(AwardCategory.AvgSubjRank, userData),
+            GenerateMamaAward(AwardCategory.ShootingNormalScore, userData),
+            GenerateMamaAward(AwardCategory.ShootingHardScore, userData),
+            GenerateMamaAward(AwardCategory.FlyingMamaNormalScore, userData),
+            GenerateMamaAward(AwardCategory.FlyingMamaHardScore, userData)
+        ];
+
+        return new JsonResult(awards, new JsonSerializerOptions(JsonSerializerDefaults.Web) { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull });
+    }
+
+    private static List<AwardOption> GetCharacterAwardOptionsByCategory(AwardCategory awardCategory)
     {
         return GetCharacterAwardOptions()
             .Where(x => x.AwardCategories.Contains(awardCategory))
@@ -377,35 +406,35 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
     {
         return
         [
-            new AwardOptionInternal("Mama / Pod 006", "000001", [CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp, CommunityAwardCategory.StoryCompanion]),
-            new AwardOptionInternal("Carrier", "000002", [CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp, CommunityAwardCategory.StoryCompanion]),
-            new AwardOptionInternal("Rion - Sickly Exile", "008001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Dimos - Departed Gunman", "007001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Gayle - Wounded Hunter", "009001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Akeha - Twilight Assassin", "015001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Argo - Apex Traveler", "006001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Levania - Dark Monster", "005001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("063y - Stalwart Prisoner", "011001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("F66x - Distressed Captive", "012001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Lars - Spiteful Soldier", "013001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Griff - Harmonious Captain", "014001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Noelle - Hidden Weapon", "010001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Fio - The Girl of Light", "019001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.LightMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Dark Mama & Babe", "000003", [CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp, CommunityAwardCategory.StoryCompanion]),
-            new AwardOptionInternal("Papa", "000004", [CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp, CommunityAwardCategory.StoryCompanion]),
-            new AwardOptionInternal("Saryu - Avowed Witch", "022001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Priyet - Verboten Werebeast", "023001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Marie - Praying Songstress", "024001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Yurie - Obsessed Ruler", "025001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Yudil - Pilfering Boor", "027001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Sarafa - Chained Belle", "026001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Hina - Dedicated Pupil", "020001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("Yuzuki - Devoted Student", "021001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaEng, CommunityAwardCategory.CharacterVaJp]),
-            new AwardOptionInternal("10H - Sentinel Savior", "048001", [CommunityAwardCategory.CharacterStory, CommunityAwardCategory.DarkMemoryStory, CommunityAwardCategory.HiddenStory, CommunityAwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Mama / Pod 006", "000001", [AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp, AwardCategory.StoryCompanion]),
+            new AwardOptionInternal("Carrier", "000002", [AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp, AwardCategory.StoryCompanion]),
+            new AwardOptionInternal("Rion - Sickly Exile", "008001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Dimos - Departed Gunman", "007001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Gayle - Wounded Hunter", "009001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Akeha - Twilight Assassin", "015001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Argo - Apex Traveler", "006001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Levania - Dark Monster", "005001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("063y - Stalwart Prisoner", "011001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("F66x - Distressed Captive", "012001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Lars - Spiteful Soldier", "013001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Griff - Harmonious Captain", "014001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Noelle - Hidden Weapon", "010001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Fio - The Girl of Light", "019001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.LightMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Dark Mama & Babe", "000003", [AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp, AwardCategory.StoryCompanion]),
+            new AwardOptionInternal("Papa", "000004", [AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp, AwardCategory.StoryCompanion]),
+            new AwardOptionInternal("Saryu - Avowed Witch", "022001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Priyet - Verboten Werebeast", "023001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Marie - Praying Songstress", "024001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Yurie - Obsessed Ruler", "025001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Yudil - Pilfering Boor", "027001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Sarafa - Chained Belle", "026001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Hina - Dedicated Pupil", "020001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("Yuzuki - Devoted Student", "021001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaEng, AwardCategory.CharacterVaJp]),
+            new AwardOptionInternal("10H - Sentinel Savior", "048001", [AwardCategory.CharacterStory, AwardCategory.DarkMemoryStory, AwardCategory.HiddenStory, AwardCategory.CharacterVaJp]),
         ];
     }
 
-    private static List<AwardOption> GetCostumeAwardOptionsByCategory(CommunityAwardCategory awardCategory)
+    private static List<AwardOption> GetCostumeAwardOptionsByCategory(AwardCategory awardCategory)
     {
         return GetCostumeAwardOptions()
             .Where(x => x.AwardCategories.Contains(awardCategory))
@@ -417,287 +446,348 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
     {
         return
         [
-            new AwardOptionInternal("2B - Praying Battler", "001001", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("2B - Shattered Battler", "001004", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("2B - Divergent Battler", "001002", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("2P - Mock Machine", "001003", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("2B - Alternate Battler", "001005", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("9S - Isolated Scanner", "002001", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("9S - Divergent Scanner", "002002", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("A2 - Vengeful Attacker", "003001", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("A2 - Divergent Attacker", "003002", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("The World-Ender - Soulful Lad", "016001", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("The World-Ender - Divergent Lad", "016002", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("The World-Ender - Alternate Lad", "016003", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("Emil - Puzzling Oddity", "017001", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("Emil - Divergent Oddity", "017002", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("Kainé - The Aerie Warrior", "018001", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("Kainé - Divergent Warrior", "018002", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("Zero - Progenitor Sister", "031001", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("Zero - Divergent Sister", "031002", [CommunityAwardCategory.CostumeDrakeNier]),
-            new AwardOptionInternal("Joker - Caged Rebel", "044001", [CommunityAwardCategory.CostumePersona]),
-            new AwardOptionInternal("Queen - Virtuous Priestess", "045001", [CommunityAwardCategory.CostumePersona]),
-            new AwardOptionInternal("Fox - Insightful Emperor", "046001", [CommunityAwardCategory.CostumePersona]),
-            new AwardOptionInternal("Crow - Scheming Justice", "047001", [CommunityAwardCategory.CostumePersona]),
-            new AwardOptionInternal("Rion - Sickly Exile", "008001", [CommunityAwardCategory.CostumeRion]),
-            new AwardOptionInternal("Rion - Dissenting Exile", "008003", [CommunityAwardCategory.CostumeRion]),
-            new AwardOptionInternal("Rion - Guardian Exile", "008010", [CommunityAwardCategory.CostumeRion]),
-            new AwardOptionInternal("Rion - Abstract Exile", "008005", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Rion - Mechanical Exile", "008002", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeMechanical]),
-            new AwardOptionInternal("Rion - Summer Exile", "008009", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("Rion - Yuletide Exile", "008012", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Rion - New Year's Exile", "008006", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Rion - Celebratory Exile", "008013", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Rion - Festive Exile", "008019", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeFestive]),
-            new AwardOptionInternal("Rion - Shadowbound Exile", "008014", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeShadowbound]),
-            new AwardOptionInternal("Rion - Abyssal Exile", "008007", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Rion - Phantasmal Exile", "008011", [CommunityAwardCategory.CostumeFinalFantasy, CommunityAwardCategory.CostumeRion]),
-            new AwardOptionInternal("Rion - Oathbound Exile", "008018", [CommunityAwardCategory.CostumeDragonQuest, CommunityAwardCategory.CostumeRion]),
-            new AwardOptionInternal("Rion - Reborn Revolutionary", "008004", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Rion - Frozen-Heart Revolutionary", "008008", [CommunityAwardCategory.CostumeRion, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("Dimos - Departed Gunman", "007001", [CommunityAwardCategory.CostumeDimos]),
-            new AwardOptionInternal("Dimos - Dissenting Gunman", "007003", [CommunityAwardCategory.CostumeDimos]),
-            new AwardOptionInternal("Dimos - Guardian Gunman", "007005", [CommunityAwardCategory.CostumeDimos]),
-            new AwardOptionInternal("Dimos - False Guardian Gunman", "007009", [CommunityAwardCategory.CostumeDimos]),
-            new AwardOptionInternal("Dimos - Abstract Gunman", "007002", [CommunityAwardCategory.CostumeDimos, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Dimos - Bloody Gunman", "007006", [CommunityAwardCategory.CostumeDimos, CommunityAwardCategory.CostumeBloody]),
-            new AwardOptionInternal("Dimos - Bloodless Gunman", "007013", [CommunityAwardCategory.CostumeDimos, CommunityAwardCategory.CostumeBloodless]),
-            new AwardOptionInternal("Dimos - Fractured Gunman", "007008", [CommunityAwardCategory.CostumeDimos, CommunityAwardCategory.CostumeFractured]),
-            new AwardOptionInternal("Dimos - Summer Gunman", "007015", [CommunityAwardCategory.CostumeDimos, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("Dimos - New Year's Gunman", "007016", [CommunityAwardCategory.CostumeDimos, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Dimos - Celebratory Gunman", "007010", [CommunityAwardCategory.CostumeDimos, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Dimos - Abyssal Gunman", "007012", [CommunityAwardCategory.CostumeDimos, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Dimos - Reborn Automaton", "007004", [CommunityAwardCategory.CostumeDimos, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Dimos - Frozen-Heart Automaton", "007007", [CommunityAwardCategory.CostumeDimos, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("Gayle - Wounded Hunter", "009001", [CommunityAwardCategory.CostumeGayle]),
-            new AwardOptionInternal("Gayle - Dissenting Hunter", "009003", [CommunityAwardCategory.CostumeGayle]),
-            new AwardOptionInternal("Gayle - Guardian Hunter", "009005", [CommunityAwardCategory.CostumeGayle]),
-            new AwardOptionInternal("Gayle - Abstract Hunter", "009002", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Gayle - Bloody Hunter", "009006", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeBloody]),
-            new AwardOptionInternal("Gayle - Fractured Hunter", "009010", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeFractured]),
-            new AwardOptionInternal("Gayle - Mechanical Hunter", "009016", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeMechanical]),
-            new AwardOptionInternal("Gayle - Summer Hunter", "009011", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("Gayle - Yuletide Hunter", "009013", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Gayle - New Year's Hunter", "009007", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Gayle - Celebratory Hunter", "009009", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Gayle - Festive Hunter", "009015", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeFestive]),
-            new AwardOptionInternal("Gayle - Abyssal Hunter", "009012", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Gayle - Reborn Contractor", "009004", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Gayle - Frozen-Heart Contractor", "009008", [CommunityAwardCategory.CostumeGayle, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("Akeha - Twilight Assassian", "015001", [CommunityAwardCategory.CostumeAkeha]),
-            new AwardOptionInternal("Akeha - Dissenting Assassian", "015003", [CommunityAwardCategory.CostumeAkeha]),
-            new AwardOptionInternal("Akeha - Guardian Assassian", "015011", [CommunityAwardCategory.CostumeAkeha]),
-            new AwardOptionInternal("Akeha - False Guardian Assassian", "015013", [CommunityAwardCategory.CostumeAkeha]),
-            new AwardOptionInternal("Akeha - Abstract Assassian", "015002", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Akeha - Bloody Assassian", "015005", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeBloody]),
-            new AwardOptionInternal("Akeha - Bloodless Assassian", "015010", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeBloodless]),
-            new AwardOptionInternal("Akeha - Fractured Assassian", "015014", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeFractured]),
-            new AwardOptionInternal("Akeha - Mechanical Assassian", "015012", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeMechanical]),
-            new AwardOptionInternal("Akeha - Summer Assassian", "015009", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("Akeha - Yuletide Assassian", "015007", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Akeha - New Year's Assassian", "015018", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Akeha - Celebratory Assassian", "015015", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Akeha - Festive Assassian", "015021", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeFestive]),
-            new AwardOptionInternal("Akeha - Abyssal Assassian", "015016", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Akeha - Divine Assassian", "015020", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeDivine]),
-            new AwardOptionInternal("Akeha - Intoner Assassian", "015006", [CommunityAwardCategory.CostumeAkeha]),
-            new AwardOptionInternal("Akeha - Fabled Assassian", "015017", [CommunityAwardCategory.CostumeSinoalice, CommunityAwardCategory.CostumeAkeha]),
-            new AwardOptionInternal("Akeha - Reborn Swordmaster", "015004", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Akeha - Frozen-Heart Swordmaster", "015008", [CommunityAwardCategory.CostumeAkeha, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("Argo - Apex Traveler", "006001", [CommunityAwardCategory.CostumeArgo]),
-            new AwardOptionInternal("Argo - Dissenting Traveler", "006003", [CommunityAwardCategory.CostumeArgo]),
-            new AwardOptionInternal("Argo - Guardian Traveler", "006005", [CommunityAwardCategory.CostumeArgo]),
-            new AwardOptionInternal("Argo - Abstract Traveler", "006006", [CommunityAwardCategory.CostumeArgo, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Argo - Bloody Traveler", "006012", [CommunityAwardCategory.CostumeArgo, CommunityAwardCategory.CostumeBloody]),
-            new AwardOptionInternal("Argo - Fractured Traveler", "006010", [CommunityAwardCategory.CostumeArgo, CommunityAwardCategory.CostumeFractured]),
-            new AwardOptionInternal("Argo - Summer Traveler", "006008", [CommunityAwardCategory.CostumeArgo, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("Argo - Yuletide Traveler", "006013", [CommunityAwardCategory.CostumeArgo, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Argo - Celebratory Traveler", "006009", [CommunityAwardCategory.CostumeArgo, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Argo - Shadowbound Traveler", "006014", [CommunityAwardCategory.CostumeArgo, CommunityAwardCategory.CostumeShadowbound]),
-            new AwardOptionInternal("Argo - Patriotic Traveler", "006002", [CommunityAwardCategory.CostumeArgo]),
-            new AwardOptionInternal("Argo - Reborn Adventurer", "006004", [CommunityAwardCategory.CostumeArgo, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Argo - Frozen-Heart Adventurer", "006007", [CommunityAwardCategory.CostumeArgo, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("Levania - Human Monster", "004001", [CommunityAwardCategory.CostumeLevania]),
-            new AwardOptionInternal("Levania - Dark Monster", "005001", [CommunityAwardCategory.CostumeLevania]),
-            new AwardOptionInternal("Levania - Guardian Monster", "005007", [CommunityAwardCategory.CostumeLevania]),
-            new AwardOptionInternal("Levania - Abstract Monster", "005002", [CommunityAwardCategory.CostumeLevania, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Levania - Bloody Monster", "005008", [CommunityAwardCategory.CostumeLevania, CommunityAwardCategory.CostumeBloody]),
-            new AwardOptionInternal("Levania - Bloodless Monster", "005005", [CommunityAwardCategory.CostumeLevania, CommunityAwardCategory.CostumeBloodless]),
-            new AwardOptionInternal("Levania - Lacrima Monster", "005010", [CommunityAwardCategory.CostumeLevania, CommunityAwardCategory.CostumeLacrima]),
-            new AwardOptionInternal("Levania - Yuletide Monster", "005006", [CommunityAwardCategory.CostumeLevania, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Levania - Celebratory Monster", "005011", [CommunityAwardCategory.CostumeLevania, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Levania - Festive Monster", "005013", [CommunityAwardCategory.CostumeLevania, CommunityAwardCategory.CostumeFestive]),
-            new AwardOptionInternal("Levania - Abyssal Monster", "005009", [CommunityAwardCategory.CostumeLevania, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Levania - Reborn Beast", "005003", [CommunityAwardCategory.CostumeLevania, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Levania - Frozen-Heart Beast", "005004", [CommunityAwardCategory.CostumeLevania, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("063y - Stalwart Prisoner", "011001", [CommunityAwardCategory.Costume063y]),
-            new AwardOptionInternal("063y - Dissenting Prisoner", "011003", [CommunityAwardCategory.Costume063y]),
-            new AwardOptionInternal("063y - Guardian Prisoner", "011009", [CommunityAwardCategory.Costume063y]),
-            new AwardOptionInternal("063y - Abstract Prisoner", "011002", [CommunityAwardCategory.Costume063y, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("063y - Fractured Prisoner", "011005", [CommunityAwardCategory.Costume063y, CommunityAwardCategory.CostumeFractured]),
-            new AwardOptionInternal("063y - Summer Prisoner", "011007", [CommunityAwardCategory.Costume063y, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("063y - Yuletide Prisoner", "011015", [CommunityAwardCategory.Costume063y, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("063y - New Year's Prisoner", "011010", [CommunityAwardCategory.Costume063y, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("063y - Celebratory Prisoner", "011012", [CommunityAwardCategory.Costume063y, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("063y - Abyssal Prisoner", "011011", [CommunityAwardCategory.Costume063y, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("063y - Divine Prisoner", "011014", [CommunityAwardCategory.Costume063y, CommunityAwardCategory.CostumeDivine]),
-            new AwardOptionInternal("063y - Phantasmal Prisoner", "011008", [CommunityAwardCategory.CostumeFinalFantasy, CommunityAwardCategory.Costume063y]),
-            new AwardOptionInternal("063y - Reborn Convict", "011004", [CommunityAwardCategory.Costume063y, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("063y - Frozen-Heart Convict", "011006", [CommunityAwardCategory.Costume063y, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("F66x - Distressed Captive", "012001", [CommunityAwardCategory.CostumeF66x]),
-            new AwardOptionInternal("F66x - Dissenting Captive", "012003", [CommunityAwardCategory.CostumeF66x]),
-            new AwardOptionInternal("F66x - Guardian Captive", "012007", [CommunityAwardCategory.CostumeF66x]),
-            new AwardOptionInternal("F66x - Abstract Captive", "012002", [CommunityAwardCategory.CostumeF66x, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("F66x - Bloody Captive", "012010", [CommunityAwardCategory.CostumeF66x, CommunityAwardCategory.CostumeBloody]),
-            new AwardOptionInternal("F66x - Bloodless Captive", "012011", [CommunityAwardCategory.CostumeF66x, CommunityAwardCategory.CostumeBloodless]),
-            new AwardOptionInternal("F66x - Lacrima Captive", "012005", [CommunityAwardCategory.CostumeF66x, CommunityAwardCategory.CostumeLacrima]),
-            new AwardOptionInternal("F66x - Summer Captive", "012008", [CommunityAwardCategory.CostumeF66x, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("F66x - Celebratory Captive", "012012", [CommunityAwardCategory.CostumeF66x, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("F66x - Abyssal Captive", "012009", [CommunityAwardCategory.CostumeF66x, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("F66x - Reborn Inmate", "012004", [CommunityAwardCategory.CostumeF66x, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("F66x - Frozen-Heart Inmate", "012006", [CommunityAwardCategory.CostumeF66x, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("Lars - Spiteful Solder", "013001", [CommunityAwardCategory.CostumeLars]),
-            new AwardOptionInternal("Lars - Dissenting Solder", "013003", [CommunityAwardCategory.CostumeLars]),
-            new AwardOptionInternal("Lars - Guardian Solder", "013008", [CommunityAwardCategory.CostumeLars]),
-            new AwardOptionInternal("Lars - Abstract Solder", "013004", [CommunityAwardCategory.CostumeLars, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Lars - Bloody Solder", "013010", [CommunityAwardCategory.CostumeLars, CommunityAwardCategory.CostumeBloody]),
-            new AwardOptionInternal("Lars - Lacrima Solder", "013007", [CommunityAwardCategory.CostumeLars, CommunityAwardCategory.CostumeLacrima]),
-            new AwardOptionInternal("Lars - Fractured Solder", "013005", [CommunityAwardCategory.CostumeLars, CommunityAwardCategory.CostumeFractured]),
-            new AwardOptionInternal("Lars - Yuletide Solder", "013012", [CommunityAwardCategory.CostumeLars, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Lars - Celebratory Solder", "013009", [CommunityAwardCategory.CostumeLars, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Lars - Abyssal Solder", "013011", [CommunityAwardCategory.CostumeLars, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Lars - Phantasmal Solder", "013014", [CommunityAwardCategory.CostumeFinalFantasy, CommunityAwardCategory.CostumeLars]),
-            new AwardOptionInternal("Lars - Reborn Truant", "013002", [CommunityAwardCategory.CostumeLars, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Lars - Frozen-Heart Truant", "013006", [CommunityAwardCategory.CostumeLars, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("Griff - Harmonioud Captain", "014001", [CommunityAwardCategory.CostumeGriff]),
-            new AwardOptionInternal("Griff - Dissenting Captain", "014003", [CommunityAwardCategory.CostumeGriff]),
-            new AwardOptionInternal("Griff - Guardian Captain", "014005", [CommunityAwardCategory.CostumeGriff]),
-            new AwardOptionInternal("Griff - False Guardian Captain", "014014", [CommunityAwardCategory.CostumeGriff]),
-            new AwardOptionInternal("Griff - Abstract Captain", "014004", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Griff - Bloody Captain", "014010", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeBloody]),
-            new AwardOptionInternal("Griff - Lacrima Captain", "014008", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeLacrima]),
-            new AwardOptionInternal("Griff - Fractured Captain", "014009", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeFractured]),
-            new AwardOptionInternal("Griff - Mechanical Captain", "014016", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeMechanical]),
-            new AwardOptionInternal("Griff - Yuletide Captain", "014011", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Griff - New Year's Captain", "014017", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Griff - Celebratory Captain", "014007", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Griff - Festive Captain", "014015", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeFestive]),
-            new AwardOptionInternal("Griff - Abyssal Captain", "014013", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Griff - Reborn Has-Been", "014002", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Griff - Frozen-Heart Has-Been", "014006", [CommunityAwardCategory.CostumeGriff, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("Noelle - Hidden Weapon", "010001", [CommunityAwardCategory.CostumeNoelle]),
-            new AwardOptionInternal("Noelle - Dissenting Weapon", "010003", [CommunityAwardCategory.CostumeNoelle]),
-            new AwardOptionInternal("Noelle - Guardian Weapon", "010005", [CommunityAwardCategory.CostumeNoelle]),
-            new AwardOptionInternal("Noelle - Abstract Weapon", "010002", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Noelle - Bloody Weapon", "010011", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeBloody]),
-            new AwardOptionInternal("Noelle - Bloodless Weapon", "010009", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeBloodless]),
-            new AwardOptionInternal("Noelle - Fractured Weapon", "010012", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeFractured]),
-            new AwardOptionInternal("Noelle - Mechanical Weapon", "010018", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeMechanical]),
-            new AwardOptionInternal("Noelle - Summer Weapon", "010016", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("Noelle - Yuletide Weapon", "010019", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Noelle - New Year's Weapon", "010010", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Noelle - Celebratory Weapon", "010007", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Noelle - Festive Weapon", "010017", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeFestive]),
-            new AwardOptionInternal("Noelle - Phantasmal Weapon", "010008", [CommunityAwardCategory.CostumeFinalFantasy, CommunityAwardCategory.CostumeNoelle]),
-            new AwardOptionInternal("Noelle - Fabled Weapon", "010014", [CommunityAwardCategory.CostumeSinoalice, CommunityAwardCategory.CostumeNoelle]),
-            new AwardOptionInternal("Noelle - Abyssal Weapon", "010013", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Noelle - Reborn Warlady", "010004", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Noelle - Frozen-Heart Warlady", "010006", [CommunityAwardCategory.CostumeNoelle, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("Fio - The Girl of Light", "019001", [CommunityAwardCategory.CostumeFio]),
-            new AwardOptionInternal("Fio - Dissenting Girl", "019004", [CommunityAwardCategory.CostumeFio]),
-            new AwardOptionInternal("Fio - Guardian Girl", "019006", [CommunityAwardCategory.CostumeFio]),
-            new AwardOptionInternal("Fio - Abstract Girl", "019005", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Fio - Lacrima Girl", "019016", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeLacrima]),
-            new AwardOptionInternal("Fio - Mechanical Girl", "019003", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeMechanical]),
-            new AwardOptionInternal("Fio - Summer Girl", "019010", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("Fio - Yuletide Girl", "019015", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Fio - New Year's Girl", "019011", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Fio - Celebratory Girl", "019012", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Fio - Festive Girl", "019018", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeFestive]),
-            new AwardOptionInternal("Fio - Abyssal Girl", "019008", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Fio - Divine Girl", "019019", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeDivine]),
-            new AwardOptionInternal("Fio - Simulacrum Girl", "019013", [CommunityAwardCategory.CostumeFio]),
-            new AwardOptionInternal("Fio - Intoner Girl", "019007", [CommunityAwardCategory.CostumeFio]),
-            new AwardOptionInternal("Fio - Reborn Princess", "019002", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Fio - Frozen-Heart Princess", "019009", [CommunityAwardCategory.CostumeFio, CommunityAwardCategory.CostumeFrozenHeart]),
-            new AwardOptionInternal("Saryu - Avowed Witch", "022001", [CommunityAwardCategory.CostumeSaryu]),
-            new AwardOptionInternal("Saryu - Guardian Witch", "022007", [CommunityAwardCategory.CostumeSaryu]),
-            new AwardOptionInternal("Saryu - Abstract Witch", "022003", [CommunityAwardCategory.CostumeSaryu, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Saryu - Bloody Witch", "022005", [CommunityAwardCategory.CostumeSaryu, CommunityAwardCategory.CostumeBloody]),
-            new AwardOptionInternal("Saryu - Summer Witch", "022006", [CommunityAwardCategory.CostumeSaryu, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("Saryu - Yuletide Witch", "022009", [CommunityAwardCategory.CostumeSaryu, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Saryu - Celebratory Witch", "022004", [CommunityAwardCategory.CostumeSaryu, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Saryu - Festive Witch", "022012", [CommunityAwardCategory.CostumeSaryu, CommunityAwardCategory.CostumeFestive]),
-            new AwardOptionInternal("Saryu - Abyssal Witch", "022011", [CommunityAwardCategory.CostumeSaryu, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Saryu - Fabled Witch", "022008", [CommunityAwardCategory.CostumeSinoalice, CommunityAwardCategory.CostumeSaryu]),
-            new AwardOptionInternal("Saryu - Phantasmal Witch", "022010", [CommunityAwardCategory.CostumeFinalFantasy, CommunityAwardCategory.CostumeSaryu]),
-            new AwardOptionInternal("Saryu - Reborn Sorceress", "022002", [CommunityAwardCategory.CostumeSaryu, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Priyet - Verboten Werebeast", "023001", [CommunityAwardCategory.CostumePriyet]),
-            new AwardOptionInternal("Priyet - Guardian Werebeast", "023006", [CommunityAwardCategory.CostumePriyet]),
-            new AwardOptionInternal("Priyet - Abstract Werebeast", "023003", [CommunityAwardCategory.CostumePriyet, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Priyet - Yuletide Werebeast", "023005", [CommunityAwardCategory.CostumePriyet, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Priyet - Celebratory Werebeast", "023004", [CommunityAwardCategory.CostumePriyet, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Priyet - Shadowbound Werebeast", "023007", [CommunityAwardCategory.CostumePriyet, CommunityAwardCategory.CostumeShadowbound]),
-            new AwardOptionInternal("Priyet - Abyssal Werebeast", "023008", [CommunityAwardCategory.CostumePriyet, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Priyet - Reborn Fiend", "023002", [CommunityAwardCategory.CostumePriyet, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Marie - Praying Songstress", "024001", [CommunityAwardCategory.CostumeMarie]),
-            new AwardOptionInternal("Marie - Guardian Songstress", "024007", [CommunityAwardCategory.CostumeMarie]),
-            new AwardOptionInternal("Marie - Abstract Songstress", "024003", [CommunityAwardCategory.CostumeMarie, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Marie - Fractured Songstress", "024006", [CommunityAwardCategory.CostumeMarie, CommunityAwardCategory.CostumeFractured]),
-            new AwardOptionInternal("Marie - Summer Songstress", "024008", [CommunityAwardCategory.CostumeMarie, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("Marie - Yuletide Songstress", "024011", [CommunityAwardCategory.CostumeMarie, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Marie - New Year's Songstress", "024005", [CommunityAwardCategory.CostumeMarie, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Marie - Celebratory Songstress", "024004", [CommunityAwardCategory.CostumeMarie, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Marie - Abyssal Songstress", "024009", [CommunityAwardCategory.CostumeMarie, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Marie - Oathbound Songstress", "024010", [CommunityAwardCategory.CostumeDragonQuest, CommunityAwardCategory.CostumeMarie]),
-            new AwardOptionInternal("Marie - Reborn Pillar", "024002", [CommunityAwardCategory.CostumeMarie, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Yurie - Obsessed Ruler", "025001", [CommunityAwardCategory.CostumeYurie]),
-            new AwardOptionInternal("Yurie - Guardian Ruler", "025005", [CommunityAwardCategory.CostumeYurie]),
-            new AwardOptionInternal("Yurie - Abstract Ruler", "025004", [CommunityAwardCategory.CostumeYurie, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Yurie - Summer Ruler", "025008", [CommunityAwardCategory.CostumeYurie, CommunityAwardCategory.CostumeSummer]),
-            new AwardOptionInternal("Yurie - Yuletide Ruler", "025010", [CommunityAwardCategory.CostumeYurie, CommunityAwardCategory.CostumeHolyNight]),
-            new AwardOptionInternal("Yurie - New Year's Ruler", "025006", [CommunityAwardCategory.CostumeYurie, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Yurie - Celebratory Ruler", "025003", [CommunityAwardCategory.CostumeYurie, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Yurie - Festive Ruler", "025011", [CommunityAwardCategory.CostumeYurie, CommunityAwardCategory.CostumeFestive]),
-            new AwardOptionInternal("Yurie - Abyssal Ruler", "025007", [CommunityAwardCategory.CostumeYurie, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Yurie - Divine Ruler", "025009", [CommunityAwardCategory.CostumeYurie, CommunityAwardCategory.CostumeDivine]),
-            new AwardOptionInternal("Yurie - Reborn Leader", "025002", [CommunityAwardCategory.CostumeYurie, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Yudil - Pilfering Boor", "027001", [CommunityAwardCategory.CostumeYudil]),
-            new AwardOptionInternal("Yudil - Guardian Boor", "027005", [CommunityAwardCategory.CostumeYudil]),
-            new AwardOptionInternal("Yudil - Abstract Boor", "027003", [CommunityAwardCategory.CostumeYudil, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Yudil - New Year's Boor", "027009", [CommunityAwardCategory.CostumeYudil, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Yudil - Celebratory Boor", "027004", [CommunityAwardCategory.CostumeYudil, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Yudil - Abyssal Boor", "027007", [CommunityAwardCategory.CostumeYudil, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Yudil - Divine Boor", "027008", [CommunityAwardCategory.CostumeYudil, CommunityAwardCategory.CostumeDivine]),
-            new AwardOptionInternal("Yudil - Phantasmal Boor", "027006", [CommunityAwardCategory.CostumeFinalFantasy, CommunityAwardCategory.CostumeYudil]),
-            new AwardOptionInternal("Yudil - Reborn Usurper", "027002", [CommunityAwardCategory.CostumeYudil, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Sarafa - Chained Belle", "026001", [CommunityAwardCategory.CostumeSarafa]),
-            new AwardOptionInternal("Sarafa - Guardian Belle", "026004", [CommunityAwardCategory.CostumeSarafa]),
-            new AwardOptionInternal("Sarafa - Abstract Belle", "026005", [CommunityAwardCategory.CostumeSarafa, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Sarafa - New Year's Belle", "026008", [CommunityAwardCategory.CostumeSarafa, CommunityAwardCategory.CostumeNewYears]),
-            new AwardOptionInternal("Sarafa - Celebratory Belle", "026003", [CommunityAwardCategory.CostumeSarafa, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Sarafa - Abyssal Belle", "026006", [CommunityAwardCategory.CostumeSarafa, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Sarafa - Shadowbound Belle", "026007", [CommunityAwardCategory.CostumeSarafa, CommunityAwardCategory.CostumeShadowbound]),
-            new AwardOptionInternal("Sarafa - Oathbound Belle", "026009", [CommunityAwardCategory.CostumeSarafa, CommunityAwardCategory.CostumeDragonQuest]),
-            new AwardOptionInternal("Sarafa - Reborn Monopolist", "026002", [CommunityAwardCategory.CostumeSarafa, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Hina - Dedicated Pupil", "020001", [CommunityAwardCategory.CostumeHina]),
-            new AwardOptionInternal("Hina - Guardian Pupil", "020007", [CommunityAwardCategory.CostumeHina]),
-            new AwardOptionInternal("Hina - Abstract Pupil", "020004", [CommunityAwardCategory.CostumeHina, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Hina - Mechanical Pupil", "020005", [CommunityAwardCategory.CostumeHina, CommunityAwardCategory.CostumeMechanical]),
-            new AwardOptionInternal("Hina - Celebratory Pupil", "020003", [CommunityAwardCategory.CostumeHina, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Hina - Abyssal Pupil", "020006", [CommunityAwardCategory.CostumeHina, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Hina - Reborn Prodigy", "049001", [CommunityAwardCategory.CostumeHina, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("Yuzuki - Devoted Student", "021001", [CommunityAwardCategory.CostumeYuzuki]),
-            new AwardOptionInternal("Yuzuki - Guardian Student", "021007", [CommunityAwardCategory.CostumeYuzuki]),
-            new AwardOptionInternal("Yuzuki - Abstract Student", "021005", [CommunityAwardCategory.CostumeYuzuki, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("Yuzuki - Mechanical Student", "021004", [CommunityAwardCategory.CostumeYuzuki, CommunityAwardCategory.CostumeMechanical]),
-            new AwardOptionInternal("Yuzuki - Celebratory Student", "021003", [CommunityAwardCategory.CostumeYuzuki, CommunityAwardCategory.CostumeCelebratory]),
-            new AwardOptionInternal("Yuzuki - Abyssal Student", "021006", [CommunityAwardCategory.CostumeYuzuki, CommunityAwardCategory.CostumeAbyssal]),
-            new AwardOptionInternal("Yuzuki - Reborn Reject", "021002", [CommunityAwardCategory.CostumeYuzuki, CommunityAwardCategory.CostumeEx]),
-            new AwardOptionInternal("10H - Sentinel Savior", "048001", [CommunityAwardCategory.Costume10H]),
-            new AwardOptionInternal("10H - Abstract Savior", "048003", [CommunityAwardCategory.Costume10H, CommunityAwardCategory.CostumeAbstract]),
-            new AwardOptionInternal("10H - Reborn Warden", "048004", [CommunityAwardCategory.Costume10H, CommunityAwardCategory.CostumeEx])
+            new AwardOptionInternal("2B - Praying Battler", "001001", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("2B - Shattered Battler", "001004", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("2B - Divergent Battler", "001002", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("2P - Mock Machine", "001003", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("2B - Alternate Battler", "001005", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("9S - Isolated Scanner", "002001", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("9S - Divergent Scanner", "002002", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("A2 - Vengeful Attacker", "003001", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("A2 - Divergent Attacker", "003002", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("The World-Ender - Soulful Lad", "016001", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("The World-Ender - Divergent Lad", "016002", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("The World-Ender - Alternate Lad", "016003", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("Emil - Puzzling Oddity", "017001", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("Emil - Divergent Oddity", "017002", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("Kainé - The Aerie Warrior", "018001", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("Kainé - Divergent Warrior", "018002", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("Zero - Progenitor Sister", "031001", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("Zero - Divergent Sister", "031002", [AwardCategory.CostumeDrakeNier]),
+            new AwardOptionInternal("Joker - Caged Rebel", "044001", [AwardCategory.CostumePersona]),
+            new AwardOptionInternal("Queen - Virtuous Priestess", "045001", [AwardCategory.CostumePersona]),
+            new AwardOptionInternal("Fox - Insightful Emperor", "046001", [AwardCategory.CostumePersona]),
+            new AwardOptionInternal("Crow - Scheming Justice", "047001", [AwardCategory.CostumePersona]),
+            new AwardOptionInternal("Rion - Sickly Exile", "008001", [AwardCategory.CostumeRion]),
+            new AwardOptionInternal("Rion - Dissenting Exile", "008003", [AwardCategory.CostumeRion]),
+            new AwardOptionInternal("Rion - Guardian Exile", "008010", [AwardCategory.CostumeRion]),
+            new AwardOptionInternal("Rion - Abstract Exile", "008005", [AwardCategory.CostumeRion, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Rion - Mechanical Exile", "008002", [AwardCategory.CostumeRion, AwardCategory.CostumeMechanical]),
+            new AwardOptionInternal("Rion - Summer Exile", "008009", [AwardCategory.CostumeRion, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("Rion - Yuletide Exile", "008012", [AwardCategory.CostumeRion, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Rion - New Year's Exile", "008006", [AwardCategory.CostumeRion, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Rion - Celebratory Exile", "008013", [AwardCategory.CostumeRion, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Rion - Festive Exile", "008019", [AwardCategory.CostumeRion, AwardCategory.CostumeFestive]),
+            new AwardOptionInternal("Rion - Shadowbound Exile", "008014", [AwardCategory.CostumeRion, AwardCategory.CostumeShadowbound]),
+            new AwardOptionInternal("Rion - Abyssal Exile", "008007", [AwardCategory.CostumeRion, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Rion - Phantasmal Exile", "008011", [AwardCategory.CostumeFinalFantasy, AwardCategory.CostumeRion]),
+            new AwardOptionInternal("Rion - Oathbound Exile", "008018", [AwardCategory.CostumeDragonQuest, AwardCategory.CostumeRion]),
+            new AwardOptionInternal("Rion - Reborn Revolutionary", "008004", [AwardCategory.CostumeRion, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Rion - Frozen-Heart Revolutionary", "008008", [AwardCategory.CostumeRion, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("Dimos - Departed Gunman", "007001", [AwardCategory.CostumeDimos]),
+            new AwardOptionInternal("Dimos - Dissenting Gunman", "007003", [AwardCategory.CostumeDimos]),
+            new AwardOptionInternal("Dimos - Guardian Gunman", "007005", [AwardCategory.CostumeDimos]),
+            new AwardOptionInternal("Dimos - False Guardian Gunman", "007009", [AwardCategory.CostumeDimos]),
+            new AwardOptionInternal("Dimos - Abstract Gunman", "007002", [AwardCategory.CostumeDimos, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Dimos - Bloody Gunman", "007006", [AwardCategory.CostumeDimos, AwardCategory.CostumeBloody]),
+            new AwardOptionInternal("Dimos - Bloodless Gunman", "007013", [AwardCategory.CostumeDimos, AwardCategory.CostumeBloodless]),
+            new AwardOptionInternal("Dimos - Fractured Gunman", "007008", [AwardCategory.CostumeDimos, AwardCategory.CostumeFractured]),
+            new AwardOptionInternal("Dimos - Summer Gunman", "007015", [AwardCategory.CostumeDimos, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("Dimos - New Year's Gunman", "007016", [AwardCategory.CostumeDimos, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Dimos - Celebratory Gunman", "007010", [AwardCategory.CostumeDimos, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Dimos - Abyssal Gunman", "007012", [AwardCategory.CostumeDimos, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Dimos - Reborn Automaton", "007004", [AwardCategory.CostumeDimos, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Dimos - Frozen-Heart Automaton", "007007", [AwardCategory.CostumeDimos, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("Gayle - Wounded Hunter", "009001", [AwardCategory.CostumeGayle]),
+            new AwardOptionInternal("Gayle - Dissenting Hunter", "009003", [AwardCategory.CostumeGayle]),
+            new AwardOptionInternal("Gayle - Guardian Hunter", "009005", [AwardCategory.CostumeGayle]),
+            new AwardOptionInternal("Gayle - Abstract Hunter", "009002", [AwardCategory.CostumeGayle, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Gayle - Bloody Hunter", "009006", [AwardCategory.CostumeGayle, AwardCategory.CostumeBloody]),
+            new AwardOptionInternal("Gayle - Fractured Hunter", "009010", [AwardCategory.CostumeGayle, AwardCategory.CostumeFractured]),
+            new AwardOptionInternal("Gayle - Mechanical Hunter", "009016", [AwardCategory.CostumeGayle, AwardCategory.CostumeMechanical]),
+            new AwardOptionInternal("Gayle - Summer Hunter", "009011", [AwardCategory.CostumeGayle, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("Gayle - Yuletide Hunter", "009013", [AwardCategory.CostumeGayle, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Gayle - New Year's Hunter", "009007", [AwardCategory.CostumeGayle, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Gayle - Celebratory Hunter", "009009", [AwardCategory.CostumeGayle, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Gayle - Festive Hunter", "009015", [AwardCategory.CostumeGayle, AwardCategory.CostumeFestive]),
+            new AwardOptionInternal("Gayle - Abyssal Hunter", "009012", [AwardCategory.CostumeGayle, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Gayle - Reborn Contractor", "009004", [AwardCategory.CostumeGayle, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Gayle - Frozen-Heart Contractor", "009008", [AwardCategory.CostumeGayle, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("Akeha - Twilight Assassian", "015001", [AwardCategory.CostumeAkeha]),
+            new AwardOptionInternal("Akeha - Dissenting Assassian", "015003", [AwardCategory.CostumeAkeha]),
+            new AwardOptionInternal("Akeha - Guardian Assassian", "015011", [AwardCategory.CostumeAkeha]),
+            new AwardOptionInternal("Akeha - False Guardian Assassian", "015013", [AwardCategory.CostumeAkeha]),
+            new AwardOptionInternal("Akeha - Abstract Assassian", "015002", [AwardCategory.CostumeAkeha, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Akeha - Bloody Assassian", "015005", [AwardCategory.CostumeAkeha, AwardCategory.CostumeBloody]),
+            new AwardOptionInternal("Akeha - Bloodless Assassian", "015010", [AwardCategory.CostumeAkeha, AwardCategory.CostumeBloodless]),
+            new AwardOptionInternal("Akeha - Fractured Assassian", "015014", [AwardCategory.CostumeAkeha, AwardCategory.CostumeFractured]),
+            new AwardOptionInternal("Akeha - Mechanical Assassian", "015012", [AwardCategory.CostumeAkeha, AwardCategory.CostumeMechanical]),
+            new AwardOptionInternal("Akeha - Summer Assassian", "015009", [AwardCategory.CostumeAkeha, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("Akeha - Yuletide Assassian", "015007", [AwardCategory.CostumeAkeha, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Akeha - New Year's Assassian", "015018", [AwardCategory.CostumeAkeha, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Akeha - Celebratory Assassian", "015015", [AwardCategory.CostumeAkeha, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Akeha - Festive Assassian", "015021", [AwardCategory.CostumeAkeha, AwardCategory.CostumeFestive]),
+            new AwardOptionInternal("Akeha - Abyssal Assassian", "015016", [AwardCategory.CostumeAkeha, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Akeha - Divine Assassian", "015020", [AwardCategory.CostumeAkeha, AwardCategory.CostumeDivine]),
+            new AwardOptionInternal("Akeha - Intoner Assassian", "015006", [AwardCategory.CostumeAkeha]),
+            new AwardOptionInternal("Akeha - Fabled Assassian", "015017", [AwardCategory.CostumeSinoalice, AwardCategory.CostumeAkeha]),
+            new AwardOptionInternal("Akeha - Reborn Swordmaster", "015004", [AwardCategory.CostumeAkeha, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Akeha - Frozen-Heart Swordmaster", "015008", [AwardCategory.CostumeAkeha, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("Argo - Apex Traveler", "006001", [AwardCategory.CostumeArgo]),
+            new AwardOptionInternal("Argo - Dissenting Traveler", "006003", [AwardCategory.CostumeArgo]),
+            new AwardOptionInternal("Argo - Guardian Traveler", "006005", [AwardCategory.CostumeArgo]),
+            new AwardOptionInternal("Argo - Abstract Traveler", "006006", [AwardCategory.CostumeArgo, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Argo - Bloody Traveler", "006012", [AwardCategory.CostumeArgo, AwardCategory.CostumeBloody]),
+            new AwardOptionInternal("Argo - Fractured Traveler", "006010", [AwardCategory.CostumeArgo, AwardCategory.CostumeFractured]),
+            new AwardOptionInternal("Argo - Summer Traveler", "006008", [AwardCategory.CostumeArgo, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("Argo - Yuletide Traveler", "006013", [AwardCategory.CostumeArgo, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Argo - Celebratory Traveler", "006009", [AwardCategory.CostumeArgo, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Argo - Shadowbound Traveler", "006014", [AwardCategory.CostumeArgo, AwardCategory.CostumeShadowbound]),
+            new AwardOptionInternal("Argo - Patriotic Traveler", "006002", [AwardCategory.CostumeArgo]),
+            new AwardOptionInternal("Argo - Reborn Adventurer", "006004", [AwardCategory.CostumeArgo, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Argo - Frozen-Heart Adventurer", "006007", [AwardCategory.CostumeArgo, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("Levania - Human Monster", "004001", [AwardCategory.CostumeLevania]),
+            new AwardOptionInternal("Levania - Dark Monster", "005001", [AwardCategory.CostumeLevania]),
+            new AwardOptionInternal("Levania - Guardian Monster", "005007", [AwardCategory.CostumeLevania]),
+            new AwardOptionInternal("Levania - Abstract Monster", "005002", [AwardCategory.CostumeLevania, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Levania - Bloody Monster", "005008", [AwardCategory.CostumeLevania, AwardCategory.CostumeBloody]),
+            new AwardOptionInternal("Levania - Bloodless Monster", "005005", [AwardCategory.CostumeLevania, AwardCategory.CostumeBloodless]),
+            new AwardOptionInternal("Levania - Lacrima Monster", "005010", [AwardCategory.CostumeLevania, AwardCategory.CostumeLacrima]),
+            new AwardOptionInternal("Levania - Yuletide Monster", "005006", [AwardCategory.CostumeLevania, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Levania - Celebratory Monster", "005011", [AwardCategory.CostumeLevania, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Levania - Festive Monster", "005013", [AwardCategory.CostumeLevania, AwardCategory.CostumeFestive]),
+            new AwardOptionInternal("Levania - Abyssal Monster", "005009", [AwardCategory.CostumeLevania, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Levania - Reborn Beast", "005003", [AwardCategory.CostumeLevania, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Levania - Frozen-Heart Beast", "005004", [AwardCategory.CostumeLevania, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("063y - Stalwart Prisoner", "011001", [AwardCategory.Costume063y]),
+            new AwardOptionInternal("063y - Dissenting Prisoner", "011003", [AwardCategory.Costume063y]),
+            new AwardOptionInternal("063y - Guardian Prisoner", "011009", [AwardCategory.Costume063y]),
+            new AwardOptionInternal("063y - Abstract Prisoner", "011002", [AwardCategory.Costume063y, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("063y - Fractured Prisoner", "011005", [AwardCategory.Costume063y, AwardCategory.CostumeFractured]),
+            new AwardOptionInternal("063y - Summer Prisoner", "011007", [AwardCategory.Costume063y, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("063y - Yuletide Prisoner", "011015", [AwardCategory.Costume063y, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("063y - New Year's Prisoner", "011010", [AwardCategory.Costume063y, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("063y - Celebratory Prisoner", "011012", [AwardCategory.Costume063y, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("063y - Abyssal Prisoner", "011011", [AwardCategory.Costume063y, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("063y - Divine Prisoner", "011014", [AwardCategory.Costume063y, AwardCategory.CostumeDivine]),
+            new AwardOptionInternal("063y - Phantasmal Prisoner", "011008", [AwardCategory.CostumeFinalFantasy, AwardCategory.Costume063y]),
+            new AwardOptionInternal("063y - Reborn Convict", "011004", [AwardCategory.Costume063y, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("063y - Frozen-Heart Convict", "011006", [AwardCategory.Costume063y, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("F66x - Distressed Captive", "012001", [AwardCategory.CostumeF66x]),
+            new AwardOptionInternal("F66x - Dissenting Captive", "012003", [AwardCategory.CostumeF66x]),
+            new AwardOptionInternal("F66x - Guardian Captive", "012007", [AwardCategory.CostumeF66x]),
+            new AwardOptionInternal("F66x - Abstract Captive", "012002", [AwardCategory.CostumeF66x, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("F66x - Bloody Captive", "012010", [AwardCategory.CostumeF66x, AwardCategory.CostumeBloody]),
+            new AwardOptionInternal("F66x - Bloodless Captive", "012011", [AwardCategory.CostumeF66x, AwardCategory.CostumeBloodless]),
+            new AwardOptionInternal("F66x - Lacrima Captive", "012005", [AwardCategory.CostumeF66x, AwardCategory.CostumeLacrima]),
+            new AwardOptionInternal("F66x - Summer Captive", "012008", [AwardCategory.CostumeF66x, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("F66x - Celebratory Captive", "012012", [AwardCategory.CostumeF66x, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("F66x - Abyssal Captive", "012009", [AwardCategory.CostumeF66x, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("F66x - Reborn Inmate", "012004", [AwardCategory.CostumeF66x, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("F66x - Frozen-Heart Inmate", "012006", [AwardCategory.CostumeF66x, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("Lars - Spiteful Solder", "013001", [AwardCategory.CostumeLars]),
+            new AwardOptionInternal("Lars - Dissenting Solder", "013003", [AwardCategory.CostumeLars]),
+            new AwardOptionInternal("Lars - Guardian Solder", "013008", [AwardCategory.CostumeLars]),
+            new AwardOptionInternal("Lars - Abstract Solder", "013004", [AwardCategory.CostumeLars, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Lars - Bloody Solder", "013010", [AwardCategory.CostumeLars, AwardCategory.CostumeBloody]),
+            new AwardOptionInternal("Lars - Lacrima Solder", "013007", [AwardCategory.CostumeLars, AwardCategory.CostumeLacrima]),
+            new AwardOptionInternal("Lars - Fractured Solder", "013005", [AwardCategory.CostumeLars, AwardCategory.CostumeFractured]),
+            new AwardOptionInternal("Lars - Yuletide Solder", "013012", [AwardCategory.CostumeLars, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Lars - Celebratory Solder", "013009", [AwardCategory.CostumeLars, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Lars - Abyssal Solder", "013011", [AwardCategory.CostumeLars, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Lars - Phantasmal Solder", "013014", [AwardCategory.CostumeFinalFantasy, AwardCategory.CostumeLars]),
+            new AwardOptionInternal("Lars - Reborn Truant", "013002", [AwardCategory.CostumeLars, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Lars - Frozen-Heart Truant", "013006", [AwardCategory.CostumeLars, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("Griff - Harmonioud Captain", "014001", [AwardCategory.CostumeGriff]),
+            new AwardOptionInternal("Griff - Dissenting Captain", "014003", [AwardCategory.CostumeGriff]),
+            new AwardOptionInternal("Griff - Guardian Captain", "014005", [AwardCategory.CostumeGriff]),
+            new AwardOptionInternal("Griff - False Guardian Captain", "014014", [AwardCategory.CostumeGriff]),
+            new AwardOptionInternal("Griff - Abstract Captain", "014004", [AwardCategory.CostumeGriff, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Griff - Bloody Captain", "014010", [AwardCategory.CostumeGriff, AwardCategory.CostumeBloody]),
+            new AwardOptionInternal("Griff - Lacrima Captain", "014008", [AwardCategory.CostumeGriff, AwardCategory.CostumeLacrima]),
+            new AwardOptionInternal("Griff - Fractured Captain", "014009", [AwardCategory.CostumeGriff, AwardCategory.CostumeFractured]),
+            new AwardOptionInternal("Griff - Mechanical Captain", "014016", [AwardCategory.CostumeGriff, AwardCategory.CostumeMechanical]),
+            new AwardOptionInternal("Griff - Yuletide Captain", "014011", [AwardCategory.CostumeGriff, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Griff - New Year's Captain", "014017", [AwardCategory.CostumeGriff, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Griff - Celebratory Captain", "014007", [AwardCategory.CostumeGriff, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Griff - Festive Captain", "014015", [AwardCategory.CostumeGriff, AwardCategory.CostumeFestive]),
+            new AwardOptionInternal("Griff - Abyssal Captain", "014013", [AwardCategory.CostumeGriff, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Griff - Reborn Has-Been", "014002", [AwardCategory.CostumeGriff, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Griff - Frozen-Heart Has-Been", "014006", [AwardCategory.CostumeGriff, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("Noelle - Hidden Weapon", "010001", [AwardCategory.CostumeNoelle]),
+            new AwardOptionInternal("Noelle - Dissenting Weapon", "010003", [AwardCategory.CostumeNoelle]),
+            new AwardOptionInternal("Noelle - Guardian Weapon", "010005", [AwardCategory.CostumeNoelle]),
+            new AwardOptionInternal("Noelle - Abstract Weapon", "010002", [AwardCategory.CostumeNoelle, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Noelle - Bloody Weapon", "010011", [AwardCategory.CostumeNoelle, AwardCategory.CostumeBloody]),
+            new AwardOptionInternal("Noelle - Bloodless Weapon", "010009", [AwardCategory.CostumeNoelle, AwardCategory.CostumeBloodless]),
+            new AwardOptionInternal("Noelle - Fractured Weapon", "010012", [AwardCategory.CostumeNoelle, AwardCategory.CostumeFractured]),
+            new AwardOptionInternal("Noelle - Mechanical Weapon", "010018", [AwardCategory.CostumeNoelle, AwardCategory.CostumeMechanical]),
+            new AwardOptionInternal("Noelle - Summer Weapon", "010016", [AwardCategory.CostumeNoelle, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("Noelle - Yuletide Weapon", "010019", [AwardCategory.CostumeNoelle, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Noelle - New Year's Weapon", "010010", [AwardCategory.CostumeNoelle, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Noelle - Celebratory Weapon", "010007", [AwardCategory.CostumeNoelle, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Noelle - Festive Weapon", "010017", [AwardCategory.CostumeNoelle, AwardCategory.CostumeFestive]),
+            new AwardOptionInternal("Noelle - Phantasmal Weapon", "010008", [AwardCategory.CostumeFinalFantasy, AwardCategory.CostumeNoelle]),
+            new AwardOptionInternal("Noelle - Fabled Weapon", "010014", [AwardCategory.CostumeSinoalice, AwardCategory.CostumeNoelle]),
+            new AwardOptionInternal("Noelle - Abyssal Weapon", "010013", [AwardCategory.CostumeNoelle, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Noelle - Reborn Warlady", "010004", [AwardCategory.CostumeNoelle, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Noelle - Frozen-Heart Warlady", "010006", [AwardCategory.CostumeNoelle, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("Fio - The Girl of Light", "019001", [AwardCategory.CostumeFio]),
+            new AwardOptionInternal("Fio - Dissenting Girl", "019004", [AwardCategory.CostumeFio]),
+            new AwardOptionInternal("Fio - Guardian Girl", "019006", [AwardCategory.CostumeFio]),
+            new AwardOptionInternal("Fio - Abstract Girl", "019005", [AwardCategory.CostumeFio, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Fio - Lacrima Girl", "019016", [AwardCategory.CostumeFio, AwardCategory.CostumeLacrima]),
+            new AwardOptionInternal("Fio - Mechanical Girl", "019003", [AwardCategory.CostumeFio, AwardCategory.CostumeMechanical]),
+            new AwardOptionInternal("Fio - Summer Girl", "019010", [AwardCategory.CostumeFio, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("Fio - Yuletide Girl", "019015", [AwardCategory.CostumeFio, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Fio - New Year's Girl", "019011", [AwardCategory.CostumeFio, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Fio - Celebratory Girl", "019012", [AwardCategory.CostumeFio, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Fio - Festive Girl", "019018", [AwardCategory.CostumeFio, AwardCategory.CostumeFestive]),
+            new AwardOptionInternal("Fio - Abyssal Girl", "019008", [AwardCategory.CostumeFio, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Fio - Divine Girl", "019019", [AwardCategory.CostumeFio, AwardCategory.CostumeDivine]),
+            new AwardOptionInternal("Fio - Simulacrum Girl", "019013", [AwardCategory.CostumeFio]),
+            new AwardOptionInternal("Fio - Intoner Girl", "019007", [AwardCategory.CostumeFio]),
+            new AwardOptionInternal("Fio - Reborn Princess", "019002", [AwardCategory.CostumeFio, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Fio - Frozen-Heart Princess", "019009", [AwardCategory.CostumeFio, AwardCategory.CostumeFrozenHeart]),
+            new AwardOptionInternal("Saryu - Avowed Witch", "022001", [AwardCategory.CostumeSaryu]),
+            new AwardOptionInternal("Saryu - Guardian Witch", "022007", [AwardCategory.CostumeSaryu]),
+            new AwardOptionInternal("Saryu - Abstract Witch", "022003", [AwardCategory.CostumeSaryu, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Saryu - Bloody Witch", "022005", [AwardCategory.CostumeSaryu, AwardCategory.CostumeBloody]),
+            new AwardOptionInternal("Saryu - Summer Witch", "022006", [AwardCategory.CostumeSaryu, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("Saryu - Yuletide Witch", "022009", [AwardCategory.CostumeSaryu, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Saryu - Celebratory Witch", "022004", [AwardCategory.CostumeSaryu, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Saryu - Festive Witch", "022012", [AwardCategory.CostumeSaryu, AwardCategory.CostumeFestive]),
+            new AwardOptionInternal("Saryu - Abyssal Witch", "022011", [AwardCategory.CostumeSaryu, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Saryu - Fabled Witch", "022008", [AwardCategory.CostumeSinoalice, AwardCategory.CostumeSaryu]),
+            new AwardOptionInternal("Saryu - Phantasmal Witch", "022010", [AwardCategory.CostumeFinalFantasy, AwardCategory.CostumeSaryu]),
+            new AwardOptionInternal("Saryu - Reborn Sorceress", "022002", [AwardCategory.CostumeSaryu, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Priyet - Verboten Werebeast", "023001", [AwardCategory.CostumePriyet]),
+            new AwardOptionInternal("Priyet - Guardian Werebeast", "023006", [AwardCategory.CostumePriyet]),
+            new AwardOptionInternal("Priyet - Abstract Werebeast", "023003", [AwardCategory.CostumePriyet, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Priyet - Yuletide Werebeast", "023005", [AwardCategory.CostumePriyet, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Priyet - Celebratory Werebeast", "023004", [AwardCategory.CostumePriyet, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Priyet - Shadowbound Werebeast", "023007", [AwardCategory.CostumePriyet, AwardCategory.CostumeShadowbound]),
+            new AwardOptionInternal("Priyet - Abyssal Werebeast", "023008", [AwardCategory.CostumePriyet, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Priyet - Reborn Fiend", "023002", [AwardCategory.CostumePriyet, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Marie - Praying Songstress", "024001", [AwardCategory.CostumeMarie]),
+            new AwardOptionInternal("Marie - Guardian Songstress", "024007", [AwardCategory.CostumeMarie]),
+            new AwardOptionInternal("Marie - Abstract Songstress", "024003", [AwardCategory.CostumeMarie, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Marie - Fractured Songstress", "024006", [AwardCategory.CostumeMarie, AwardCategory.CostumeFractured]),
+            new AwardOptionInternal("Marie - Summer Songstress", "024008", [AwardCategory.CostumeMarie, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("Marie - Yuletide Songstress", "024011", [AwardCategory.CostumeMarie, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Marie - New Year's Songstress", "024005", [AwardCategory.CostumeMarie, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Marie - Celebratory Songstress", "024004", [AwardCategory.CostumeMarie, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Marie - Abyssal Songstress", "024009", [AwardCategory.CostumeMarie, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Marie - Oathbound Songstress", "024010", [AwardCategory.CostumeDragonQuest, AwardCategory.CostumeMarie]),
+            new AwardOptionInternal("Marie - Reborn Pillar", "024002", [AwardCategory.CostumeMarie, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Yurie - Obsessed Ruler", "025001", [AwardCategory.CostumeYurie]),
+            new AwardOptionInternal("Yurie - Guardian Ruler", "025005", [AwardCategory.CostumeYurie]),
+            new AwardOptionInternal("Yurie - Abstract Ruler", "025004", [AwardCategory.CostumeYurie, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Yurie - Summer Ruler", "025008", [AwardCategory.CostumeYurie, AwardCategory.CostumeSummer]),
+            new AwardOptionInternal("Yurie - Yuletide Ruler", "025010", [AwardCategory.CostumeYurie, AwardCategory.CostumeHolyNight]),
+            new AwardOptionInternal("Yurie - New Year's Ruler", "025006", [AwardCategory.CostumeYurie, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Yurie - Celebratory Ruler", "025003", [AwardCategory.CostumeYurie, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Yurie - Festive Ruler", "025011", [AwardCategory.CostumeYurie, AwardCategory.CostumeFestive]),
+            new AwardOptionInternal("Yurie - Abyssal Ruler", "025007", [AwardCategory.CostumeYurie, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Yurie - Divine Ruler", "025009", [AwardCategory.CostumeYurie, AwardCategory.CostumeDivine]),
+            new AwardOptionInternal("Yurie - Reborn Leader", "025002", [AwardCategory.CostumeYurie, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Yudil - Pilfering Boor", "027001", [AwardCategory.CostumeYudil]),
+            new AwardOptionInternal("Yudil - Guardian Boor", "027005", [AwardCategory.CostumeYudil]),
+            new AwardOptionInternal("Yudil - Abstract Boor", "027003", [AwardCategory.CostumeYudil, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Yudil - New Year's Boor", "027009", [AwardCategory.CostumeYudil, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Yudil - Celebratory Boor", "027004", [AwardCategory.CostumeYudil, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Yudil - Abyssal Boor", "027007", [AwardCategory.CostumeYudil, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Yudil - Divine Boor", "027008", [AwardCategory.CostumeYudil, AwardCategory.CostumeDivine]),
+            new AwardOptionInternal("Yudil - Phantasmal Boor", "027006", [AwardCategory.CostumeFinalFantasy, AwardCategory.CostumeYudil]),
+            new AwardOptionInternal("Yudil - Reborn Usurper", "027002", [AwardCategory.CostumeYudil, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Sarafa - Chained Belle", "026001", [AwardCategory.CostumeSarafa]),
+            new AwardOptionInternal("Sarafa - Guardian Belle", "026004", [AwardCategory.CostumeSarafa]),
+            new AwardOptionInternal("Sarafa - Abstract Belle", "026005", [AwardCategory.CostumeSarafa, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Sarafa - New Year's Belle", "026008", [AwardCategory.CostumeSarafa, AwardCategory.CostumeNewYears]),
+            new AwardOptionInternal("Sarafa - Celebratory Belle", "026003", [AwardCategory.CostumeSarafa, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Sarafa - Abyssal Belle", "026006", [AwardCategory.CostumeSarafa, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Sarafa - Shadowbound Belle", "026007", [AwardCategory.CostumeSarafa, AwardCategory.CostumeShadowbound]),
+            new AwardOptionInternal("Sarafa - Oathbound Belle", "026009", [AwardCategory.CostumeSarafa, AwardCategory.CostumeDragonQuest]),
+            new AwardOptionInternal("Sarafa - Reborn Monopolist", "026002", [AwardCategory.CostumeSarafa, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Hina - Dedicated Pupil", "020001", [AwardCategory.CostumeHina]),
+            new AwardOptionInternal("Hina - Guardian Pupil", "020007", [AwardCategory.CostumeHina]),
+            new AwardOptionInternal("Hina - Abstract Pupil", "020004", [AwardCategory.CostumeHina, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Hina - Mechanical Pupil", "020005", [AwardCategory.CostumeHina, AwardCategory.CostumeMechanical]),
+            new AwardOptionInternal("Hina - Celebratory Pupil", "020003", [AwardCategory.CostumeHina, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Hina - Abyssal Pupil", "020006", [AwardCategory.CostumeHina, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Hina - Reborn Prodigy", "049001", [AwardCategory.CostumeHina, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("Yuzuki - Devoted Student", "021001", [AwardCategory.CostumeYuzuki]),
+            new AwardOptionInternal("Yuzuki - Guardian Student", "021007", [AwardCategory.CostumeYuzuki]),
+            new AwardOptionInternal("Yuzuki - Abstract Student", "021005", [AwardCategory.CostumeYuzuki, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("Yuzuki - Mechanical Student", "021004", [AwardCategory.CostumeYuzuki, AwardCategory.CostumeMechanical]),
+            new AwardOptionInternal("Yuzuki - Celebratory Student", "021003", [AwardCategory.CostumeYuzuki, AwardCategory.CostumeCelebratory]),
+            new AwardOptionInternal("Yuzuki - Abyssal Student", "021006", [AwardCategory.CostumeYuzuki, AwardCategory.CostumeAbyssal]),
+            new AwardOptionInternal("Yuzuki - Reborn Reject", "021002", [AwardCategory.CostumeYuzuki, AwardCategory.CostumeEx]),
+            new AwardOptionInternal("10H - Sentinel Savior", "048001", [AwardCategory.Costume10H]),
+            new AwardOptionInternal("10H - Abstract Savior", "048003", [AwardCategory.Costume10H, AwardCategory.CostumeAbstract]),
+            new AwardOptionInternal("10H - Reborn Warden", "048004", [AwardCategory.Costume10H, AwardCategory.CostumeEx])
         ];
+    }
+
+    private static Award GenerateMamaAward(AwardCategory awardCategory, List<UserData> userData)
+    {
+        var allRankings = GetAllMamaAwardRankings(awardCategory, userData);
+        var topThree = allRankings.GroupBy(x => x.Value).Take(5).Select(x => x.Key).ToArray();
+        var options = allRankings.Where(x => topThree.Contains(x.Value))
+            .GroupBy(x => x.Value)
+            .Select(x => new AwardOption { Name = string.Join(", ", x.Select(y => y.Name)) })
+            .ToList();
+
+        return new Award
+        {
+            Category = awardCategory,
+            OptionList = options,
+            Winners = topThree
+        };
+    }
+
+    private static ImmutableList<MamaAwardUser> GetAllMamaAwardRankings(AwardCategory awardCategory, List<UserData> userData)
+    {
+        IEnumerable<MamaAwardUser> rankings = awardCategory switch
+        {
+            AwardCategory.DaysLoggedInJp => userData
+                .Where(x => x.Region == SystemRegion.JP && x.TotalLoginCount > 100)
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.TotalLoginCount)),
+            AwardCategory.DaysLoggedInGl => userData
+                .Where(x => x.Region == SystemRegion.GL && x.TotalLoginCount > 100)
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.TotalLoginCount)),
+            AwardCategory.MaxForce => userData
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.MaxForce ?? 0)),
+            AwardCategory.CostumesCollected => userData
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.CostumeCount)),
+            AwardCategory.WeaponsCollected => userData
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.WeaponCount)),
+            AwardCategory.AwakeningCount => userData
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.AwakeningCount)),
+            AwardCategory.AvgArenaRank => userData
+                .Where(x => x.ArenaRankings.Count > 0)
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, (int)Math.Round(x.ArenaRankings.Average(y => y.Rank)))),
+            AwardCategory.AvgSubjRank => userData
+                .Where(x => x.SubjugationRankings.Count > 0)
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, (int)Math.Round(x.SubjugationRankings.Average(y => y.Score)))),
+            AwardCategory.ShootingNormalScore => userData
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.ExplorationRankings.Find(y => y.ExplorationType == ExplorationType.Shooting && y.DifficultyType == ExplorationDifficultyType.Normal)?.Score ?? 0)),
+            AwardCategory.ShootingHardScore => userData
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.ExplorationRankings.Find(y => y.ExplorationType == ExplorationType.Shooting && y.DifficultyType == ExplorationDifficultyType.Hard)?.Score ?? 0)),
+            AwardCategory.FlyingMamaNormalScore => userData
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.ExplorationRankings.Find(y => y.ExplorationType == ExplorationType.FlyingMama && y.DifficultyType == ExplorationDifficultyType.Normal)?.Score ?? 0)),
+            AwardCategory.FlyingMamaHardScore => userData
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.ExplorationRankings.Find(y => y.ExplorationType == ExplorationType.FlyingMama && y.DifficultyType == ExplorationDifficultyType.Hard)?.Score ?? 0)),
+            _ => []
+        };
+
+        rankings = rankings.Where(x => x.Value > 0);
+
+        return awardCategory switch
+        {
+            AwardCategory.AvgArenaRank => [.. rankings.OrderBy(x => x.Value).ThenBy(x => x.Name)],
+            _ => [.. rankings.OrderByDescending(x => x.Value).ThenBy(x => x.Name)]
+        };
     }
 
     private async Task SetWinnersAsync(List<Award> awards)
@@ -711,9 +801,11 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
             var groupedCategoryVotes = categoryVotes.GroupBy(x => x).Select(x => new { Vote = x.Key, Count = x.Count() });
             var maxCount = groupedCategoryVotes.Max(x => x.Count);
 
-            award.Winners = groupedCategoryVotes.Where(x => x.Count == maxCount).Select(x => x.Vote).ToArray();
+            award.Winners = groupedCategoryVotes.Where(x => x.Count == maxCount).Select(x => (long)x.Vote).ToArray();
         }
     }
 }
 
-public record AwardOptionInternal(string Name, string ImagePath, List<CommunityAwardCategory> AwardCategories);
+public record AwardOptionInternal(string Name, string ImagePath, List<AwardCategory> AwardCategories);
+
+internal record MamaAwardUser(long Id, string Name, long Value);

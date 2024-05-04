@@ -11,7 +11,7 @@ public class UserSubmissionDto
 
 public class UserVoteDto
 {
-    public CommunityAwardCategory CommunityAwardCategory { get; set; }
+    public AwardCategory CommunityAwardCategory { get; set; }
 
     public int Selection { get; set; }
 }

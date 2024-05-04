@@ -13,7 +13,7 @@ public class UserSubmission
 
 public class UserVote
 {
-    public required CommunityAwardCategory CommunityAwardCategory { get; set; }
+    public required AwardCategory CommunityAwardCategory { get; set; }
 
     public required int Selection { get; set; }
 }

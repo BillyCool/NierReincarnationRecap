@@ -6,5 +6,5 @@ public class UserPreferences
 {
     public Guid Token { get; set; } = Guid.NewGuid();
 
-    public Dictionary<CommunityAwardCategory, int> Votes { get; set; } = [];
+    public Dictionary<AwardCategory, int> Votes { get; set; } = [];
 }

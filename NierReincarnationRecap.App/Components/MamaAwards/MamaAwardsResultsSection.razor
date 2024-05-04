@@ -1,0 +1,11 @@
+﻿
+@if (Awards.Count > 0)
+{
+    <MudGrid>
+        @foreach (var award in Awards)
+        {
+            <MamaAwardsResultsCard Award="award" AwardIndex="@Awards.IndexOf(award)" AwardCount="@Awards.Count" />
+        }
+    </MudGrid>
+    <br />
+}

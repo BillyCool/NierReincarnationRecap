@@ -2,8 +2,10 @@
 
 namespace NierReincarnationRecap.Model.Enums;
 
-public enum CommunityAwardCategory
+public enum AwardCategory
 {
+    #region Community Awards
+
     [Display(Name = "Favorite Arc")]
     StoryArc,
 
@@ -161,5 +163,47 @@ public enum CommunityAwardCategory
     CostumePersona,
 
     [Display(Name = "Favorite Dragon Quest Costume")]
-    CostumeDragonQuest
+    CostumeDragonQuest,
+
+    #endregion Community Awards
+
+    #region Mama Awards
+
+    [Display(Name = "Most Days Logged In (JP)")]
+    DaysLoggedInJp,
+
+    [Display(Name = "Most Days Logged In (GL)")]
+    DaysLoggedInGl,
+
+    [Display(Name = "Highest Force")]
+    MaxForce,
+
+    [Display(Name = "Most Costumes Collected")]
+    CostumesCollected,
+
+    [Display(Name = "Most Weapons Collected")]
+    WeaponsCollected,
+
+    [Display(Name = "Biggest Whale 🐳")]
+    AwakeningCount,
+
+    [Display(Name = "Highest Average Arena Rank")]
+    AvgArenaRank,
+
+    [Display(Name = "Highest Average Subjugation Rank")]
+    AvgSubjRank,
+
+    [Display(Name = "Highest Shooting Normal Score")]
+    ShootingNormalScore,
+
+    [Display(Name = "Highest Shooting Hard Score")]
+    ShootingHardScore,
+
+    [Display(Name = "Highest Flying Mama Normal Score")]
+    FlyingMamaNormalScore,
+
+    [Display(Name = "Highest Flying Mama Hard Score")]
+    FlyingMamaHardScore
+
+    #endregion Mama Awards
 }

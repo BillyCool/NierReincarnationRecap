@@ -22,7 +22,7 @@ public partial class CommunityAwardsSub
 
     private List<Award>? Awards;
 
-    private List<CommunityAwardCategory> AwardCategories => Awards?.Select(x => x.Category).ToList() ?? [];
+    private List<AwardCategory> AwardCategories => Awards?.Select(x => x.Category).ToList() ?? [];
 
     private bool IsVotingEnabled => Awards?.Any(x => x.Winners is null) == true;
 

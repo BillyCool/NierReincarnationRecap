@@ -1,0 +1,38 @@
+﻿@using NierReincarnationRecap.App.Components.Awards
+@using NierReincarnationRecap.App.Components.UserRecap
+@using NierReincarnationRecap.Model.Enums
+@using NierReincarnationRecap.Model.ViewModel
+
+<MudItem xs="12">
+    <MudCard Class="border-double border-4 " Outlined Square Style="border-color: #b2b0a1; background: radial-gradient(circle, #5f574d, #38322f)">
+        <MudCardHeader Class="justify-center">
+            <MudText Typo="Typo.subtitle2">@(AwardIndex + 1 + "/" + AwardCount)</MudText>
+        </MudCardHeader>
+        <MudCardContent Class="pb-10 px-10">
+            <MudText Typo="Typo.h4" GutterBottom="true" Class="border-b-4" Align="Align.Center">@Award.Category.GetDisplayName()</MudText>
+            @for (int i = 0; i < Award.OptionList.Count; i++)
+            {
+                var headingText = Award.Category switch
+                {
+                    AwardCategory.AwakeningCount => string.Empty,
+                    AwardCategory.AvgSubjRank => Award.Winners?.ElementAtOrDefault(i).ToSubjugationToRank(),
+                    _ => Award.Winners?.ElementAtOrDefault(i).ToString("N0")
+                };
+
+                <VotingOption
+                    AwardOption="Award.OptionList[i]"
+                    AwardOptionIndex=i
+                    IsHighlited=true
+                    HeadingText=@headingText />
+            }
+        </MudCardContent>
+    </MudCard>
+</MudItem>
+
+@code {
+    [Parameter][EditorRequired] public required Award Award { get; set; }
+
+    [Parameter][EditorRequired] public required int AwardIndex { get; set; }
+
+    [Parameter][EditorRequired] public required int AwardCount { get; set; }
+}

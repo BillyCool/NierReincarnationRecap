@@ -1,4 +1,5 @@
-﻿@using NierReincarnationRecap.App.Services
+﻿@using NierReincarnationRecap.App.Components.Awards
+@using NierReincarnationRecap.App.Services
 @using NierReincarnationRecap.Model.ViewModel
 @using NierReincarnationRecap.Model.Enums
 @inject IUserPreferencesService UserPreferencesService
@@ -12,11 +13,14 @@
             <MudText Typo="Typo.h4" GutterBottom="true" Class="border-b-4" Align="Align.Center">@Award.Category.GetDisplayName()</MudText>
             @for (int i = 0; i < Award.OptionList.Count; i++)
             {
+                var isHighlighted = IsVotingEnabled ? i == SelectedOption : Award.Winners?.Contains(i) == true;
+                var headingText = isHighlighted ? (IsVotingEnabled ? "Selected" : "Winner") : default;
+
                 <VotingOption
                     AwardOption="Award.OptionList[i]"
                     AwardOptionIndex=i
-                    IsWinner="@(!IsVotingEnabled && Award.Winners?.Contains(i) == true)"
-                    IsSelected=@(IsVotingEnabled && i == SelectedOption)
+                    IsHighlited=@isHighlighted
+                    HeadingText=@headingText
                     OnOptionSelected="OptionSelected" />
             }
         </MudCardContent>
@@ -28,11 +32,11 @@
 
     [Parameter][EditorRequired] public required int AwardIndex { get; set; }
 
+    [Parameter][EditorRequired] public required int AwardCount { get; set; }
+
+    [Parameter] public required bool IsVotingEnabled { get; set; }
+
     [CascadingParameter] public UserPreferences UserPreferences { get; set; } = null!;
-
-    [CascadingParameter(Name = "AwardCount")] public int AwardCount { get; set; }
-
-    [CascadingParameter(Name = "IsVotingEnabled")] public bool IsVotingEnabled { get; set; }
 
     public int? SelectedOption { get; set; }
 

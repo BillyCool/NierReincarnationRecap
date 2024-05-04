@@ -11,11 +11,7 @@
     <MudGrid>
         @foreach (var award in Awards)
         {
-            <CascadingValue Name="AwardCount" Value="Awards.Count">
-                <CascadingValue Name="IsVotingEnabled" Value="IsVotingEnabled">
-                    <VotingCard Award="award" AwardIndex="@Awards.IndexOf(award)" />
-                </CascadingValue>
-            </CascadingValue>
+            <CommunityAwardsVotingCard Award="award" AwardIndex="@Awards.IndexOf(award)" AwardCount="@Awards.Count" IsVotingEnabled="@IsVotingEnabled" />
         }
     </MudGrid>
     <br />

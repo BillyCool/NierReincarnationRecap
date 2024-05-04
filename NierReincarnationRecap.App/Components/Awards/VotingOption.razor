@@ -12,9 +12,9 @@
                 <MudContainer Class="vote-image-container" Style="@($"background-image: url('images/vote/ch{AwardOption.ImagePath}_battle01.png');background-size: auto 100%;opacity: {(IsHighlited ? "0.3" : "0.2")};")" />
             }
             <MudCardContent Class="py-2 px-10 relative">
-                @if (IsHighlited)
+                @if (!string.IsNullOrEmpty(HeadingText))
                 {
-                    <MudText Typo="Typo.subtitle2" Class="mud-text-secondary" Style="color:#38322f">@(IsWinner ? "Winner" : "Selected")</MudText>
+                    <MudText Typo="Typo.subtitle2" Class="mud-text-secondary" Style=@(IsHighlited ? "color:#38322f" : "color:##b2b0a1")>@HeadingText</MudText>
                 }
                 <MudText Typo="Typo.h6" GutterBottom="true">
                     @AwardOption.Name
@@ -29,13 +29,11 @@
 
     [Parameter][EditorRequired] public int AwardOptionIndex { get; set; }
 
-    [Parameter] public bool IsWinner { get; set; }
+    [Parameter] public EventCallback<int> OnOptionSelected { get; set; }
 
-    [Parameter][EditorRequired] public bool IsSelected { get; set; }
+    [Parameter] public string? HeadingText { get; set; }
 
-    [Parameter][EditorRequired] public EventCallback<int> OnOptionSelected { get; set; }
-
-    public bool IsHighlited => IsWinner || IsSelected;
+    [Parameter][EditorRequired] public bool IsHighlited { get; set; }
 
     private async Task SelectOption()
     {
