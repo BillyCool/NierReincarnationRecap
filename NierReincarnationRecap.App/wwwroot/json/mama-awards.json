@@ -1,0 +1,132 @@
+﻿[
+  {
+    "category": 53,
+    "optionList": [
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "\u3042\u3059\u304B" }
+    ],
+    "winners": [ 1155, 1121, 180 ]
+  },
+  {
+    "category": 54,
+    "optionList": [
+      { "name": "Kapater, NoSkilsy, sango, Thiccsalot" },
+      { "name": "beez, BigLisy, Forgotten, Thaddeus, veltsu, Viliam1337, XYconfig" },
+      { "name": "Ankkah, Doppel, Nom" },
+      { "name": "Gwynevere, Lumeryn, Taika" },
+      { "name": "Complainer, Ziggy1x" }
+    ],
+    "winners": [ 1007, 1006, 1005, 1004, 1003 ]
+  },
+  {
+    "category": 55,
+    "optionList": [
+      { "name": "BigLisy" },
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "Kapater" },
+      { "name": "veltsu" },
+      { "name": "Jammer" }
+    ],
+    "winners": [ 746631, 735908, 721622, 704979, 701921 ]
+  },
+  {
+    "category": 56,
+    "optionList": [
+      { "name": "BigLisy, Gwynevere, Lumeryn, S\u00F6ldner, Thiccsalot, Viliam1337" },
+      { "name": "Jammer" },
+      { "name": "Chem_Echs, seaturtle, Zeure" },
+      { "name": "Kapater, NoSkilsy, \u5929\u6587\u9928\u7684\u732B" },
+      { "name": "algizsage" }
+    ],
+    "winners": [ 280, 279, 278, 277, 276 ]
+  },
+  {
+    "category": 57,
+    "optionList": [
+      { "name": "S\u00F6ldner" },
+      { "name": "BigLisy" },
+      { "name": "Gwynevere" },
+      { "name": "Zeure" },
+      { "name": "Chem_Echs" }
+    ],
+    "winners": [ 637, 635, 634, 628, 627 ]
+  },
+  {
+    "category": 58,
+    "optionList": [
+      { "name": "S\u00F6ldner" },
+      { "name": "BigLisy" },
+      { "name": "Kapater" },
+      { "name": "seaturtle" },
+      { "name": "\u5929\u6587\u9928\u7684\u732B" }
+    ],
+    "winners": [ 1319, 1173, 1102, 1072, 999 ]
+  },
+  {
+    "category": 59,
+    "optionList": [
+      { "name": "BigLisy" },
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "Gwynevere" },
+      { "name": "Farplane" },
+      { "name": "fdas" }
+    ],
+    "winners": [ 7, 17, 38, 41, 44 ]
+  },
+  {
+    "category": 60,
+    "optionList": [
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "BigLisy" },
+      { "name": "Yonah" },
+      { "name": "Sammy" }
+    ],
+    "winners": [ 220289005, 202348259, 195038739, 185028403, 176499652 ]
+  },
+  {
+    "category": 61,
+    "optionList": [
+      { "name": "Skriabin" },
+      { "name": "Bang Doll, Luke" },
+      { "name": "Clueless, Rain" },
+      { "name": "Chem_Echs, Taika" },
+      { "name": "Dr. Llama, Xyphase" }
+    ],
+    "winners": [ 175775, 175600, 173800, 173650, 171600 ]
+  },
+  {
+    "category": 62,
+    "optionList": [
+      { "name": "Skriabin" },
+      { "name": "BigLisy, Dr. Llama, eemeli7093, Gwynevere, Jaron95, Kapater, Lucas, Luke, Maelstrom, Nobody, Shana, Taika, Thaddeus, Xyphase, yimc808" },
+      { "name": "Andromeda" },
+      { "name": "Aqest, Mcguyver10" },
+      { "name": "algizsage, Chem_Echs, jj, MIDACHI, Sammy, sango, Zael, Zeure" }
+    ],
+    "winners": [ 251246, 214384, 213333, 209884, 209583 ]
+  },
+  {
+    "category": 63,
+    "optionList": [
+      { "name": "Bionic" },
+      { "name": "Gread" },
+      { "name": "Farplane" },
+      { "name": "veltsu" },
+      { "name": "algizsage" }
+    ],
+    "winners": [ 201220, 199480, 197590, 196590, 194600 ]
+  },
+  {
+    "category": 64,
+    "optionList": [
+      { "name": "Gread" },
+      { "name": "Yonah" },
+      { "name": "Zepertix" },
+      { "name": "Bionic" },
+      { "name": "Clueless" }
+    ],
+    "winners": [ 226900, 217350, 212370, 211760, 211220 ]
+  }
+]

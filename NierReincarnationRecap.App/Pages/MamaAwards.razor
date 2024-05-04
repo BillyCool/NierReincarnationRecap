@@ -1,0 +1,19 @@
+﻿@page "/mama-awards"
+@using NierReincarnationRecap.App.Components.MamaAwards
+
+<PageTitle>NieR Reincarnation Recap - Mama Awards</PageTitle>
+
+@if (Awards is null)
+{
+    <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+}
+else if (Awards.Count == 0)
+{
+    <MudAlert Severity="Severity.Warning" Variant="Variant.Outlined">
+        There are no active awards, check back later
+    </MudAlert>
+}
+else
+{
+    <MamaAwardsResultsSection Awards="@Awards" />
+}
