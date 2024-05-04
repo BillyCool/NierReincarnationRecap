@@ -15,8 +15,8 @@
                 <VotingOption
                     AwardOption="Award.OptionList[i]"
                     AwardOptionIndex=i
-                    IsWinner="@(i == Award.Winner)"
-                    IsSelected=@(i == SelectedOption)
+                    IsWinner="@(!IsVotingEnabled && Award.Winners?.Contains(i) == true)"
+                    IsSelected=@(IsVotingEnabled && i == SelectedOption)
                     OnOptionSelected="OptionSelected" />
             }
         </MudCardContent>
@@ -31,6 +31,8 @@
     [CascadingParameter] public UserPreferences UserPreferences { get; set; } = null!;
 
     [CascadingParameter(Name = "AwardCount")] public int AwardCount { get; set; }
+
+    [CascadingParameter(Name = "IsVotingEnabled")] public bool IsVotingEnabled { get; set; }
 
     public int? SelectedOption { get; set; }
 

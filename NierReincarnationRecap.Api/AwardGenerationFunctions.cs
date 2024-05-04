@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Azure.Functions.Worker.Http;
+using Microsoft.EntityFrameworkCore;
+using NierReincarnationRecap.Business.EF;
 using NierReincarnationRecap.Model.Enums;
 using NierReincarnationRecap.Model.ViewModel;
 using System.Text.Json;
@@ -8,7 +10,7 @@ using System.Text.Json.Serialization;
 
 namespace NierReincarnationRecap.Api;
 
-public class AwardGenerationFunctions
+public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
 {
     [Function("story-awards-json")]
     public async Task<IActionResult> StoryAwardsJson([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req)
@@ -108,6 +110,8 @@ public class AwardGenerationFunctions
                 ]
             },
         ];
+
+        await SetWinnersAsync(awards);
 
         return new JsonResult(awards, new JsonSerializerOptions(JsonSerializerDefaults.Web) { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull });
     }
@@ -239,6 +243,8 @@ public class AwardGenerationFunctions
             },
         ];
 
+        await SetWinnersAsync(awards);
+
         return new JsonResult(awards, new JsonSerializerOptions(JsonSerializerDefaults.Web) { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull });
     }
 
@@ -353,6 +359,8 @@ public class AwardGenerationFunctions
                 OptionList = GetCostumeAwardOptionsByCategory(CommunityAwardCategory.CostumeDragonQuest)
             }
         ];
+
+        await SetWinnersAsync(awards);
 
         return new JsonResult(awards, new JsonSerializerOptions(JsonSerializerDefaults.Web) { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull });
     }
@@ -690,6 +698,21 @@ public class AwardGenerationFunctions
             new AwardOptionInternal("10H - Abstract Savior", "048003", [CommunityAwardCategory.Costume10H, CommunityAwardCategory.CostumeAbstract]),
             new AwardOptionInternal("10H - Reborn Warden", "048004", [CommunityAwardCategory.Costume10H, CommunityAwardCategory.CostumeEx])
         ];
+    }
+
+    private async Task SetWinnersAsync(List<Award> awards)
+    {
+        foreach (var award in awards)
+        {
+            var categoryVotes = await dbContext.UserSubmissions
+                .SelectMany(x => x.Votes.Where(v => v.CommunityAwardCategory == award.Category).Select(v => v.Selection))
+                .ToListAsync();
+
+            var groupedCategoryVotes = categoryVotes.GroupBy(x => x).Select(x => new { Vote = x.Key, Count = x.Count() });
+            var maxCount = groupedCategoryVotes.Max(x => x.Count);
+
+            award.Winners = groupedCategoryVotes.Where(x => x.Count == maxCount).Select(x => x.Vote).ToArray();
+        }
     }
 }
 

@@ -8,4 +8,6 @@ public partial class VotingSection
     [Parameter][EditorRequired] public required List<Award> Awards { get; set; }
 
     [Parameter][EditorRequired] public string? HeaderImagePath { get; set; }
+
+    [Parameter][EditorRequired] public bool IsVotingEnabled { get; set; }
 }

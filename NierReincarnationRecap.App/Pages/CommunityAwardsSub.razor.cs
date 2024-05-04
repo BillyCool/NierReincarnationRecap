@@ -24,6 +24,8 @@ public partial class CommunityAwardsSub
 
     private List<CommunityAwardCategory> AwardCategories => Awards?.Select(x => x.Category).ToList() ?? [];
 
+    private bool IsVotingEnabled => Awards?.Any(x => x.Winners is null) == true;
+
     private bool IsSubmitting { get; set; }
 
     protected override async Task OnInitializedAsync()

@@ -8,5 +8,5 @@ public class Award
 
     public List<AwardOption> OptionList { get; init; } = [];
 
-    public int? Winner { get; init; }
+    public int[]? Winners { get; set; }
 }
