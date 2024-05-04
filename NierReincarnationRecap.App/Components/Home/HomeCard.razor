@@ -4,7 +4,7 @@
             <MudCardContent Class="@(IsDisabled ? "py-6 px-10" : "py-10 px-10")" Style="height:150px;">
                 @if (IsDisabled)
                 {
-                    <MudText Typo="Typo.subtitle2" Class="mud-text-secondary">Coming soon</MudText>
+                    <MudText Typo="Typo.subtitle2" Class="mud-text-secondary">@DisabledText</MudText>
                 }
                 <MudText Typo="Typo.h6" GutterBottom="true" Class="border-b-4">@Title</MudText>
                 <MudText Typo="Typo.body2">@Description</MudText>
@@ -20,5 +20,7 @@
 
     [Parameter][EditorRequired] public required string Link { get; set; }
 
-    [Parameter] public bool IsDisabled { get; set; }
+    [Parameter] public string? DisabledText { get; set; }
+
+    private bool IsDisabled => !string.IsNullOrEmpty(DisabledText);
 }
