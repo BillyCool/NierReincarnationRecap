@@ -11,7 +11,7 @@ namespace NierReincarnationRecap.Api
 {
     public class UserFunctions(NierReincarnationRecapDbContext dbContext, ILogger<UserFunctions> logger)
     {
-        [Function("submit-user-data")]
+        //[Function("submit-user-data")]
         public async Task<HttpResponseData> SubmitUserData([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req)
         {
             try
@@ -53,7 +53,7 @@ namespace NierReincarnationRecap.Api
             }
         }
 
-        [Function("submit-votes")]
+        //[Function("submit-votes")]
         public async Task<HttpResponseData> SubmitUserVotes([HttpTrigger(AuthorizationLevel.Anonymous, "post")] HttpRequestData req)
         {
             try

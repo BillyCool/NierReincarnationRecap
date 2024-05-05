@@ -5,7 +5,8 @@
       { "name": "The Girl and the Monster" },
       { "name": "The Sun and the Moon" },
       { "name": "The People and the World" }
-    ]
+    ],
+    "winners": [ 1 ]
   },
   {
     "category": 1,
@@ -13,7 +14,8 @@
       { "name": "The Girl and the Monster" },
       { "name": "The Sun and the Moon" },
       { "name": "The People and the World" }
-    ]
+    ],
+    "winners": [ 1 ]
   },
   {
     "category": 3,
@@ -102,7 +104,8 @@
         "name": "10H - Sentinel Savior",
         "imagePath": "048001"
       }
-    ]
+    ],
+    "winners": [ 20 ]
   },
   {
     "category": 4,
@@ -191,7 +194,8 @@
         "name": "10H - Reborn Warden",
         "imagePath": "048004"
       }
-    ]
+    ],
+    "winners": [ 19 ]
   },
   {
     "category": 5,
@@ -244,7 +248,8 @@
         "name": "Fio - Frozen-Heart Princess",
         "imagePath": "019009"
       }
-    ]
+    ],
+    "winners": [ 8 ]
   },
   {
     "category": 6,
@@ -333,7 +338,8 @@
         "name": "10H - Sentinel Savior",
         "imagePath": "048001"
       }
-    ]
+    ],
+    "winners": [ 20 ]
   },
   {
     "category": 7,
@@ -383,6 +389,7 @@
       { "name": "Hallowed Struggle" },
       { "name": "Starfall Cliff" },
       { "name": "The Cage of Rebirth" }
-    ]
+    ],
+    "winners": [ 44 ]
   }
 ]

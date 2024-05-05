@@ -3,12 +3,8 @@
 
 <PageTitle>NieR Reincarnation Recap - Home</PageTitle>
 
-@{
-    var hoursLeft = Math.Round((new DateTimeOffset(2024, 5, 5, 14, 0, 0, TimeSpan.Zero) - DateTimeOffset.UtcNow).TotalHours);
-}
-
 <MudGrid>
-    <HomeCard Title="Community Awards" Description="@("Community favorites over the years. Voting is closing " + (hoursLeft > 0 ? $"in ~{hoursLeft} hour{(hoursLeft > 1 ? "s" : "")}" : "soon") + "!")" Link="/community-awards" />
+    <HomeCard Title="Community Awards" Description="Community favorites over the years. Results are live!" Link="/community-awards" />
     <HomeCard Title="Mama Awards" Description="Player rankings across a wide range of categories." Link="/mama-awards" />
     <HomeCard Title="Save Data" Description="Download a copy of your account data and optionally get your personalized recap." Link="/save-data" DisabledText="Unavailable" />
     <HomeCard Title="About" Description="Learn more about this website." Link="/about" />

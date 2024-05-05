@@ -86,7 +86,8 @@
         "name": "10H - Abstract Savior",
         "imagePath": "048003"
       }
-    ]
+    ],
+    "winners": [ 20 ]
   },
   {
     "category": 33,
@@ -131,7 +132,8 @@
         "name": "Saryu - Bloody Witch",
         "imagePath": "022005"
       }
-    ]
+    ],
+    "winners": [ 0, 1, 7 ]
   },
   {
     "category": 34,
@@ -156,7 +158,8 @@
         "name": "Noelle - Bloodless Weapon",
         "imagePath": "010009"
       }
-    ]
+    ],
+    "winners": [ 0 ]
   },
   {
     "category": 35,
@@ -181,7 +184,8 @@
         "name": "Fio - Lacrima Girl",
         "imagePath": "019016"
       }
-    ]
+    ],
+    "winners": [ 0 ]
   },
   {
     "category": 36,
@@ -222,7 +226,8 @@
         "name": "Marie - Fractured Songstress",
         "imagePath": "024006"
       }
-    ]
+    ],
+    "winners": [ 8 ]
   },
   {
     "category": 37,
@@ -259,7 +264,8 @@
         "name": "Yuzuki - Mechanical Student",
         "imagePath": "021004"
       }
-    ]
+    ],
+    "winners": [ 1 ]
   },
   {
     "category": 38,
@@ -312,7 +318,8 @@
         "name": "Yurie - Summer Ruler",
         "imagePath": "025008"
       }
-    ]
+    ],
+    "winners": [ 11 ]
   },
   {
     "category": 39,
@@ -373,7 +380,8 @@
         "name": "Yurie - Yuletide Ruler",
         "imagePath": "025010"
       }
-    ]
+    ],
+    "winners": [ 12 ]
   },
   {
     "category": 40,
@@ -426,7 +434,8 @@
         "name": "Sarafa - New Year\u0027s Belle",
         "imagePath": "026008"
       }
-    ]
+    ],
+    "winners": [ 9 ]
   },
   {
     "category": 41,
@@ -511,7 +520,8 @@
         "name": "Yuzuki - Celebratory Student",
         "imagePath": "021003"
       }
-    ]
+    ],
+    "winners": [ 2 ]
   },
   {
     "category": 42,
@@ -552,7 +562,8 @@
         "name": "Yurie - Festive Ruler",
         "imagePath": "025011"
       }
-    ]
+    ],
+    "winners": [ 2 ]
   },
   {
     "category": 43,
@@ -573,7 +584,8 @@
         "name": "Sarafa - Shadowbound Belle",
         "imagePath": "026007"
       }
-    ]
+    ],
+    "winners": [ 3 ]
   },
   {
     "category": 44,
@@ -654,7 +666,8 @@
         "name": "Yuzuki - Abyssal Student",
         "imagePath": "021006"
       }
-    ]
+    ],
+    "winners": [ 17 ]
   },
   {
     "category": 45,
@@ -679,7 +692,8 @@
         "name": "Yudil - Divine Boor",
         "imagePath": "027008"
       }
-    ]
+    ],
+    "winners": [ 3 ]
   },
   {
     "category": 46,
@@ -768,7 +782,8 @@
         "name": "10H - Reborn Warden",
         "imagePath": "048004"
       }
-    ]
+    ],
+    "winners": [ 20 ]
   },
   {
     "category": 47,
@@ -821,7 +836,8 @@
         "name": "Fio - Frozen-Heart Princess",
         "imagePath": "019009"
       }
-    ]
+    ],
+    "winners": [ 6 ]
   },
   {
     "category": 48,
@@ -898,7 +914,8 @@
         "name": "Zero - Divergent Sister",
         "imagePath": "031002"
       }
-    ]
+    ],
+    "winners": [ 17, 8 ]
   },
   {
     "category": 49,
@@ -915,7 +932,8 @@
         "name": "Saryu - Fabled Witch",
         "imagePath": "022008"
       }
-    ]
+    ],
+    "winners": [ 2 ]
   },
   {
     "category": 50,
@@ -944,7 +962,8 @@
         "name": "Yudil - Phantasmal Boor",
         "imagePath": "027006"
       }
-    ]
+    ],
+    "winners": [ 3 ]
   },
   {
     "category": 51,
@@ -965,7 +984,8 @@
         "name": "Crow - Scheming Justice",
         "imagePath": "047001"
       }
-    ]
+    ],
+    "winners": [ 0 ]
   },
   {
     "category": 52,
@@ -982,6 +1002,7 @@
         "name": "Sarafa - Oathbound Belle",
         "imagePath": "026009"
       }
-    ]
+    ],
+    "winners": [ 1 ]
   }
 ]
