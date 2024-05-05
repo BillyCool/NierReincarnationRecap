@@ -12,11 +12,14 @@
             <MudText Typo="Typo.h4" GutterBottom="true" Class="border-b-4" Align="Align.Center">@Award.Category.GetDisplayName()</MudText>
             @for (int i = 0; i < Award.OptionList.Count; i++)
             {
+                var value = Award.Winners?.ElementAtOrDefault(i) ?? 0;
                 var headingText = Award.Category switch
                 {
                     AwardCategory.AwakeningCount => string.Empty,
-                    AwardCategory.AvgSubjRank => Award.Winners?.ElementAtOrDefault(i).ToSubjugationToRank(),
-                    _ => Award.Winners?.ElementAtOrDefault(i).ToString("N0")
+                    AwardCategory.AvgSubjRank => value.ToSubjugationToRank(),
+                    AwardCategory.SubjugationFireScore or AwardCategory.SubjugationWaterScore or AwardCategory.SubjugationWindScore or
+                        AwardCategory.SubjugationLightScore or AwardCategory.SubjugationDarkScore => $"{value.ToString("N0")} ({value.ToSubjugationToRank()})",
+                    _ => value.ToString("N0")
                 };
 
                 <VotingOption

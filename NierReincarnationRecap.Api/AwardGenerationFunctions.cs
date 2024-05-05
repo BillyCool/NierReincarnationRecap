@@ -385,6 +385,11 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
             GenerateMamaAward(AwardCategory.AwakeningCount, userData),
             GenerateMamaAward(AwardCategory.AvgArenaRank, userData),
             GenerateMamaAward(AwardCategory.AvgSubjRank, userData),
+            GenerateMamaAward(AwardCategory.SubjugationFireScore, userData),
+            GenerateMamaAward(AwardCategory.SubjugationWaterScore, userData),
+            GenerateMamaAward(AwardCategory.SubjugationWindScore, userData),
+            GenerateMamaAward(AwardCategory.SubjugationLightScore, userData),
+            GenerateMamaAward(AwardCategory.SubjugationDarkScore, userData),
             GenerateMamaAward(AwardCategory.ShootingNormalScore, userData),
             GenerateMamaAward(AwardCategory.ShootingHardScore, userData),
             GenerateMamaAward(AwardCategory.FlyingMamaNormalScore, userData),
@@ -766,10 +771,25 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
                 .Select(x => new MamaAwardUser(x.UserId, x.Name, x.AwakeningCount)),
             AwardCategory.AvgArenaRank => userData
                 .Where(x => x.ArenaRankings.Count > 0)
-                .Select(x => new MamaAwardUser(x.UserId, x.Name, (int)Math.Round(x.ArenaRankings.Average(y => y.Rank)))),
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, (long)Math.Round(x.ArenaRankings.Average(y => y.Rank)))),
             AwardCategory.AvgSubjRank => userData
                 .Where(x => x.SubjugationRankings.Count > 0)
-                .Select(x => new MamaAwardUser(x.UserId, x.Name, (int)Math.Round(x.SubjugationRankings.Average(y => y.Score)))),
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, (long)Math.Round(x.SubjugationRankings.Average(y => y.Score)))),
+            AwardCategory.SubjugationFireScore => userData
+                .Where(x => x.SubjugationRankings.Any(x => x.AttributeType == AttributeType.FIRE))
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.SubjugationRankings.Where(x => x.AttributeType == AttributeType.FIRE).MaxBy(x => x.Score)!.Score)),
+            AwardCategory.SubjugationWaterScore => userData
+                .Where(x => x.SubjugationRankings.Any(x => x.AttributeType == AttributeType.WATER))
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.SubjugationRankings.Where(x => x.AttributeType == AttributeType.WATER).MaxBy(x => x.Score)!.Score)),
+            AwardCategory.SubjugationWindScore => userData
+                .Where(x => x.SubjugationRankings.Any(x => x.AttributeType == AttributeType.WIND))
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.SubjugationRankings.Where(x => x.AttributeType == AttributeType.WIND).MaxBy(x => x.Score)!.Score)),
+            AwardCategory.SubjugationLightScore => userData
+                .Where(x => x.SubjugationRankings.Any(x => x.AttributeType == AttributeType.LIGHT))
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.SubjugationRankings.Where(x => x.AttributeType == AttributeType.LIGHT).MaxBy(x => x.Score)!.Score)),
+            AwardCategory.SubjugationDarkScore => userData
+                .Where(x => x.SubjugationRankings.Any(x => x.AttributeType == AttributeType.DARK))
+                .Select(x => new MamaAwardUser(x.UserId, x.Name, x.SubjugationRankings.Where(x => x.AttributeType == AttributeType.DARK).MaxBy(x => x.Score)!.Score)),
             AwardCategory.ShootingNormalScore => userData
                 .Select(x => new MamaAwardUser(x.UserId, x.Name, x.ExplorationRankings.Find(y => y.ExplorationType == ExplorationType.Shooting && y.DifficultyType == ExplorationDifficultyType.Normal)?.Score ?? 0)),
             AwardCategory.ShootingHardScore => userData

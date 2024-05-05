@@ -86,6 +86,61 @@
     "winners": [ 220289005, 202348259, 195038739, 185028403, 176499652 ]
   },
   {
+    "category": 65,
+    "optionList": [
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "spacesoda" },
+      { "name": "Dr. Llama" },
+      { "name": "Sammy" },
+      { "name": "5YRDesu" }
+    ],
+    "winners": [ 564354256, 514465530, 509937689, 507623928, 504957334 ]
+  },
+  {
+    "category": 66,
+    "optionList": [
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "MokKish" },
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "Yonah" },
+      { "name": "Heracles" }
+    ],
+    "winners": [ 576691060, 540261513, 518100296, 510421590, 508970401 ]
+  },
+  {
+    "category": 67,
+    "optionList": [
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "BigLisy" },
+      { "name": "Sammy" },
+      { "name": "Kaler" },
+      { "name": "spacesoda" }
+    ],
+    "winners": [ 546162270, 513548730, 505376292, 504990390, 504395130 ]
+  },
+  {
+    "category": 68,
+    "optionList": [
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "Dr. Llama" },
+      { "name": "BigLisy" },
+      { "name": "Doppel" },
+      { "name": "Heracles" }
+    ],
+    "winners": [ 540570029, 511259319, 509281612, 507819660, 507528270 ]
+  },
+  {
+    "category": 69,
+    "optionList": [
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "\u5929\u6587\u9928\u7684\u732B" },
+      { "name": "BigLisy" },
+      { "name": "Dr. Llama" },
+      { "name": "Jammer" }
+    ],
+    "winners": [ 555122744, 526505953, 504250326, 504205987, 503237278 ]
+  },
+  {
     "category": 61,
     "optionList": [
       { "name": "Skriabin" },

@@ -203,7 +203,22 @@ public enum AwardCategory
     FlyingMamaNormalScore,
 
     [Display(Name = "Highest Flying Mama Hard Score")]
-    FlyingMamaHardScore
+    FlyingMamaHardScore,
+
+    [Display(Name = "Highest Subjugation Fire Moose Score")]
+    SubjugationFireScore,
+
+    [Display(Name = "Highest Subjugation Water Moose Score")]
+    SubjugationWaterScore,
+
+    [Display(Name = "Highest Subjugation Wind Moose Score")]
+    SubjugationWindScore,
+
+    [Display(Name = "Highest Subjugation Light Moose Score")]
+    SubjugationLightScore,
+
+    [Display(Name = "Highest Subjugation Dark Moose Score")]
+    SubjugationDarkScore
 
     #endregion Mama Awards
 }
