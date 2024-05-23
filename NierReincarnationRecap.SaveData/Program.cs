@@ -1,11 +1,11 @@
-﻿using NierReincarnationRecap.Business.Network;
-using NierReincarnationRecap.Business.Proto;
+﻿using Google.Protobuf.WellKnownTypes;
 using NierReincarnationRecap.Business;
-using System.Text.Json;
-using Google.Protobuf.WellKnownTypes;
-using System.IO.Compression;
+using NierReincarnationRecap.Business.Network;
+using NierReincarnationRecap.Business.Proto;
 using NierReincarnationRecap.Model;
 using NierReincarnationRecap.Model.Enums;
+using System.IO.Compression;
+using System.Text.Json;
 
 namespace NierReincarnationRecap.SaveData;
 
@@ -53,7 +53,7 @@ public static class Program
         await AuthenticateUserAsync();
 
         // Get user data table names
-        var userDataTableNames = await GetUserDataTableNamesAsync();
+        List<string> userDataTableNames = await GetUserDataTableNamesAsync();
 
         // Get user data
         DarkUserMemoryDatabase darkUserMemoryDatabase = await GetUserDataAsync(userDataTableNames);
@@ -126,7 +126,7 @@ public static class Program
 
     private static async Task<string> GetBackupTokenAsync()
     {
-        var backupTokenResponse = await DarkClient.GetBackupTokenAsync(new GetBackupTokenRequest { Uuid = Uuid });
+        GetBackupTokenResponse? backupTokenResponse = await DarkClient.GetBackupTokenAsync(new GetBackupTokenRequest { Uuid = Uuid });
 
         if (backupTokenResponse is null)
         {
@@ -146,7 +146,7 @@ public static class Program
         Console.ReadKey();
         Console.WriteLine("Please wait...");
 
-        var transferUserResponse = await DarkClient.TransferUserAsync(new TransferUserRequest { Uuid = Uuid });
+        TransferUserResponse? transferUserResponse = await DarkClient.TransferUserAsync(new TransferUserRequest { Uuid = Uuid });
 
         if (transferUserResponse is null)
         {
@@ -159,7 +159,7 @@ public static class Program
 
     private static async Task GetAndroidArgsAsync()
     {
-        var androidArgsResponse = await DarkClient.GetAndroidArgsAsync(new GetAndroidArgsRequest
+        GetAndroidArgsResponse? androidArgsResponse = await DarkClient.GetAndroidArgsAsync(new GetAndroidArgsRequest
         {
             Uuid = Uuid,
             Signature = Signature,
@@ -186,7 +186,7 @@ public static class Program
         trList.Add(new Tr("ms", Array.Empty<string>()));
         trList.Add(new Tr("ics", string.Empty));
 
-        var authUserResponse = await DarkClient.AuthAsync(new AuthUserRequest
+        AuthUserResponse? authUserResponse = await DarkClient.AuthAsync(new AuthUserRequest
         {
             Uuid = Uuid,
             Signature = Signature,
@@ -206,7 +206,7 @@ public static class Program
 
     private static async Task<List<string>> GetUserDataTableNamesAsync()
     {
-        var userDataGetNameResponseV2 = await DarkClient.GetUserDataNameV2Async(new Empty());
+        UserDataGetNameResponseV2? userDataGetNameResponseV2 = await DarkClient.GetUserDataNameV2Async(new Empty());
 
         if (userDataGetNameResponseV2 is null)
         {
@@ -218,7 +218,7 @@ public static class Program
 
     private static async Task<DarkUserMemoryDatabase> GetUserDataAsync(List<string> userDataTableNames)
     {
-        var userDataGetResponse = await DarkClient.GetUserDataAsync(new UserDataGetRequest
+        UserDataGetResponse? userDataGetResponse = await DarkClient.GetUserDataAsync(new UserDataGetRequest
         {
             TableName = { userDataTableNames }
         });
@@ -229,16 +229,19 @@ public static class Program
         }
 
         DarkUserMemoryDatabase darkUserMemoryDatabase = new();
-        var properties = darkUserMemoryDatabase.GetType().GetProperties();
-        var args = properties[0].PropertyType.GetGenericArguments()[0].Name;
+        System.Reflection.PropertyInfo[] properties = darkUserMemoryDatabase.GetType().GetProperties();
+        string args = properties[0].PropertyType.GetGenericArguments()[0].Name;
 
-        foreach (var kvp in userDataGetResponse!.UserDataJson)
+        foreach (KeyValuePair<string, string> kvp in userDataGetResponse!.UserDataJson)
         {
             string key = $"Entity{kvp.Key}";
 
-            var property = Array.Find(properties, x => x.PropertyType.IsGenericType && x.PropertyType.GetGenericArguments().Any(y => y.Name == key));
+            System.Reflection.PropertyInfo? property = Array.Find(properties, x => x.PropertyType.IsGenericType && x.PropertyType.GetGenericArguments().Any(y => y.Name == key));
 
-            if (property is null) continue;
+            if (property is null)
+            {
+                continue;
+            }
 
             object deserializedValue = JsonSerializer.Deserialize(kvp.Value, property.PropertyType, JsonSerializerOptions)!;
             property.SetValue(darkUserMemoryDatabase, deserializedValue);
@@ -252,7 +255,7 @@ public static class Program
         using FileStream zipToOpen = new("userdata.zip", FileMode.Create);
         using ZipArchive archive = new(zipToOpen, ZipArchiveMode.Create);
 
-        foreach (var property in typeof(DarkUserMemoryDatabase).GetProperties())
+        foreach (System.Reflection.PropertyInfo property in typeof(DarkUserMemoryDatabase).GetProperties())
         {
             string fileName = $"{property.Name}.json";
             string fileContent = JsonSerializer.Serialize(property.GetValue(darkUserMemoryDatabase, null), new JsonSerializerOptions()
@@ -260,7 +263,7 @@ public static class Program
                 WriteIndented = true,
             });
 
-            var entry = archive.CreateEntry(fileName, CompressionLevel.Fastest);
+            ZipArchiveEntry entry = archive.CreateEntry(fileName, CompressionLevel.Fastest);
 
             using StreamWriter writer = new(entry.Open());
             writer.Write(fileContent);

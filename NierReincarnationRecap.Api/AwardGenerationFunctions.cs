@@ -8,10 +8,8 @@ using NierReincarnationRecap.Model.Dto;
 using NierReincarnationRecap.Model.Enums;
 using NierReincarnationRecap.Model.ViewModel;
 using System.Collections.Immutable;
-using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
 
 namespace NierReincarnationRecap.Api;
 
@@ -736,9 +734,9 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
 
     private static Award GenerateMamaAward(AwardCategory awardCategory, List<UserData> userData)
     {
-        var allRankings = GetAllMamaAwardRankings(awardCategory, userData);
-        var topThree = allRankings.GroupBy(x => x.Value).Take(5).Select(x => x.Key).ToArray();
-        var options = allRankings.Where(x => topThree.Contains(x.Value))
+        ImmutableList<MamaAwardUser> allRankings = GetAllMamaAwardRankings(awardCategory, userData);
+        long[] topThree = allRankings.GroupBy(x => x.Value).Take(5).Select(x => x.Key).ToArray();
+        List<AwardOption> options = allRankings.Where(x => topThree.Contains(x.Value))
             .GroupBy(x => x.Value)
             .Select(x => new AwardOption { Name = string.Join(", ", x.Select(y => y.Name)) })
             .ToList();
@@ -812,14 +810,14 @@ public class AwardGenerationFunctions(NierReincarnationRecapDbContext dbContext)
 
     private async Task SetWinnersAsync(List<Award> awards)
     {
-        foreach (var award in awards)
+        foreach (Award award in awards)
         {
-            var categoryVotes = await dbContext.UserSubmissions
+            List<int> categoryVotes = await dbContext.UserSubmissions
                 .SelectMany(x => x.Votes.Where(v => v.CommunityAwardCategory == award.Category).Select(v => v.Selection))
                 .ToListAsync();
 
             var groupedCategoryVotes = categoryVotes.GroupBy(x => x).Select(x => new { Vote = x.Key, Count = x.Count() });
-            var maxCount = groupedCategoryVotes.Max(x => x.Count);
+            int maxCount = groupedCategoryVotes.Max(x => x.Count);
 
             award.Winners = groupedCategoryVotes.Where(x => x.Count == maxCount).Select(x => (long)x.Vote).ToArray();
         }

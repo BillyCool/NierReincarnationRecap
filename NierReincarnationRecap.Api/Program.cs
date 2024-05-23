@@ -5,7 +5,7 @@ using NierReincarnationRecap.Business.EF;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-var host = new HostBuilder()
+IHost host = new HostBuilder()
     .ConfigureFunctionsWebApplication()
     .ConfigureServices(services =>
     {
